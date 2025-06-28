@@ -14,4 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Zeynep/Scenes/Game.unity
     guid: d43314839cb39bbd3a3412515a06af48
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: ea4520b54ecebc74090193008a65810a,
+      type: 3}
