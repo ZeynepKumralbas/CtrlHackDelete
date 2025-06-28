@@ -8,7 +8,7 @@ using TMPro;
 public class RoomListItem : MonoBehaviour
 {
     public TextMeshProUGUI roomNameText;
-    RoomInfo info;
+    public RoomInfo info;
 
     public void SetUp(RoomInfo _info)
     {
