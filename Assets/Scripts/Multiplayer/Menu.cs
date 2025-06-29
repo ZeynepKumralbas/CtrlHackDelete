@@ -13,7 +13,7 @@ public class Menu : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-     public void Close()
+    public void Close()
     {
         isOpen = false;
         gameObject.SetActive(false);

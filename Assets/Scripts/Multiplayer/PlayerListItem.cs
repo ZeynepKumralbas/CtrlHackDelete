@@ -8,12 +8,20 @@ using Photon.Pun;
 public class PlayerListItem : MonoBehaviourPunCallbacks
 {
     public TextMeshProUGUI playerUserName;
+    public TextMeshProUGUI teamText;
     Player player;
-    
-    public void SetUp(Player _player)
+    int team;
+
+    public void SetUp(Player _player, int _team)
     {
         player = _player;
+        team = _team;
         playerUserName.text = _player.NickName;
+        teamText.text = "Team " + _team;
+
+        ExitGames.Client.Photon.Hashtable customProps = new ExitGames.Client.Photon.Hashtable();
+        customProps["Team"] = _team;
+        _player.SetCustomProperties(customProps);
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)

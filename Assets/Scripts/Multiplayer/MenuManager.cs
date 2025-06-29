@@ -8,9 +8,22 @@ public class MenuManager : MonoBehaviour
 
     public Menu[] menus;
 
+    /*   void Awake()
+       {
+           instance = this;
+       }
+   */
     void Awake()
     {
+      //  instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         instance = this;
+        DontDestroyOnLoad(gameObject); // 💡 bu satır her şeyi çözer
     }
 
     public void OpenMenu(string menuName)
@@ -20,10 +33,12 @@ public class MenuManager : MonoBehaviour
         {
             if (menus[i].menuName == menuName)
             {
+                Debug.Log("open: " + menus[i]);
                 menus[i].Open();
             }
             else if (menus[i].isOpen)
             {
+                Debug.Log("close: " + menus[i]);
                 CloseMenu(menus[i]);
             }
         }
@@ -44,5 +59,14 @@ public class MenuManager : MonoBehaviour
     public void CloseMenu(Menu menu)
     {
         menu.Close();
+    }
+
+    public void CloseAllMenus()
+    {
+        Debug.Log("Close all menus");
+        foreach (Menu menu in menus)
+        {
+            menu.Close();
+        }
     }
 }

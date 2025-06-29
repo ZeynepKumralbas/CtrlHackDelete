@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Photon.Pun;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,17 +17,26 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator _animator;
 
+    // Multiplayer
+    public PhotonView view;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
+        view = GetComponent<PhotonView>();
     }
 
     void Update()
     {
+        if (!view.IsMine)
+        {
+            return;
+        }
+
         _moveDirection = move.action.ReadValue<Vector2>();
 
-        // Hareket varsa yönünü deðiþtir
+        // Hareket varsa yï¿½nï¿½nï¿½ deï¿½iï¿½tir
         if (_moveDirection != Vector2.zero)
         {
             Vector3 lookDirection = new Vector3(_moveDirection.x, 0f, _moveDirection.y);
@@ -34,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
         }
 
-        // Animasyona hýz bilgisi gönder (0 = idle, 0.5 = yürüme, 1 = koþu)
+        // Animasyona hï¿½z bilgisi gï¿½nder (0 = idle, 0.5 = yï¿½rï¿½me, 1 = koï¿½u)
         float inputMagnitude = _moveDirection.magnitude;
         bool isRunning = run.action.IsPressed();
         float animationSpeed = inputMagnitude * (isRunning ? 1f : 0.5f);
@@ -44,6 +54,11 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!view.IsMine)
+        {
+            return;
+        }
+
         bool isRunning = run.action.IsPressed();
         float currentSpeed = isRunning ? runSpeed : walkSpeed;
 

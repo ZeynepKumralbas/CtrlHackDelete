@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Photon.Pun;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -13,12 +14,22 @@ public class PlayerInteraction : MonoBehaviour
     private Coroutine holdCoroutine;
     private GameObject currentMissionPoint;
 
+    // Multiplayer
+    public PhotonView view;
+
     void Start()
     {
         _animator = GetComponent<Animator>();
+        view = GetComponent<PhotonView>();
     }
+
     void Update()
     {
+        if (!view.IsMine)
+        {
+            return;
+        }
+
         if (!isInMissionPoint) return;
 
         if (interaction.action.WasPressedThisFrame())
@@ -33,7 +44,7 @@ public class PlayerInteraction : MonoBehaviour
                 StopCoroutine(holdCoroutine);
                 holdCoroutine = null;
                 _animator.SetBool("isInteracting", false); // animasyonu durdur
-                Debug.Log("Tuþ erken býrakýldý, iþlem iptal.");
+                Debug.Log("Tus erken birakildi, islem iptal.");
             }
         }
     }
@@ -41,7 +52,7 @@ public class PlayerInteraction : MonoBehaviour
     private IEnumerator HoldInteraction()
     {
         isHolding = true;
-        _animator.SetBool("isInteracting", true); // animasyonu baþlat
+        _animator.SetBool("isInteracting", true); // animasyonu baï¿½lat
         float holdTime = 0f;
 
         while (holdTime < interactionTime)
@@ -49,21 +60,21 @@ public class PlayerInteraction : MonoBehaviour
             if (!interaction.action.IsPressed())
             {
                 _animator.SetBool("isInteracting", false); // animasyonu durdur
-                yield break; // tuþ býrakýldýysa çýk
+                yield break; // tuï¿½ bï¿½rakï¿½ldï¿½ysa ï¿½ï¿½k
             }
 
             holdTime += Time.deltaTime;
             yield return null;
         }
 
-        // Görev tamamlandý
-        Debug.Log("Görev tamamlandý!");
+        // Gï¿½rev tamamlandï¿½
+        Debug.Log("Gorev tamamlandi!");
         _animator.SetBool("isInteracting", false);
         isHolding = false;
 
         if (currentMissionPoint != null)
         {
-            currentMissionPoint.SetActive(false); // görev alanýný kapat
+            currentMissionPoint.SetActive(false); // gï¿½rev alanï¿½nï¿½ kapat
         }
     }
 
@@ -73,7 +84,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             isInMissionPoint = true;
             currentMissionPoint = other.gameObject;
-            Debug.Log("Görev alanýna girildi");
+            Debug.Log("Gorev alanina girildi");
         }
     }
 
@@ -89,7 +100,7 @@ public class PlayerInteraction : MonoBehaviour
                 StopCoroutine(holdCoroutine);
                 holdCoroutine = null;
                 _animator.SetBool("isInteracting", false);
-                Debug.Log("Görev alaný terk edildi, iþlem iptal.");
+                Debug.Log("Gorev alani terk edildi, islem iptal.");
             }
         }
     }

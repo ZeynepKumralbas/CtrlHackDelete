@@ -6,10 +6,12 @@ using TMPro;
 using Photon.Realtime;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
     public static Launcher instance;
+    public Button loadingNextButton;
     public TMP_InputField roomNameInputField;
     public TextMeshProUGUI roomNameText;
     public TextMeshProUGUI errorText;
@@ -18,11 +20,27 @@ public class Launcher : MonoBehaviourPunCallbacks
     public Transform playerListContent;
     public GameObject playerListItemPrefab;
     public GameObject startButton;
+    int nextTeamNumber = 1;
+    public bool hasEnteredUsernameThisSession = false;
+    bool returnToMenuScene = false;
 
 
+    /*   void Awake()
+       {
+           instance = this;
+       }
+   */
     void Awake()
     {
+        //  instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     // Start is called before the first frame update
@@ -41,9 +59,17 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public override void OnJoinedLobby()
     {
-        MenuManager.instance.OpenMenu("TitleMenu");
+        //MenuManager.instance.OpenMenu("UsernameMenu");
         Debug.Log("Joined Lobby");
-        PhotonNetwork.NickName = "Player " + Random.Range(0, 10000).ToString("0000");
+        if (!hasEnteredUsernameThisSession)
+        {
+            loadingNextButton.gameObject.SetActive(true);
+        //    MenuManager.instance.OpenMenu("UsernameMenu");
+        }
+        else
+        {
+            MenuManager.instance.OpenMenu("TitleMenu");
+        }
     }
 
     public void CreateRoom()
@@ -71,7 +97,8 @@ public class Launcher : MonoBehaviourPunCallbacks
 
         for (int i = 0; i < players.Count(); i++)
         {
-            Instantiate(playerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(players[i]);
+            int teamNumber = GetNextTeamMember();
+            Instantiate(playerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(players[i], teamNumber);
         }
 
         startButton.SetActive(PhotonNetwork.IsMasterClient);
@@ -96,18 +123,57 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public void StartGame()
     {
+        Debug.Log("Start Game..");
         PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
+        MenuManager.instance.CloseAllMenus();
     }
 
     public void LeaveRoom()
     {
-        PhotonNetwork.LeaveRoom();
-        MenuManager.instance.OpenMenu("LoadingMenu");
+        Debug.Log("Launcher LeaveRoom");
+
+        Debug.Log($"InRoom: {PhotonNetwork.InRoom}, IsConnected: {PhotonNetwork.IsConnected}");
+
+        //    MenuManager.instance.OpenMenu("LoadingMenu");
+        if (SceneManager.GetActiveScene().name == "Game")
+        {
+            returnToMenuScene = true;
+        }
+
+
+        if (PhotonNetwork.InRoom)
+        {
+            PhotonNetwork.LeaveRoom();
+        }
+        // PhotonNetwork.LeaveRoom();
     }
 
     public override void OnLeftRoom()
     {
-        MenuManager.instance.OpenMenu("TitleMenu");
+        Debug.Log("OnLeftRoom");
+        if (returnToMenuScene)
+        {
+            Debug.Log("Return to menu scene");
+            //  GameObject obj = new GameObject("SceneLoader");
+            StartCoroutine(LoadScene("Menu"));
+            Destroy(RoomManager.instance.gameObject);
+        }
+        else
+        {
+            MenuManager.instance.OpenMenu("TitleMenu");
+        }
+        returnToMenuScene = false;
+    }
+
+    private IEnumerator LoadScene(string scene)
+    {
+        Debug.Log("coroutine");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
@@ -119,7 +185,8 @@ public class Launcher : MonoBehaviourPunCallbacks
 
         for (int i = 0; i < roomList.Count; i++)
         {
-            if (roomList[i].RemovedFromList){
+            if (roomList[i].RemovedFromList)
+            {
                 continue;
             }
             Instantiate(roomListItemPrefab, roomListContent).GetComponent<RoomListItem>().SetUp(roomList[i]);
@@ -128,6 +195,21 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        Instantiate(playerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(newPlayer);
+        int teamNumber = GetNextTeamMember();
+        GameObject playerItem = Instantiate(playerListItemPrefab, playerListContent);
+        playerItem.GetComponent<PlayerListItem>().SetUp(newPlayer, teamNumber);
+    }
+
+    private int GetNextTeamMember()
+    {
+        int teamMember = nextTeamNumber;
+        nextTeamNumber = 3 - nextTeamNumber;
+        return teamMember;
+    }
+    
+    public void QuitGame()
+    {
+        Debug.Log("GameLeaved");
+        Application.Quit();
     }
 }
