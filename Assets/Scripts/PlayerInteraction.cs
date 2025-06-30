@@ -7,11 +7,13 @@ using UnityEngine.UI;
 public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] private InputActionReference interaction;
-    [SerializeField] private float interactionTime = 10f;
+    [SerializeField] private float interactionTime = 5f;
     [SerializeField] private GameObject txtInteractionButton;
     [SerializeField] private Slider missionCompletePercentSlider;
 
     private Animator _animator;
+
+    private float defaultInteractionTime;
 
     private bool isInMissionPoint = false;
     private bool isHolding = false;
@@ -22,6 +24,8 @@ public class PlayerInteraction : MonoBehaviour
 
     void Start()
     {
+        defaultInteractionTime = interactionTime;
+
         _animator = GetComponent<Animator>();
 
         if(txtInteractionButton != null) 
@@ -108,6 +112,8 @@ public class PlayerInteraction : MonoBehaviour
         {
             currentMissionPoint.SetActive(false);
 
+            interactionTime = defaultInteractionTime;
+
             if (txtInteractionButton != null)
                 txtInteractionButton.SetActive(false);
         }
@@ -116,6 +122,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) //Görev alanýna giriþ kontrolcüsü
     {
+        float defaultInteractionTime = interactionTime;
         if (other.CompareTag("MissionPoint"))
         {
             isInMissionPoint = true;
@@ -153,6 +160,8 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (other.CompareTag("MissionPoint"))
         {
+            interactionTime = defaultInteractionTime;
+
             isInMissionPoint = false;
             currentMissionPoint = null;
 
