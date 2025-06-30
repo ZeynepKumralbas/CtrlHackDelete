@@ -24,6 +24,9 @@ public class Launcher : MonoBehaviourPunCallbacks
     public bool hasEnteredUsernameThisSession = false;
     bool returnToMenuScene = false;
 
+    // Team selection
+    public Transform humansTeamContent;
+    public Transform watchersTeamContent;
 
     /*   void Awake()
        {
@@ -98,7 +101,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         for (int i = 0; i < players.Count(); i++)
         {
             int teamNumber = GetNextTeamMember();
-            Instantiate(playerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(players[i], teamNumber);
+            Instantiate(playerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(players[i], "None");
         }
 
         startButton.SetActive(PhotonNetwork.IsMasterClient);
@@ -195,9 +198,10 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        int teamNumber = GetNextTeamMember();
+        //    int teamNumber = GetNextTeamMember();
         GameObject playerItem = Instantiate(playerListItemPrefab, playerListContent);
-        playerItem.GetComponent<PlayerListItem>().SetUp(newPlayer, teamNumber);
+        playerItem.GetComponent<PlayerListItem>().SetUp(newPlayer, "None");
+        UpdatePlayerList();
     }
 
     private int GetNextTeamMember()
@@ -206,7 +210,66 @@ public class Launcher : MonoBehaviourPunCallbacks
         nextTeamNumber = 3 - nextTeamNumber;
         return teamMember;
     }
+
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        UpdatePlayerList();
+    }
+
+    public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
+    {
+        if (changedProps.ContainsKey("Team"))
+        {
+            UpdatePlayerList();
+
+            if (targetPlayer == PhotonNetwork.LocalPlayer)
+            {
+                RoomMenuUIController.instance.UpdateButtonVisibility();
+            }
+        }
+    }
     
+    void UpdatePlayerList()
+    {
+
+        Debug.Log("Update Player List");
+        // Önce hepsini temizle
+        foreach (Transform t in humansTeamContent) Destroy(t.gameObject);
+        foreach (Transform t in watchersTeamContent) Destroy(t.gameObject);
+        foreach (Transform t in playerListContent) Destroy(t.gameObject);
+
+        foreach (Player player in PhotonNetwork.PlayerList)
+        {
+            Debug.Log("player: " + player);
+            string team = "None";
+            if (player.CustomProperties.ContainsKey("Team"))
+            {
+                Debug.Log("Team var:" + player.CustomProperties["Team"].ToString());
+                team = player.CustomProperties["Team"].ToString();
+            }
+
+            GameObject item = Instantiate(playerListItemPrefab);
+
+            switch (team)
+            {
+                case "Humans":
+                    item.transform.SetParent(humansTeamContent, false);
+                    Debug.Log("Humans");
+                    break;
+                case "Watchers":
+                    item.transform.SetParent(watchersTeamContent, false);
+                    Debug.Log("Watchers");
+                    break;
+                default:
+                    item.transform.SetParent(playerListContent, false);
+                    Debug.Log("None");
+                    break;
+            }
+
+            item.GetComponent<PlayerListItem>().SetUp(player, team);
+        }
+    }
+
     public void QuitGame()
     {
         Debug.Log("GameLeaved");
