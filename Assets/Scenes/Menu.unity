@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.23529412}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.23529412}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -528,7 +528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &174032788
 RectTransform:
   m_ObjectHideFlags: 0
@@ -964,7 +964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &280781602
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3021,7 +3021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.23529412}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3639,8 +3639,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 280}
-  m_SizeDelta: {x: 500, y: 50}
+  m_AnchoredPosition: {x: -1, y: 285}
+  m_SizeDelta: {x: 291.4766, y: 42.4232}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1033030846
 MonoBehaviour:
@@ -4359,8 +4359,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 759}
-  m_SizeDelta: {x: 500, y: 50}
+  m_AnchoredPosition: {x: -1, y: 773.2438}
+  m_SizeDelta: {x: 291.4766, y: 42.4232}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1383040636
 MonoBehaviour:
@@ -6515,7 +6515,7 @@ MonoBehaviour:
   playerListContent: {fileID: 60471798}
   playerListItemPrefab: {fileID: 6210171954194770902, guid: 4d9585e1cb49f96e994647fd4105ce79,
     type: 3}
-  startButton: {fileID: 1033030844}
+  startButton: {fileID: 1033030846}
   hasEnteredUsernameThisSession: 0
   humansTeamContent: {fileID: 919134192}
   watchersTeamContent: {fileID: 160687577}

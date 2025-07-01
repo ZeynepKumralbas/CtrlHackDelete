@@ -7,11 +7,12 @@ using Photon.Realtime;
 using System.Linq;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 using Cinemachine;
+using System;
 
 public class PlayerControllerManager : MonoBehaviourPunCallbacks
 {
     PhotonView view;
-    public int playerTeam;
+    public String playerTeam;
     GameObject controller;
     private Dictionary<int, int> playerTeams = new Dictionary<int, int>();
 
@@ -36,14 +37,14 @@ public class PlayerControllerManager : MonoBehaviourPunCallbacks
         Debug.Log("CreateController");
         if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("Team"))
         {
-            playerTeam = (int)PhotonNetwork.LocalPlayer.CustomProperties["Team"];
+            playerTeam = PhotonNetwork.LocalPlayer.CustomProperties["Team"].ToString();
             Debug.Log("Player's Team: " + playerTeam);
         }
 
         AssignPlayerToSpawnArea(playerTeam);
     }
 
-    void AssignPlayerToSpawnArea(int team)
+    void AssignPlayerToSpawnArea(String team)
     {
         Debug.Log("AssignPlayerToSpawnArea");
         GameObject spawnAreaWatcher = GameObject.Find("SpawnAreaWatcher");
@@ -57,14 +58,14 @@ public class PlayerControllerManager : MonoBehaviourPunCallbacks
 
         Transform spawnPoint = null;
 
-        if (team == 1)
+        if (team == "Watchers")
         {
             spawnPoint = spawnAreaWatcher.transform;
         }
 
-        else if (team == 2)
+        else if (team == "Humans")
         {
-            spawnPoint = spawnAreaImposters.transform.GetChild(Random.Range(0, spawnAreaImposters.transform.childCount));
+            spawnPoint = spawnAreaImposters.transform.GetChild(UnityEngine.Random.Range(0, spawnAreaImposters.transform.childCount));
         }
 
         if (spawnPoint != null)
@@ -85,7 +86,7 @@ public class PlayerControllerManager : MonoBehaviourPunCallbacks
             Debug.LogError("No available spawn points for team " + team);
         }
     }
-
+/*
     void AssignTeamsToAllPlayers()
     {
         Debug.Log("AssignTeamsToAllPlayers");
@@ -101,10 +102,10 @@ public class PlayerControllerManager : MonoBehaviourPunCallbacks
             }
         }
     }
-
+*/
     public override void OnPlayerEnteredRoom(Photon.Realtime.Player newplayer)
     {
         Debug.Log("OnPlayerEnteredRoom");
-        AssignTeamsToAllPlayers();
+    //    AssignTeamsToAllPlayers();
     }
 }

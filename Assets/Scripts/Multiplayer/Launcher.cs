@@ -19,7 +19,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public GameObject roomListItemPrefab;
     public Transform playerListContent;
     public GameObject playerListItemPrefab;
-    public GameObject startButton;
+    public Button startButton;
     int nextTeamNumber = 1;
     public bool hasEnteredUsernameThisSession = false;
     bool returnToMenuScene = false;
@@ -67,12 +67,14 @@ public class Launcher : MonoBehaviourPunCallbacks
         if (!hasEnteredUsernameThisSession)
         {
             loadingNextButton.gameObject.SetActive(true);
-        //    MenuManager.instance.OpenMenu("UsernameMenu");
+            //    MenuManager.instance.OpenMenu("UsernameMenu");
         }
         else
         {
             MenuManager.instance.OpenMenu("TitleMenu");
         }
+        startButton.interactable = false; // Önce kapat
+        UpdateStartButtonState();
     }
 
     public void CreateRoom()
@@ -100,16 +102,16 @@ public class Launcher : MonoBehaviourPunCallbacks
 
         for (int i = 0; i < players.Count(); i++)
         {
-            int teamNumber = GetNextTeamMember();
+        //    int teamNumber = GetNextTeamMember();
             Instantiate(playerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(players[i], "None");
         }
-
-        startButton.SetActive(PhotonNetwork.IsMasterClient);
+        
+        startButton.gameObject.SetActive(PhotonNetwork.IsMasterClient);
     }
 
     public override void OnMasterClientSwitched(Player newMasterClient)
     {
-        startButton.SetActive(PhotonNetwork.IsMasterClient);
+        startButton.gameObject.SetActive(PhotonNetwork.IsMasterClient);
     }
 
     public override void OnCreateRoomFailed(short returnCode, string errorMessage)
@@ -202,6 +204,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         GameObject playerItem = Instantiate(playerListItemPrefab, playerListContent);
         playerItem.GetComponent<PlayerListItem>().SetUp(newPlayer, "None");
         UpdatePlayerList();
+        UpdateStartButtonState();
     }
 
     private int GetNextTeamMember()
@@ -214,18 +217,28 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         UpdatePlayerList();
+        RoomMenuUIController.instance.UpdateButtonVisibility();
+        UpdateStartButtonState();
     }
 
     public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
     {
+        /*
         if (changedProps.ContainsKey("Team"))
         {
             UpdatePlayerList();
 
-            if (targetPlayer == PhotonNetwork.LocalPlayer)
-            {
-                RoomMenuUIController.instance.UpdateButtonVisibility();
-            }
+            //    if (targetPlayer == PhotonNetwork.LocalPlayer)
+            //    {
+            RoomMenuUIController.instance.UpdateButtonVisibility();
+            //    }
+        }
+        */
+        if (changedProps.ContainsKey("Team"))
+        {
+            RoomMenuUIController.instance.UpdateButtonVisibility();
+            UpdatePlayerList();
+            UpdateStartButtonState();
         }
     }
     
@@ -268,6 +281,43 @@ public class Launcher : MonoBehaviourPunCallbacks
 
             item.GetComponent<PlayerListItem>().SetUp(player, team);
         }
+    }
+
+    public void UpdateStartButtonState()
+    {
+        int humansCount = 0;
+        int watchersCount = 0;
+        int bufferCount = 0;
+
+        foreach (Player p in PhotonNetwork.PlayerList)
+        {
+            if (p.CustomProperties.TryGetValue("Team", out object teamObj) && teamObj is string team)
+            {
+                switch (team)
+                {
+                    case "Humans":
+                        humansCount++;
+                        break;
+                    case "Watchers":
+                        watchersCount++;
+                        break;
+                    case "None":
+                        bufferCount++;
+                        break;
+                }
+            }
+            else
+            {
+                bufferCount++; // Eğer hiç takım ayarlanmamışsa, buffer say
+            }
+        }
+
+        bool canStart = PhotonNetwork.IsMasterClient &&
+                        watchersCount == 1 &&
+                        humansCount >= 1 &&
+                        bufferCount == 0;
+
+        startButton.interactable = canStart;
     }
 
     public void QuitGame()
