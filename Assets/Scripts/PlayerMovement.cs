@@ -26,13 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _moveDirection = move.action.ReadValue<Vector2>();
 
-        // Hareket varsa yönünü deðiþtir
-        if (_moveDirection != Vector2.zero)
-        {
-            Vector3 lookDirection = new Vector3(_moveDirection.x, 0f, _moveDirection.y);
-            Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
-        }
+
 
         // Animasyona hýz bilgisi gönder (0 = idle, 0.5 = yürüme, 1 = koþu)
         float inputMagnitude = _moveDirection.magnitude;
@@ -49,5 +43,14 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movement = new Vector3(_moveDirection.x, 0, _moveDirection.y) * currentSpeed;
         rb.velocity = movement;
+
+        // Hareket varsa yönünü deðiþtir
+        if (_moveDirection != Vector2.zero)
+        {
+            Vector3 lookDirection = new Vector3(_moveDirection.x, 0f, _moveDirection.y);
+            Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+        }
+
     }
 }
