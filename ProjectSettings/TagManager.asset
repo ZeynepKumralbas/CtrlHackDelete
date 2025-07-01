@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - MissionPoint
+  - HardMission
+  - EasyMission
+  - NormalMission
   layers:
   - Default
   - TransparentFX

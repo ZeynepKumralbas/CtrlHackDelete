@@ -36,14 +36,6 @@ public class PlayerMovement : MonoBehaviour
 
         _moveDirection = move.action.ReadValue<Vector2>();
 
-        // Hareket varsa y�n�n� de�i�tir
-        if (_moveDirection != Vector2.zero)
-        {
-            Vector3 lookDirection = new Vector3(_moveDirection.x, 0f, _moveDirection.y);
-            Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
-        }
-
         // Animasyona h�z bilgisi g�nder (0 = idle, 0.5 = y�r�me, 1 = ko�u)
         float inputMagnitude = _moveDirection.magnitude;
         bool isRunning = run.action.IsPressed();
@@ -64,5 +56,14 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movement = new Vector3(_moveDirection.x, 0, _moveDirection.y) * currentSpeed;
         rb.velocity = movement;
+
+        // Hareket varsa y�n�n� de�i�tir
+        if (_moveDirection != Vector2.zero)
+        {
+            Vector3 lookDirection = new Vector3(_moveDirection.x, 0f, _moveDirection.y);
+            Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+        }
+
     }
 }
