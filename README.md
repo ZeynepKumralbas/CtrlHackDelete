@@ -29,7 +29,7 @@ CTRL HACK DELETE
 
 ## 📖 Game Story
 In a dark future ruled by artificial intelligence, nearly all humans are gone.  
-But a small resistance remains — and their plan is simple but risky: act like a robot and sneak into the heart of the system.
+But a small resistance remains  and their plan is simple but risky: act like a robot and sneak into the heart of the system.
 
 Your goal is clear: reach the **Core** and issue the command that could end the machine rule:  
 **CTRL. HACK. DELETE.**
