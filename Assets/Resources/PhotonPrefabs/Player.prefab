@@ -576,6 +576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   materialNameToModify: M_AtlasOffset
   materialToModify: {fileID: 2100000, guid: b155bbc5f87677d47a8fcce7466463d3, type: 2}
+  view: {fileID: 3553726884540960953}
 --- !u!114 &32285131712612002
 MonoBehaviour:
   m_ObjectHideFlags: 0

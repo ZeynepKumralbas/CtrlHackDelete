@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class PlayerInteraction : MonoBehaviour
+public class PlayerInteraction : MonoBehaviourPun
 {
     [SerializeField] private InputActionReference interaction;
     [SerializeField] private float interactionTime = 5f;
@@ -28,70 +28,68 @@ public class PlayerInteraction : MonoBehaviour
 
     void Start()
     {
-        view = GetComponent<PhotonView>();
-        defaultInteractionTime = interactionTime;
         _animator = GetComponent<Animator>();
-        txtInteractionButton = UIManager.Instance.txtInteractionButton;
-        missionCompletePercentSlider = UIManager.Instance.missionCompletePercentSlider;
+        defaultInteractionTime = interactionTime;
 
-        if(txtInteractionButton != null) 
-            txtInteractionButton.SetActive(false);
-
-        if (missionCompletePercentSlider != null)
+        if (view.IsMine)
         {
-            missionCompletePercentSlider.gameObject.SetActive(false);
-            missionCompletePercentSlider.maxValue = interactionTime;
-            missionCompletePercentSlider.value = interactionTime;
-        }
+            txtInteractionButton = UIManager.Instance.txtInteractionButton;
+            missionCompletePercentSlider = UIManager.Instance.missionCompletePercentSlider;
 
+            if (txtInteractionButton != null)
+                txtInteractionButton.SetActive(false);
+
+            if (missionCompletePercentSlider != null)
+            {
+                missionCompletePercentSlider.gameObject.SetActive(false);
+                missionCompletePercentSlider.maxValue = interactionTime;
+                missionCompletePercentSlider.value = interactionTime;
+            }
+        }
     }
+
     void Update()
     {
-        if (!view.IsMine)
-        {
-            return;
-        }
+        if (!view.IsMine || !isInMissionPoint) return;
 
-        if (!isInMissionPoint) return; //G�rev alan�nda de�ilse kod �al��maz
-
-        if (interaction.action.WasPressedThisFrame()) //Etkile�im tu�una bas�ld��� anda Corotine'i ba�lat
+        if (interaction.action.WasPressedThisFrame())
         {
             holdCoroutine = StartCoroutine(HoldInteraction());
         }
 
-        if (interaction.action.WasReleasedThisFrame()) //Etkile�im tu�una basma b�rak�ld��� anda Corotine'i ve animasyonu durdur
+        if (interaction.action.WasReleasedThisFrame())
         {
             if (holdCoroutine != null)
             {
                 StopCoroutine(holdCoroutine);
                 holdCoroutine = null;
-                _animator.SetBool("isInteracting", false);
-                Debug.Log("Tu� erken b�rak�ld�, i�lem iptal.");
+                view.RPC("SetInteractingAnim", RpcTarget.All, false);
+                Debug.Log("Tuş erken bırakıldı, işlem iptal.");
             }
         }
     }
 
-    private IEnumerator HoldInteraction() //Tu�a bas�ld��� s�re boyunca Coroutine ve animasyon �al���r
+    private IEnumerator HoldInteraction()
     {
         isHolding = true;
-        _animator.SetBool("isInteracting", true);
+        view.RPC("SetInteractingAnim", RpcTarget.All, true);
         float holdTime = 0f;
 
-        if(missionCompletePercentSlider != null)
+        if (missionCompletePercentSlider != null)
         {
             missionCompletePercentSlider.gameObject.SetActive(true);
             missionCompletePercentSlider.value = interactionTime;
         }
 
-        while (holdTime < interactionTime) //Tu�a ilgili s�re kadar bas�lmas� istenir
+        while (holdTime < interactionTime)
         {
-            if (!interaction.action.IsPressed()) //Tu� b�rak�ld���nda animasyon durur ve Coroutine'den ��k�l�r
+            if (!interaction.action.IsPressed())
             {
-                _animator.SetBool("isInteracting", false);
+                view.RPC("SetInteractingAnim", RpcTarget.All, false);
 
                 if (missionCompletePercentSlider != null)
                 {
-                    missionCompletePercentSlider.gameObject.SetActive(true);
+                    missionCompletePercentSlider.gameObject.SetActive(false);
                     missionCompletePercentSlider.value = interactionTime;
                 }
 
@@ -108,9 +106,8 @@ public class PlayerInteraction : MonoBehaviour
             yield return null;
         }
 
-        //�lgili s�re kadar bas�l�rsa g�rev tamamlan�r, Coroutine ve animasyon durdurulur
-        Debug.Log("G�rev tamamland�!");
-        _animator.SetBool("isInteracting", false);
+        Debug.Log("Görev tamamlandı!");
+        view.RPC("SetInteractingAnim", RpcTarget.All, false);
         isHolding = false;
 
         if (missionCompletePercentSlider != null)
@@ -119,62 +116,65 @@ public class PlayerInteraction : MonoBehaviour
             missionCompletePercentSlider.value = 0;
         }
 
-        if (currentMissionPoint != null) //G�rev alan� kapat�l�r
+        if (currentMissionPoint != null)
         {
             currentMissionPoint.SetActive(false);
-
             interactionTime = defaultInteractionTime;
 
             if (txtInteractionButton != null)
                 txtInteractionButton.SetActive(false);
         }
-
     }
 
-    private void OnTriggerEnter(Collider other) //G�rev alan�na giri� kontrolc�s�
+    [PunRPC]
+    private void SetInteractingAnim(bool isInteracting)
     {
-        float defaultInteractionTime = interactionTime;
+        _animator.SetBool("isInteracting", isInteracting);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!view.IsMine) return;
+
         if (other.CompareTag("MissionPoint"))
         {
-            Debug.Log("onTrigger => missionCompletePercentSlider:" + missionCompletePercentSlider + " txtInteractionButton:" + txtInteractionButton);
-
             isInMissionPoint = true;
             currentMissionPoint = other.gameObject;
 
-            switch (currentMissionPoint.transform.GetChild(0).tag)
+            string difficulty = currentMissionPoint.transform.parent.tag;
+
+            switch (difficulty)
             {
                 case "EasyMission":
-                    interactionTime = interactionTime* 1;
-                    missionCompletePercentSlider.maxValue = interactionTime;
+                    interactionTime = defaultInteractionTime * 1;
                     break;
                 case "NormalMission":
-                    interactionTime = interactionTime * 2;
-                    missionCompletePercentSlider.maxValue = interactionTime;
+                    interactionTime = defaultInteractionTime * 2;
                     break;
                 case "HardMission":
-                    interactionTime = interactionTime * 3;
-                    missionCompletePercentSlider.maxValue = interactionTime;
-                    break;
-                default:
+                    interactionTime = defaultInteractionTime * 3;
                     break;
             }
+
+            missionCompletePercentSlider.maxValue = interactionTime;
 
             if (txtInteractionButton != null)
             {
-                txtInteractionButton.transform.position = currentMissionPoint.transform.position + new Vector3(0f, 1.5f, 0f);  
+                txtInteractionButton.transform.position = currentMissionPoint.transform.position + new Vector3(0f, 1.5f, 0f);
                 txtInteractionButton.SetActive(true);
             }
 
-            Debug.Log("G�rev alan�na girildi");
+            Debug.Log("Görev alanına girildi");
         }
     }
 
-    private void OnTriggerExit(Collider other) //G�rev alan�ndan ��k�� kontrolc�s�
+    private void OnTriggerExit(Collider other)
     {
+        if (!view.IsMine) return;
+
         if (other.CompareTag("MissionPoint"))
         {
             interactionTime = defaultInteractionTime;
-
             isInMissionPoint = false;
             currentMissionPoint = null;
 
@@ -182,7 +182,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 StopCoroutine(holdCoroutine);
                 holdCoroutine = null;
-                _animator.SetBool("isInteracting", false);
+                view.RPC("SetInteractingAnim", RpcTarget.All, false);
             }
 
             if (missionCompletePercentSlider != null)
@@ -194,8 +194,7 @@ public class PlayerInteraction : MonoBehaviour
             if (txtInteractionButton != null)
                 txtInteractionButton.SetActive(false);
 
-            Debug.Log("G�rev alan� terk edildi, i�lem iptal.");
-
+            Debug.Log("Görev alanı terk edildi, işlem iptal.");
         }
     }
 }

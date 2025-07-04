@@ -1,9 +1,10 @@
+using Photon.Pun;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace YourNamespaceHere
 {
-    public class ModularRobotRandomizer : MonoBehaviour
+    public class ModularRobotRandomizer : MonoBehaviourPun
     {
         private List<GameObject> heads = new List<GameObject>();
         private List<GameObject> bodies = new List<GameObject>();
@@ -14,21 +15,31 @@ namespace YourNamespaceHere
 
         private List<GameObject> activeParts = new List<GameObject>();
 
-        [SerializeField] private string materialNameToModify = "M_AtlasOffset"; // // Material name
+        [SerializeField] private string materialNameToModify = "M_AtlasOffset"; // Material name
         [SerializeField] private Material materialToModify; // Optional material reference
+
+        //Multiplayer
+        public PhotonView view;
 
         private void Awake()
         {
-            OrganizeRobotParts();
+            OrganizeRobotParts(); //Robot parçalarýný listelere yerleþtir
         }
 
         private void Start()
         {
-            RandomizeMaterialOffsets();
+            if (view.IsMine)
+            {
+                // Ýlk rastgele rengi sadece kendi objen için oluþtur ve tüm oyunculara gönder
+                RandomizeMaterialOffsets();
+            }
         }
 
         private void Update()
         {
+            if (!view.IsMine)
+                return;
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 RandomizeMaterialOffsets();
@@ -56,11 +67,18 @@ namespace YourNamespaceHere
 
         private void RandomizeMaterialOffsets()
         {
+            //Rastgele birer offset degeri belirle
             float[] possibleValues = { 0f, 0.205078125f, 0.41015625f };
             float randomX = possibleValues[Random.Range(0, possibleValues.Length)];
+            float randomY = Random.Range(0, 32) * 0.03125f;
 
-            float randomY = Random.Range(0, 32) * 0.03125f; // Generate values between 0 and 1 on steps of 0.03125
+            //Renk deðiþikliðini tüm oyunculara bildir
+            view.RPC("ApplyMaterialOffsets", RpcTarget.AllBuffered, randomX, randomY);
+        }
 
+        [PunRPC]
+        void ApplyMaterialOffsets(float offsetX, float offsetY)
+        {
             foreach (GameObject part in activeParts)
             {
                 if (part != null)
@@ -68,12 +86,12 @@ namespace YourNamespaceHere
                     SkinnedMeshRenderer renderer = part.GetComponent<SkinnedMeshRenderer>();
                     if (renderer != null)
                     {
+                        //Robot parçalarinin rendererlarinin index degerlerini al
                         int materialIndex = GetMaterialIndex(renderer);
-                        if (materialIndex != -1) // Material found on material list
+                        if (materialIndex != -1)
                         {
                             Material mat = renderer.materials[materialIndex];
-
-                            mat.SetVector("_UV_Offset", new Vector2(randomX, randomY));
+                            mat.SetVector("_UV_Offset", new Vector2(offsetX, offsetY));
                         }
                     }
                 }
@@ -86,13 +104,13 @@ namespace YourNamespaceHere
             {
                 Material mat = renderer.materials[i];
 
+                //Dogru renk skalasi eslesiyorsa eslesen index degerini dondur
                 if ((materialToModify != null && mat == materialToModify) || mat.name.Contains(materialNameToModify))
                 {
-                    return i; // Return material index
+                    return i;
                 }
             }
-            return -1; // Material not found
+            return -1;
         }
     }
 }
-
