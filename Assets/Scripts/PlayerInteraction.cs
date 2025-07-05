@@ -50,7 +50,8 @@ public class PlayerInteraction : MonoBehaviourPun
 
     void Update()
     {
-        if (!view.IsMine || !isInMissionPoint) return;
+        if (!view.IsMine) return;
+        if (!isInMissionPoint) return;
 
         if (interaction.action.WasPressedThisFrame())
         {
@@ -61,6 +62,8 @@ public class PlayerInteraction : MonoBehaviourPun
         {
             if (holdCoroutine != null)
             {
+                isInMissionPoint = false;
+
                 StopCoroutine(holdCoroutine);
                 holdCoroutine = null;
                 view.RPC("SetInteractingAnim", RpcTarget.All, false);
@@ -118,12 +121,19 @@ public class PlayerInteraction : MonoBehaviourPun
 
         if (currentMissionPoint != null)
         {
-            currentMissionPoint.SetActive(false);
+            PhotonView missionView = currentMissionPoint.GetComponentInParent<PhotonView>();
+            if (missionView != null)
+            {
+                view.RPC("SetMissionVisibility", RpcTarget.All, missionView.ViewID, false);
+            }
+            view.RPC("SetMissionVisibility", RpcTarget.All, missionView.ViewID, false);
+
             interactionTime = defaultInteractionTime;
 
             if (txtInteractionButton != null)
                 txtInteractionButton.SetActive(false);
         }
+
     }
 
     [PunRPC]
@@ -131,7 +141,21 @@ public class PlayerInteraction : MonoBehaviourPun
     {
         _animator.SetBool("isInteracting", isInteracting);
     }
+    [PunRPC]
+    private void SetMissionVisibility(int missionPhotonViewId, bool isVisible)
+    {
+        PhotonView missionView = PhotonView.Find(missionPhotonViewId);
+        if (missionView != null)
+        {
+            Transform missionTransform = missionView.transform;
+            Transform sphere = missionTransform.GetChild(0); // Child objesi
 
+            if (sphere != null)
+            {
+                sphere.gameObject.SetActive(isVisible);
+            }
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (!view.IsMine) return;
