@@ -9,7 +9,7 @@ aBUGames
 | Eymen Arapoğlu     | Product Owner  | <a href="https://www.linkedin.com/in/eymen-arapo%C4%9Flu-3543a8262/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>     <a href="https://github.com/Eymen179"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>              <a href="https://eymen179.itch.io/"><img src="https://static.itch.io/images/itchio-textless-black.svg" width="24"/></a>        |
 | Furkan Enes Kurnaz | Developer      | <a href="https://www.linkedin.com/in/furkan-enes-kurnaz-906999236/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>      <a href="https://github.com/FurkanEnesKurnaz"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>      <a href="https://furkankurnaz.itch.io/"><img src="https://static.itch.io/images/itchio-textless-black.svg" width="24"/></a>    |
 | Eren Altınışık     | Developer      | <a href="https://www.linkedin.com/in/erenaltinisik/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>                     <a href="https://github.com/goldenlight97"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>                                                                                                                                        |
-| Şevval Arslan      | Developer      | <a href="https://www.linkedin.com/in/%C5%9Fevval-arslan-039526256/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>      <a href="http://github.com/iamsevval"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>                                                                                                                                             |
+| Şevval Arslan      | Developer      | <a href="https://www.linkedin.com/in/%C5%9Fevval-arslan-039526256/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>      <a href="http://github.com/iamsevval"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>              <a href="https://sevvalarslan.itch.io"><img src="https://static.itch.io/images/itchio-textless-black.svg" width="24"/></a>     |
 
 
 ## Game Name
@@ -116,41 +116,35 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
     <br/>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Board Update:</strong></span>
 Task categories on the Trello board are color-coded for clarity:
-    <div style="display: flex; flex-direction: column; gap: 6px; max-width: 300px;">
-  <div><span style="background-color: #61bd4f; color: black; padding: 4px 8px; border-radius: 4px; display: inline-block; min-width: 100px;">UI</span></div>
-  <div><span style="background-color: #F2D600; color: black; padding: 4px 8px; border-radius: 4px; display: inline-block; min-width: 100px;">Design</span></div>
-  <div><span style="background-color: #FF9F1A; color: black; padding: 4px 8px; border-radius: 4px; display: inline-block; min-width: 100px;">Meeting</span></div>
-  <div><span style="background-color: #EB5A46; color: white; padding: 4px 8px; border-radius: 4px; display: inline-block; min-width: 100px;">Test</span></div>
-  <div><span style="background-color: #C377E0; color: white; padding: 4px 8px; border-radius: 4px; display: inline-block; min-width: 100px;">Code/Development</span></div>
-  <div><span style="background-color: #a6c2e1; color: black; padding: 4px 8px; border-radius: 4px; display: inline-block; min-width: 100px;">Documentation</span></div>
-  <div><span style="background-color: #0079BF; color: white; padding: 4px 8px; border-radius: 4px; display: inline-block; min-width: 100px;">Buffer</span></div>
-  <div><span style="background-color: #d63384; color: white; padding: 4px 8px; border-radius: 4px; display: inline-block; min-width: 100px;">Polish</span></div>
-</div>
+<div style="text-align: center; margin: 1em 0;">
+      <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/TrelloBoard/ColorLegend.png" alt="Trello Board Color Legend" width="400" />
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.1: Trello Board Color Legend</p>
+    </div>
 <div style="text-align: center; margin: 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/TrelloBoard/TrelloBoardUpdate.png" alt="Trello Board" width="400" />
-      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.1: Trello Board</p>
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.2: Trello Board</p>
     </div>
 <br/>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Game Status Screenshots:</strong></span>
     <div style="text-align: center; margin: 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/RobotAsset.png" alt="Robot Asset" width="400" />
-      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.2: Robot Asset</p>
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.3: Robot Asset</p>
     </div>
     <div style="text-align: center; margin: 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuFindRoom.png" alt="Find Room" width="400" />
-      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.3: Find Room Menu</p>
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.4: Find Room Menu</p>
     </div>
     <div style="text-align: center; margin: 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuTeamSelection.png" alt="Team Selection Menu" width="400" />
-      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.4: Team Selection Menu</p>
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.5: Team Selection Menu</p>
     </div>
     <div style="text-align: center; margin: 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/GameWith2OnlinePlayers.png" alt="Game Scene with 2 Online Players" width="400" />
-      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.5: Game Scene with 2 Online Players</p>
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.6: Game Scene with 2 Online Players</p>
     </div>
     <div style="text-align: center; margin: 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/NPCsWanderingAround.png" alt="NPCs Wandering Around" width="400" />
-      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.6: NPCs Wandering Around</p>
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.7: NPCs Wandering Around</p>
     </div>
     <br/>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Review:</strong></span>
