@@ -119,26 +119,26 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
       <li>TBA:</li>
     </ul>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Game Status Screenshot:</strong></span>
-    <figure style="text-align: center;">
+    <figure style="text-align: center; margin: 0 0 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/RobotAsset.png" alt="Robot Asset" width="400" />
       <figcaption>Figure 1.1: Robot Asset</figcaption>
     </figure>
-    <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
-      <figure style="margin: 0; text-align: center;">
+    <div style="display: flex; gap: 10px; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+      <figure style="margin: 0; text-align: center; flex: 1 1 400px; max-width: 400px;">
         <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuFindRoom.png" alt="Find Room" width="400" />
         <figcaption>Figure 1.2: Find Room Menu</figcaption>
       </figure>
-      <figure style="margin: 0; text-align: center;">
-        <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuTeamSelection.png" alt="Team Selection" width="400" />
-        <figcaption>Figure 1.3: Team Selection</figcaption>
+      <figure style="margin: 0; text-align: center; flex: 1 1 400px; max-width: 400px;">
+        <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuTeamSelection.png" alt="Team Selection Menu" width="400" />
+        <figcaption>Figure 1.3: Team Selection Menu</figcaption>
       </figure>
     </div>
-    <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
-      <figure style="margin: 0; text-align: center;">
+    <div style="display: flex; gap: 10px; justify-content: center; align-items: flex-start; flex-wrap: wrap; margin-top: 1em;">
+      <figure style="margin: 0; text-align: center; flex: 1 1 400px; max-width: 400px;">
         <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/GameWith2OnlinePlayers.png" alt="Game Scene with 2 Online Players" width="400" />
-      <figcaption>Figure 1.4: Game Scene with 2 Online Players</figcaption>
+        <figcaption>Figure 1.4: Game Scene with 2 Online Players</figcaption>
       </figure>
-      <figure style="margin: 0; text-align: center;">
+      <figure style="margin: 0; text-align: center; flex: 1 1 400px; max-width: 400px;">
         <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/NPCsWanderingAround.png" alt="NPCs Wandering Around" width="400" />
         <figcaption>Figure 1.5: NPCs Wandering Around</figcaption>
       </figure>
