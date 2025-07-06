@@ -119,7 +119,17 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
       <li>TBA:</li>
     </ul>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Game Status Screenshot:</strong></span>
-    <figure style="text-align: center; margin: 1em 0;">
+    <div style="text-align: center; margin: 1em 0;">
+  <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/RobotAsset.png" alt="Robot Asset" width="400" />
+  <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.1: Robot Asset</p>
+</div>
+
+<div style="text-align: center; margin: 1em 0;">
+  <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuFindRoom.png" alt="Find Room" width="400" />
+  <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.2: Find Room Menu</p>
+</div>
+
+<figure style="text-align: center; margin: 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/RobotAsset.png" alt="Robot Asset" width="400" />
       <figcaption>Figure 1.1: Robot Asset</figcaption>
     </figure>
