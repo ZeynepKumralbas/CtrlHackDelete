@@ -1,5 +1,5 @@
 ## Team Name
-TBA
+aBUGames
 
 ## Team Members
 
@@ -102,51 +102,71 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
     </ul>
     <br/>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Estimated Points to Completion:</strong></span>
-    <ul>
-      <li>TBA</li>
-    </ul>
-    <span style="font-size: 1.3em; font-weight: bold;"><strong>Point Completion Logic:</strong></span>
+    38/164
+<br/>
+<br/>
+<span style="font-size: 1.3em; font-weight: bold;"><strong>Point Completion Logic:</strong></span>
     To estimate the effort required for each task, we adopted the Fibonacci-based point system (1, 2, 3, 5, 8). This approach was chosen because it reflects the relative complexity and uncertainty of tasks more effectively than strict time-based estimates. As a newly formed team working with unfamiliar systems-such as multiplayer networking, NPC behaviors, and synchronized interactions-there is a degree of unpredictability in task difficulty. Fibonacci estimation helps accommodate that uncertainty by assigning increasingly spaced point values. Tasks were evaluated based on their expected effort, technical difficulty, and ambiguity, rather than absolute hours. This method enables clearer sprint planning, better workload balancing, and a shared understanding of scope among team members.
     <br/>
     <br/>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Daily Scrum:</strong></span>
       Daily updates and quick discussions are shared through WhatsApp, and meetings take place on Slack.  
-      <a href="https://github.com/ZeynepKumralbas/CtrlHackDelete/tree/main/ProjectManagement/Sprint1DailyScrum" target="_blank">Sprint 1 Daily Scrum</a>
+      <a href="https://github.com/ZeynepKumralbas/CtrlHackDelete/tree/main/ProjectManagement/Sprint1/DailyScrum" target="_blank">Sprint 1 Daily Scrum</a>
     <br/>
     <br/>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Board Update:</strong></span>
-    <ul>
-      <li>TBA:</li>
-    </ul>
-    <span style="font-size: 1.3em; font-weight: bold;"><strong>Game Status Screenshot:</strong></span>
+Task categories on the Trello board are color-coded for clarity:
+    <div style="display: flex; flex-direction: column; gap: 6px; max-width: 300px;">
+  <div><span style="background-color: #61bd4f; color: black; padding: 4px 8px; border-radius: 4px; display: inline-block; min-width: 100px;">UI</span></div>
+  <div><span style="background-color: #F2D600; color: black; padding: 4px 8px; border-radius: 4px; display: inline-block; min-width: 100px;">Design</span></div>
+  <div><span style="background-color: #FF9F1A; color: black; padding: 4px 8px; border-radius: 4px; display: inline-block; min-width: 100px;">Meeting</span></div>
+  <div><span style="background-color: #EB5A46; color: white; padding: 4px 8px; border-radius: 4px; display: inline-block; min-width: 100px;">Test</span></div>
+  <div><span style="background-color: #C377E0; color: white; padding: 4px 8px; border-radius: 4px; display: inline-block; min-width: 100px;">Code/Development</span></div>
+  <div><span style="background-color: #a6c2e1; color: black; padding: 4px 8px; border-radius: 4px; display: inline-block; min-width: 100px;">Documentation</span></div>
+  <div><span style="background-color: #0079BF; color: white; padding: 4px 8px; border-radius: 4px; display: inline-block; min-width: 100px;">Buffer</span></div>
+  <div><span style="background-color: #d63384; color: white; padding: 4px 8px; border-radius: 4px; display: inline-block; min-width: 100px;">Polish</span></div>
+</div>
+<div style="text-align: center; margin: 1em 0;">
+      <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/TrelloBoard/TrelloBoardUpdate.png" alt="Trello Board" width="400" />
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.1: Trello Board</p>
+    </div>
+<br/>
+    <span style="font-size: 1.3em; font-weight: bold;"><strong>Game Status Screenshots:</strong></span>
     <div style="text-align: center; margin: 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/RobotAsset.png" alt="Robot Asset" width="400" />
-      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.1: Robot Asset</p>
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.2: Robot Asset</p>
     </div>
     <div style="text-align: center; margin: 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuFindRoom.png" alt="Find Room" width="400" />
-      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.2: Find Room Menu</p>
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.3: Find Room Menu</p>
     </div>
     <div style="text-align: center; margin: 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuTeamSelection.png" alt="Team Selection Menu" width="400" />
-      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.3: Team Selection Menu</p>
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.4: Team Selection Menu</p>
     </div>
     <div style="text-align: center; margin: 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/GameWith2OnlinePlayers.png" alt="Game Scene with 2 Online Players" width="400" />
-      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.4: Game Scene with 2 Online Players</p>
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.5: Game Scene with 2 Online Players</p>
     </div>
     <div style="text-align: center; margin: 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/NPCsWanderingAround.png" alt="NPCs Wandering Around" width="400" />
-      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.5: NPCs Wandering Around</p>
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.6: NPCs Wandering Around</p>
     </div>
     <br/>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Review:</strong></span>
-    <ul>
-      <li>TBA</li>
-    </ul>
+    During Sprint 1, the team aimed to build the foundation of the game by setting up the multiplayer infrastructure, implementing character control, NPC movement, developing the team selection menu, and designing the main menu.
+    Most of the planned goals were successfully completed and integrated into a playable prototype. Minor bugs remain, which will be addressed in Sprint 2.
+    Due to limited availability of some team members,caused by ongoing work or interview commitments,the team was able to complete 31 out of the estimated 38 points for this sprint, still covering nearly all core objectives.
+    <br/>
+<br/>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Retrospective:</strong></span>
+       During this sprint, the team collaborated effectively and successfully met most of the planned goals. However, two main challenges were identified:
     <ul>
-      <li>TBA</li>
-    </ul>
-  </details>
+        <li><strong>File Management:</strong> Some difficulties occurred during merge operations due to inconsistent or unclear file naming conventions. A clearer and unified naming strategy will be adopted for future work.</li>
+        <li><strong>Time Constraints:</strong> Certain members had limited availability due to professional responsibilities. To address this, one team member has been assigned to support their workload-particularly focusing on UI/design tasks-in the upcoming sprint.</li>
+      </ul>
+      <p>
+        These insights will help guide improvements in workflow and collaboration throughout the rest of the project.
+      </p>
+    </details>
 
