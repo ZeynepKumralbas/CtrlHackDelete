@@ -101,13 +101,16 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
       </li>
     </ul>
     <br/>
-    <span style="font-size: 1.3em; font-weight: bold;"><strong>Estimated Points to Completion:</strong></span>
+    <span style="font-size: 1.3em; font-weight: bold;"><strong>Estimated Points to Complete:</strong></span>
     38/164
 <br/>
 <br/>
 <span style="font-size: 1.3em; font-weight: bold;"><strong>Point Completion Logic:</strong></span>
-    To estimate the effort required for each task, we adopted the Fibonacci-based point system (1, 2, 3, 5, 8). This approach was chosen because it reflects the relative complexity and uncertainty of tasks more effectively than strict time-based estimates. As a newly formed team working with unfamiliar systems-such as multiplayer networking, NPC behaviors, and synchronized interactions-there is a degree of unpredictability in task difficulty. Fibonacci estimation helps accommodate that uncertainty by assigning increasingly spaced point values. Tasks were evaluated based on their expected effort, technical difficulty, and ambiguity, rather than absolute hours. This method enables clearer sprint planning, better workload balancing, and a shared understanding of scope among team members.
-    <br/>
+To estimate the effort required for each task, we adopted the Fibonacci-based point system (1, 2, 3, 5, 8). We chose this approach because it effectively captures the relative complexity and inherent uncertainty of tasks better than strict time-based estimates.
+As a newly formed team working with unfamiliar systems-such as multiplayer networking, NPC behaviors, and synchronized interactions-we anticipate unpredictability in assessing task difficulty. The Fibonacci sequence’s increasing gaps allow us to naturally express this uncertainty by giving larger tasks proportionally greater weight.
+This method also promotes better communication and shared understanding within the team, as it encourages discussion about task scope and complexity rather than exact time predictions, which are often unreliable in our context. By focusing on relative effort instead of absolute hours, we can plan sprints more clearly, balance workloads more effectively, and adapt quickly as our knowledge improves throughout development.
+Overall, Fibonacci estimation aligns well with our team’s experience level and project nature, making it a practical and flexible choice for managing effort estimation.    
+<br/>
     <br/>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Daily Scrum:</strong></span>
       Daily updates and quick discussions are shared through WhatsApp, and meetings take place on Slack.  
@@ -150,7 +153,7 @@ Task categories on the Trello board are color-coded for clarity:
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Review:</strong></span>
     During Sprint 1, the team aimed to build the foundation of the game by setting up the multiplayer infrastructure, implementing character control, NPC movement, developing the team selection menu, and designing the main menu.
     Most of the planned goals were successfully completed and integrated into a playable prototype. Minor bugs remain, which will be addressed in Sprint 2.
-    Due to limited availability of some team members,caused by ongoing work or interview commitments,the team was able to complete 31 out of the estimated 38 points for this sprint, still covering nearly all core objectives.
+    Due to limited availability of some team members, caused by ongoing work or interview commitments, the team was able to complete 31 out of the estimated 38 points for this sprint, still covering nearly all core objectives.
     <br/>
 <br/>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Retrospective:</strong></span>
