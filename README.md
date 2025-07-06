@@ -119,30 +119,35 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
       <li>TBA:</li>
     </ul>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Game Status Screenshot:</strong></span>
-    <div style="text-align: center; margin: 1em 0;">
-      <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/RobotAsset.png" alt="Robot Asset" width="400" />
-      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.1: Robot Asset</p>
-    </div>
-    <div style="display: flex; gap: 10px; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
-      <div style="text-align: center; flex: 1 1 400px; max-width: 400px;">
-        <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuFindRoom.png" alt="Find Room" width="400" />
-        <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.2: Find Room Menu</p>
-      </div>
-      <div style="text-align: center; flex: 1 1 400px; max-width: 400px;">
-        <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuTeamSelection.png" alt="Team Selection Menu" width="400" />
-        <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.3: Team Selection Menu</p>
-      </div>
-    </div>
-    <div style="display: flex; gap: 10px; justify-content: center; align-items: flex-start; flex-wrap: wrap; margin-top: 1em;">
-      <div style="text-align: center; flex: 1 1 400px; max-width: 400px;">
-        <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/GameWith2OnlinePlayers.png" alt="Game Scene with 2 Online Players" width="400" />
-        <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.4: Game Scene with 2 Online Players</p>
-      </div>
-      <div style="text-align: center; flex: 1 1 400px; max-width: 400px;">
-        <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/NPCsWanderingAround.png" alt="NPCs Wandering Around" width="400" />
-        <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.5: NPCs Wandering Around</p>
-      </div>
-    </div>
+<!-- Figure 1.1 tek başına ortalı -->
+<div style="text-align: center; margin-bottom: 2em;">
+  <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/RobotAsset.png" alt="Robot Asset" width="400" />
+  <p style="font-style: italic; margin-top: 0.5em;">Figure 1.1: Robot Asset</p>
+</div>
+
+<!-- Figure 1.2 ve 1.3 yan yana ortalı -->
+<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 2em;">
+  <div style="text-align: center;">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuFindRoom.png" alt="Find Room" width="400" />
+    <p style="font-style: italic; margin-top: 0.5em;">Figure 1.2: Find Room Menu</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuTeamSelection.png" alt="Team Selection Menu" width="400" />
+    <p style="font-style: italic; margin-top: 0.5em;">Figure 1.3: Team Selection Menu</p>
+  </div>
+</div>
+
+<!-- Figure 1.4 ve 1.5 yan yana ortalı -->
+<div style="display: flex; justify-content: center; gap: 20px;">
+  <div style="text-align: center;">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/GameWith2OnlinePlayers.png" alt="Game Scene with 2 Online Players" width="400" />
+    <p style="font-style: italic; margin-top: 0.5em;">Figure 1.4: Game Scene with 2 Online Players</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/NPCsWanderingAround.png" alt="NPCs Wandering Around" width="400" />
+    <p style="font-style: italic; margin-top: 0.5em;">Figure 1.5: NPCs Wandering Around</p>
+  </div>
+</div>
     <br/>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Review:</strong></span>
     <ul>
