@@ -119,26 +119,26 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
       <li>TBA:</li>
     </ul>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Game Status Screenshot:</strong></span>
-    <figure style="margin: 0 auto 2em auto; max-width: 400px; text-align: center;">
+    <div style="text-align: center; margin: 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/RobotAsset.png" alt="Robot Asset" width="400" />
-      <figcaption style="font-style: italic; margin-top: 0.5em;">Figure 1.1: Robot Asset</figcaption>
-    </figure>
-    <figure style="margin: 0 auto 2em auto; max-width: 400px; text-align: center;">
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.1: Robot Asset</p>
+    </div>
+    <div style="text-align: center; margin: 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuFindRoom.png" alt="Find Room" width="400" />
-      <figcaption style="font-style: italic; margin-top: 0.5em;">Figure 1.2: Find Room Menu</figcaption>
-    </figure>
-    <figure style="margin: 0 auto 2em auto; max-width: 400px; text-align: center;">
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.2: Find Room Menu</p>
+    </div>
+    <div style="text-align: center; margin: 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuTeamSelection.png" alt="Team Selection Menu" width="400" />
-      <figcaption style="font-style: italic; margin-top: 0.5em;">Figure 1.3: Team Selection Menu</figcaption>
-    </figure>
-    <figure style="margin: 0 auto 2em auto; max-width: 400px; text-align: center;">
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.3: Team Selection Menu</p>
+    </div>
+    <div style="text-align: center; margin: 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/GameWith2OnlinePlayers.png" alt="Game Scene with 2 Online Players" width="400" />
-      <figcaption style="font-style: italic; margin-top: 0.5em;">Figure 1.4: Game Scene with 2 Online Players</figcaption>
-    </figure>
-    <figure style="margin: 0 auto 2em auto; max-width: 400px; text-align: center;">
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.4: Game Scene with 2 Online Players</p>
+    </div>
+    <div style="text-align: center; margin: 1em 0;">
       <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/NPCsWanderingAround.png" alt="NPCs Wandering Around" width="400" />
-      <figcaption style="font-style: italic; margin-top: 0.5em;">Figure 1.5: NPCs Wandering Around</figcaption>
-    </figure>
+      <p style="margin: 0.5em 0 0 0; font-style: italic;">Figure 1.5: NPCs Wandering Around</p>
+    </div>
     <br/>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Review:</strong></span>
     <ul>
