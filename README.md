@@ -106,7 +106,7 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
       <li>TBA</li>
     </ul>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Point Completion Logic:</strong></span>
-    To estimate the effort required for each task, we adopted the Fibonacci-based point system (1, 2, 3, 5, 8). This approach was chosen because it reflects the relative complexity and uncertainty of tasks more effectively than strict time-based estimates. As a newly formed team working with unfamiliar systems-such as multiplayer networking, NPC behaviors, and synchronized interactions—there is a degree of unpredictability in task difficulty. Fibonacci estimation helps accommodate that uncertainty by assigning increasingly spaced point values. Tasks were evaluated based on their expected effort, technical difficulty, and ambiguity, rather than absolute hours. This method enables clearer sprint planning, better workload balancing, and a shared understanding of scope among team members.
+    To estimate the effort required for each task, we adopted the Fibonacci-based point system (1, 2, 3, 5, 8). This approach was chosen because it reflects the relative complexity and uncertainty of tasks more effectively than strict time-based estimates. As a newly formed team working with unfamiliar systems-such as multiplayer networking, NPC behaviors, and synchronized interactions-there is a degree of unpredictability in task difficulty. Fibonacci estimation helps accommodate that uncertainty by assigning increasingly spaced point values. Tasks were evaluated based on their expected effort, technical difficulty, and ambiguity, rather than absolute hours. This method enables clearer sprint planning, better workload balancing, and a shared understanding of scope among team members.
     <br/>
     <br/>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Daily Scrum:</strong></span>
@@ -119,6 +119,30 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
       <li>TBA:</li>
     </ul>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Game Status Screenshot:</strong></span>
+    <figure style="text-align: center;">
+      <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/RobotAsset.png" alt="Robot Asset" width="400" />
+      <figcaption>Figure 1.1: Robot Asset</figcaption>
+    </figure>
+    <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+      <figure style="margin: 0; text-align: center;">
+        <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuFindRoom.png" alt="Find Room" width="400" />
+        <figcaption>Figure 1.2: Find Room Menu</figcaption>
+      </figure>
+      <figure style="margin: 0; text-align: center;">
+        <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuTeamSelection.png" alt="Team Selection" width="400" />
+        <figcaption>Figure 1.3: Team Selection</figcaption>
+      </figure>
+    </div>
+    <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+      <figure style="margin: 0; text-align: center;">
+        <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/GameWith2OnlinePlayers.png" alt="Game Scene with 2 Online Players" width="400" />
+      <figcaption>Figure 1.4: Game Scene with 2 Online Players</figcaption>
+      </figure>
+      <figure style="margin: 0; text-align: center;">
+        <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/NPCsWanderingAround.png" alt="NPCs Wandering Around" width="400" />
+        <figcaption>Figure 1.5: NPCs Wandering Around</figcaption>
+      </figure>
+    </div>
     <br/>
     <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Review:</strong></span>
     <ul>
