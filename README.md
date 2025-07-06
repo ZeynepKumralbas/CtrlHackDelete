@@ -53,10 +53,10 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
 - 💻 Indie game lovers interested in creative mechanics  
 - 🔞 Recommended for ages 13 and up
 
-## Product Backlog
+## 🗃️ Product Backlog
 [Trello](https://trello.com/invite/b/68582bb91c557a8922e77594/ATTIdcd19b358bfb2d774811755d1cf56501AEFE1FCE/yzta-bootcamp)
 
-## Sprints
+## ⏱️ Sprints
   <br/>
   <details>
     <summary><span style="font-size: 1.5em; font-weight: bold;">Sprint 1</span></summary>
