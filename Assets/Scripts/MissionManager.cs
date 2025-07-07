@@ -1,98 +1,122 @@
-using System.Collections.Generic;
-using UnityEngine;
+using Cinemachine;
 using Photon.Pun;
-using Photon.Realtime;
+using System.Collections;
+using System.Collections.Generic;
+using System.Reflection;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
-public class MissionManager : MonoBehaviourPun
+public class MissionManager : MonoBehaviour
 {
-    [SerializeField] private int missionsPerPlayer = 0;
+    private TMP_Dropdown drnMissionList;
+    private Image missionPointer;
 
-    private List<Transform> allMissions = new List<Transform>();
+    private GameObject selectedMission;
+    private CinemachineVirtualCamera playerCam;
 
+    [SerializeField] private List<string> missionList = new List<string>();
+
+    public PhotonView view;
     void Start()
     {
-        if (PhotonNetwork.IsMasterClient)
-        {
-            CollectAllMissions();
-            AssignMissionsToPlayers();
-        }
-    }
+        drnMissionList = UIManager.Instance.missionListDropdown;
+        missionPointer = UIManager.Instance.imgMissionPointer;
 
-    private void CollectAllMissions()
+        missionPointer.gameObject.SetActive(false);
+
+        for(int i = 0; i < gameObject.transform.childCount; i++)
+        {
+            missionList.Add(gameObject.transform.GetChild(i).gameObject.name);
+        }
+
+        drnMissionList.AddOptions(missionList);
+
+        drnMissionList.onValueChanged.AddListener(OnMissionSelected);
+
+        if(view.IsMine) 
+            playerCam = FindObjectOfType<CinemachineVirtualCamera>();
+    }
+    void Update()
     {
-        foreach (Transform mission in transform)
-        {
-            allMissions.Add(mission);
-            // Baþlangýçta tüm MissionSphere'leri devre dýþý býrak
-            Transform sphere = mission.GetChild(0);
-            if (sphere != null)
-                sphere.gameObject.SetActive(false);
-        }
-    }
+        if (!view.IsMine || selectedMission == null) return;
 
-    private void AssignMissionsToPlayers()
+        MissionPointerRotation();
+
+    }
+    private void MissionPointerRotation()
     {
-        List<Player> players = new List<Player>(PhotonNetwork.PlayerList);
+        // UI pointer'ýn ekran sýnýrlarý içinde kalmasýný saðla
+        float minX = missionPointer.GetPixelAdjustedRect().width / 2;
+        float maxX = Screen.width - minX;
 
-        if(allMissions.Count % players.Count != 0)
+        float minY = missionPointer.GetPixelAdjustedRect().height / 2;
+        float maxY = Screen.height - minY;
+
+        // Görev objesinin ekran pozisyonu
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(selectedMission.transform.position);
+
+        // Eðer hedef ekranýn arkasýndaysa
+        if (screenPos.z < 0)
         {
-            for (int i = 0; i < allMissions.Count % players.Count; i++)
-            {
-                allMissions.Remove(allMissions[Random.Range(0,allMissions.Count)]);
-            }
+            // Ekran arkasýndaysa iþareti ekran kenarýna sabitle
+            screenPos *= -1;
+            screenPos.x = (screenPos.x < Screen.width / 2) ? maxX : minX;
+            screenPos.y = (screenPos.y < Screen.height / 2) ? maxY : minY;
         }
 
-        missionsPerPlayer = allMissions.Count / players.Count;
-        if (allMissions.Count < players.Count)
-        {
-            Debug.LogWarning("Yeterli görev yok!");
-            return;
-        }
+        // Ekran pozisyonunu sýnýrlara göre kýrp
+        screenPos.x = Mathf.Clamp(screenPos.x, minX, maxX);
+        screenPos.y = Mathf.Clamp(screenPos.y, minY, maxY);
 
-        List<Transform> shuffled = new List<Transform>(allMissions);
-        ShuffleList(shuffled);
+        // UI pointer'ý konumlandýr
+        missionPointer.transform.position = screenPos;
 
-        int missionIndex = 0;
+        // Kamera ve hedefin dünya pozisyonu arasýndaki yön vektörü
+        Vector3 dir = selectedMission.transform.position - playerCam.transform.position;
+        dir.y = 0f; // Sadece yatay yön için
 
-        foreach (Player player in players)
-        {
-            List<string> assignedMissionNames = new List<string>();
+        // Açýyý hesapla
+        float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
 
-            for (int i = 0; i < missionsPerPlayer; i++)
-            {
-                Transform mission = shuffled[missionIndex++];
-                assignedMissionNames.Add(mission.name); // MissionPoint_A, etc.
-            }
-
-            // RPC ile ilgili oyuncuya görevleri gönder
-            photonView.RPC("ActivateMissionsForPlayer", player, assignedMissionNames.ToArray());
-        }
+        // UI pointer'ý döndür
+        missionPointer.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-    [PunRPC]
-    private void ActivateMissionsForPlayer(string[] missionNames)
+    public void RemoveMissionAndRedirect(string missionName)
     {
-        foreach (string missionName in missionNames)
+        int index = missionList.IndexOf(missionName);
+
+        if (index >= 0)
         {
-            Transform mission = transform.Find(missionName);
-            if (mission != null)
-            {
-                Transform sphere = mission.GetChild(0);
-                if (sphere != null)
-                    sphere.gameObject.SetActive(true);
-            }
+            missionList.RemoveAt(index);
+            drnMissionList.options.RemoveAt(index);
+            Debug.Log("deneme");
+            // Eðer mevcut seçim silinen görevse, önce geçici olarak sýfýra ayarla
+            if (drnMissionList.value == index)
+                drnMissionList.value = 0;
+
+            drnMissionList.RefreshShownValue();
+        }
+
+        if (missionList.Count > 0)
+        {
+            int randomIndex = Random.Range(0, missionList.Count);
+            drnMissionList.value = randomIndex; // Bu, OnMissionSelected tetikler
+        }
+        else
+        {
+            selectedMission = null;
+            missionPointer.enabled = false;
         }
     }
 
-    // Liste karýþtýrma fonksiyonu
-    private void ShuffleList<T>(List<T> list)
+    private void OnMissionSelected(int index)
     {
-        for (int i = 0; i < list.Count; i++)
-        {
-            T temp = list[i];
-            int rand = Random.Range(i, list.Count);
-            list[i] = list[rand];
-            list[rand] = temp;
-        }
+        missionPointer.gameObject.SetActive(true);
+
+        selectedMission = gameObject.transform.Find(drnMissionList.options[index].text).gameObject;
+        Debug.Log(selectedMission.name);
     }
+
 }

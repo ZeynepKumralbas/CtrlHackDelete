@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviourPun
 {
+    public static PlayerInteraction Instance;
+    private MissionManager missionManager;
+
     [SerializeField] private InputActionReference interaction;
     [SerializeField] private float interactionTime = 5f;
     [SerializeField] private GameObject txtInteractionButton;
@@ -22,6 +25,7 @@ public class PlayerInteraction : MonoBehaviourPun
     private Coroutine holdCoroutine;
 
     private GameObject currentMissionPoint;
+    private string currentMissionPointName;
 
     // Multiplayer
     public PhotonView view;
@@ -29,6 +33,8 @@ public class PlayerInteraction : MonoBehaviourPun
     void Start()
     {
         _animator = GetComponent<Animator>();
+        missionManager = FindObjectOfType<MissionManager>();
+
         defaultInteractionTime = interactionTime;
 
         if (view.IsMine)
@@ -121,6 +127,8 @@ public class PlayerInteraction : MonoBehaviourPun
 
         if (currentMissionPoint != null)
         {
+            currentMissionPointName = currentMissionPoint.transform.parent.name;
+
             PhotonView missionView = currentMissionPoint.GetComponentInParent<PhotonView>();
             if (missionView != null)
             {
@@ -133,6 +141,13 @@ public class PlayerInteraction : MonoBehaviourPun
             if (txtInteractionButton != null)
                 txtInteractionButton.SetActive(false);
         }
+
+        if (missionManager != null && !string.IsNullOrEmpty(currentMissionPointName) && 
+            !currentMissionPoint.activeSelf)
+        {
+            missionManager.RemoveMissionAndRedirect(currentMissionPointName);
+        }
+
 
     }
 
