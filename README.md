@@ -161,6 +161,7 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
   Most of the planned goals were successfully completed and integrated into a playable prototype. Minor bugs remain, which will be addressed in Sprint 2.
   Due to limited availability of some team members, caused by ongoing work or interview commitments, the team was able to complete 31 out of the estimated 38 points for this sprint, still covering nearly all core objectives.
 
+  <br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Retrospective:</strong></span>
   During this sprint, the team collaborated effectively and successfully met most of the planned goals. However, two main challenges were identified:
   <ul>
