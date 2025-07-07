@@ -59,7 +59,7 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
 ## ⏱️ Sprints
 <br/>
 <details>
-  <summary><span style="font-size: 1.7em; font-weight: bold;"><strong> Sprint 1 </strong> </span></summary>
+  <summary><span style="font-size: 1.8em; font-weight: bold;"><strong> Sprint 1 </strong> </span></summary>
   <br/>
 
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Notes:</strong></span>
@@ -101,23 +101,18 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
     </li>
   </ul>
 
-  <br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Estimated Points to Complete:</strong></span>
     38/164
 
-  <br/><br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Point Completion Logic:</strong></span>
   To estimate the effort required for each task, we adopted the Fibonacci-based point system (1, 2, 3, 5, 8). We chose this approach because it effectively captures the relative complexity and inherent uncertainty of tasks better than strict time-based estimates.
   As a newly formed team working with unfamiliar systems-such as multiplayer networking, NPC behaviors, and synchronized interactions-we anticipate unpredictability in assessing task difficulty. The Fibonacci sequence’s increasing gaps allow us to naturally express this uncertainty by giving larger tasks proportionally greater weight.
   This method also promotes better communication and shared understanding within the team, as it encourages discussion about task scope and complexity rather than exact time predictions, which are often unreliable in our context. By focusing on relative effort instead of absolute hours, we can plan sprints more clearly, balance workloads more effectively, and adapt quickly as our knowledge improves throughout development.
   Overall, Fibonacci estimation aligns well with our team’s experience level and project nature, making it a practical and flexible choice for managing effort estimation.    
-  
-  <br/><br/>
+
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Daily Scrum:</strong></span>
-  Daily updates and quick discussions are shared through WhatsApp, and meetings take place on Slack.  
-  <a href="https://github.com/ZeynepKumralbas/CtrlHackDelete/tree/main/ProjectManagement/Sprint1/DailyScrum" target="_blank">Sprint 1 Daily Scrum</a>
-  
-  <br/><br/>
+  Daily updates and quick discussions are shared through WhatsApp, and meetings take place on Slack. <a href="https://github.com/ZeynepKumralbas/CtrlHackDelete/tree/main/ProjectManagement/Sprint1/DailyScrum" target="_blank">Sprint 1 Daily Scrum</a>
+
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Board Update:</strong></span>
   Task categories on the Trello board are color-coded for clarity:
 
@@ -140,36 +135,32 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
     <br/><em>Figure 1.3: Robot Asset</em>
   </p>
 
-  <table>
-  <tr>
-    <td align="center" style="padding: 10px;">
-      <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuFindRoom.png" alt="Find Room" width="280"/><br/>
-      <em>Figure 1.4: Find Room Menu</em>
-    </td>
-    <td align="center" style="padding: 10px;">
-      <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuTeamSelection.png" alt="Team Selection Menu" width="280"/><br/>
-      <em>Figure 1.5: Team Selection Menu</em>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" style="padding: 10px;">
-      <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/GameWith2OnlinePlayers.png" alt="Game Scene with 2 Online Players" width="280"/><br/>
-      <em>Figure 1.6: Game Scene with 2 Online Players</em>
-    </td>
-    <td align="center" style="padding: 10px;">
-      <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/NPCsWanderingAround.png" alt="NPCs Wandering Around" width="280"/><br/>
-      <em>Figure 1.7: NPCs Wandering Around</em>
-    </td>
-  </tr>
-</table>
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuFindRoom.png" alt="Find Room" width="400"/>
+    <br/><em>Figure 1.4: Find Room Menu</em>
+  </p>
+
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuTeamSelection.png" alt="Team Selection Menu" width="400"/>
+    <br/><em>Figure 1.5: Team Selection Menu</em>
+  </p>
+
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/GameWith2OnlinePlayers.png" alt="Game Scene with 2 Online Players" width="400"/>
+    <br/><em>Figure 1.6: Game Scene with 2 Online Players</em>
+  </p>
+
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/NPCsWanderingAround.png" alt="NPCs Wandering Around" width="400"/>
+    <br/><em>Figure 1.7: NPCs Wandering Around</em>
+  </p>
     
   <br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Review:</strong></span>
   During Sprint 1, the team aimed to build the foundation of the game by setting up the multiplayer infrastructure, implementing character control, NPC movement, developing the team selection menu, and designing the main menu.
   Most of the planned goals were successfully completed and integrated into a playable prototype. Minor bugs remain, which will be addressed in Sprint 2.
   Due to limited availability of some team members, caused by ongoing work or interview commitments, the team was able to complete 31 out of the estimated 38 points for this sprint, still covering nearly all core objectives.
-  
-  <br/><br/>
+
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Retrospective:</strong></span>
   During this sprint, the team collaborated effectively and successfully met most of the planned goals. However, two main challenges were identified:
   <ul>
