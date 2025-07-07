@@ -59,7 +59,7 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
 ## ⏱️ Sprints
 <br/>
 <details>
-  <summary><span style="font-size: 1.6em; font-weight: bold;"><strong> Sprint 1 </strong> </span></summary>
+  <summary><span style="font-size: 1.7em; font-weight: bold;"><strong> Sprint 1 </strong> </span></summary>
   <br/>
 
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Notes:</strong></span>
@@ -122,45 +122,46 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
   Task categories on the Trello board are color-coded for clarity:
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/TrelloBoard/ColorLegend.png" alt="Trello Board Color Legend" width="400" />
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/TrelloBoard/ColorLegend.png" alt="Trello Board Color Legend" style="width:50%;"  />
     <br/><em>Figure 1.1: Trello Board Color Legend</em>
   </p>
 
-  <div style="text-align: center; margin: 1em 0;">
-      <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/TrelloBoard/TrelloBoardUpdate.png" alt="Trello Board" width="400" />
-      <p style="margin: 0.5em 0 0 0; font-size:0.9em; font-style:italic;">Figure 1.2: Trello Board</p>
-    </div>
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/TrelloBoard/TrelloBoardUpdate.png" alt="Trello Board" width="400" />
+    <br/><em>Figure 1.2: Trello Board</em>
+  </p>
 
   <br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Game Status Screenshots:</strong></span>
-    
-  <div style="text-align: center; margin: 2em 0;">
-      <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/RobotAsset.png" alt="Robot Asset" width="400" />
-      <p style="margin: 0.5em 0 0 0; font-size:0.9em; font-style: italic;">Figure 1.3: Robot Asset</p>
-    </div>
-  
-  <table align="center">
-    <tr>
-      <td align="center" width="50%">
-        <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuFindRoom.png" alt="Find Room" width="300" /><br/>
-        <em>Figure 1.4: Find Room Menu</em>
-      </td>
-      <td align="center" width="50%">
-        <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuTeamSelection.png" alt="Team Selection Menu" width="300" /><br/>
-        <em>Figure 1.5: Team Selection Menu</em>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="50%">
-        <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/GameWith2OnlinePlayers.png" alt="Game Scene with 2 Online Players" width="300" /><br/>
-        <em>Figure 1.6: Game Scene with 2 Online Players</em>
-      </td>
-      <td align="center" width="50%">
-        <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/NPCsWanderingAround.png" alt="NPCs Wandering Around" width="300" /><br/>
-        <em>Figure 1.7: NPCs Wandering Around</em>
-      </td>
-    </tr>
-  </table>
+  <br/>
+  <br/>
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/RobotAsset.png" alt="Robot Asset" width="400" />
+    <br/><em>Figure 1.3: Robot Asset</em>
+  </p>
+
+  <table>
+  <tr>
+    <td align="center" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuFindRoom.png" alt="Find Room" width="280"/><br/>
+      <em>Figure 1.4: Find Room Menu</em>
+    </td>
+    <td align="center" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuTeamSelection.png" alt="Team Selection Menu" width="280"/><br/>
+      <em>Figure 1.5: Team Selection Menu</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/GameWith2OnlinePlayers.png" alt="Game Scene with 2 Online Players" width="280"/><br/>
+      <em>Figure 1.6: Game Scene with 2 Online Players</em>
+    </td>
+    <td align="center" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/NPCsWanderingAround.png" alt="NPCs Wandering Around" width="280"/><br/>
+      <em>Figure 1.7: NPCs Wandering Around</em>
+    </td>
+  </tr>
+</table>
     
   <br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Review:</strong></span>
