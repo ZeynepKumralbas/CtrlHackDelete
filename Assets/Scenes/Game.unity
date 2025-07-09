@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 108422270}
   - component: {fileID: 108422269}
   - component: {fileID: 108422268}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MissionSphere
   m_TagString: MissionPoint
   m_Icon: {fileID: 0}
@@ -506,7 +506,7 @@ GameObject:
   - component: {fileID: 118751708}
   - component: {fileID: 118751707}
   - component: {fileID: 118751706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MissionSphere
   m_TagString: MissionPoint
   m_Icon: {fileID: 0}
@@ -659,7 +659,7 @@ GameObject:
   - component: {fileID: 158272938}
   - component: {fileID: 158272937}
   - component: {fileID: 158272936}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MissionSphere
   m_TagString: MissionPoint
   m_Icon: {fileID: 0}
@@ -1053,7 +1053,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1719985856}
+  m_Father: {fileID: 1208476643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1138,7 +1138,7 @@ GameObject:
   - component: {fileID: 686653957}
   - component: {fileID: 686653956}
   - component: {fileID: 686653955}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MissionSphere
   m_TagString: MissionPoint
   m_Icon: {fileID: 0}
@@ -1243,7 +1243,7 @@ GameObject:
   - component: {fileID: 691528580}
   - component: {fileID: 691528579}
   - component: {fileID: 691528578}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MissionSphere
   m_TagString: MissionPoint
   m_Icon: {fileID: 0}
@@ -1595,7 +1595,7 @@ GameObject:
   - component: {fileID: 873452632}
   - component: {fileID: 873452631}
   - component: {fileID: 873452630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MissionSphere
   m_TagString: MissionPoint
   m_Icon: {fileID: 0}
@@ -2688,6 +2688,44 @@ Transform:
   m_Children: []
   m_Father: {fileID: 525976291}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1208476642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1208476643}
+  m_Layer: 5
+  m_Name: HumansUI
+  m_TagString: HumanUI
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1208476643
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208476642}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1253564543}
+  - {fileID: 1287101316}
+  - {fileID: 478915896}
+  m_Father: {fileID: 1719985856}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1247394047
 GameObject:
   m_ObjectHideFlags: 0
@@ -4483,10 +4521,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1253564543}
-  - {fileID: 1287101316}
-  - {fileID: 478915896}
-  - {fileID: 1888889181}
+  - {fileID: 1208476643}
+  - {fileID: 2021531685}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4640,7 +4676,7 @@ GameObject:
   - component: {fileID: 1850432400}
   - component: {fileID: 1850432399}
   - component: {fileID: 1850432398}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MissionSphere
   m_TagString: MissionPoint
   m_Icon: {fileID: 0}
@@ -4909,41 +4945,6 @@ Transform:
   - {fileID: 920396806}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1888889180
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1888889181}
-  m_Layer: 5
-  m_Name: PointerWindow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1888889181
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888889180}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1719985856}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1977173160
 GameObject:
   m_ObjectHideFlags: 0
@@ -4975,6 +4976,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 525976291}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2021531684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2021531685}
+  m_Layer: 5
+  m_Name: WatcherUI
+  m_TagString: WatcherUI
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2021531685
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021531684}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1719985856}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &2023308057 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 960402142563879607, guid: 08030488f77126a8bad1fbc306390c83,
@@ -4993,7 +5029,7 @@ GameObject:
   - component: {fileID: 2133643770}
   - component: {fileID: 2133643769}
   - component: {fileID: 2133643768}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MissionSphere
   m_TagString: MissionPoint
   m_Icon: {fileID: 0}
@@ -5092,7 +5128,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1719985856}
+    m_TransformParent: {fileID: 1208476643}
     m_Modifications:
     - target: {fileID: 1412279658268862616, guid: 61acf54686d797842988a7288403c069,
         type: 3}
@@ -5157,27 +5193,27 @@ PrefabInstance:
     - target: {fileID: 1412279658268862616, guid: 61acf54686d797842988a7288403c069,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1412279658268862616, guid: 61acf54686d797842988a7288403c069,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1412279658268862616, guid: 61acf54686d797842988a7288403c069,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1412279658268862616, guid: 61acf54686d797842988a7288403c069,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -270
+      value: 640
       objectReference: {fileID: 0}
     - target: {fileID: 1412279658268862616, guid: 61acf54686d797842988a7288403c069,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -60
+      value: 430
       objectReference: {fileID: 0}
     - target: {fileID: 1412279658268862616, guid: 61acf54686d797842988a7288403c069,
         type: 3}
@@ -5210,7 +5246,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1719985856}
+    m_TransformParent: {fileID: 1208476643}
     m_Modifications:
     - target: {fileID: 785025023987459429, guid: 3733cddd98605011d8704786f9ade6b5,
         type: 3}
@@ -5275,17 +5311,17 @@ PrefabInstance:
     - target: {fileID: 785025023987459429, guid: 3733cddd98605011d8704786f9ade6b5,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 785025023987459429, guid: 3733cddd98605011d8704786f9ade6b5,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 785025023987459429, guid: 3733cddd98605011d8704786f9ade6b5,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 785025023987459429, guid: 3733cddd98605011d8704786f9ade6b5,
         type: 3}
@@ -5295,7 +5331,7 @@ PrefabInstance:
     - target: {fileID: 785025023987459429, guid: 3733cddd98605011d8704786f9ade6b5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 120
+      value: -370
       objectReference: {fileID: 0}
     - target: {fileID: 785025023987459429, guid: 3733cddd98605011d8704786f9ade6b5,
         type: 3}
