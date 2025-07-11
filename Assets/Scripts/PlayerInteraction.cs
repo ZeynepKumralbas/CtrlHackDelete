@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviourPun
 {
-    public static PlayerInteraction Instance;
     private MissionManager missionManager;
 
     [SerializeField] private InputActionReference interaction;
