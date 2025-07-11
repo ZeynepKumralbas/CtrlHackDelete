@@ -37,7 +37,14 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         if (scene.name == "Game")
         {
-            MenuManager.instance.CloseAllMenus();
+            if(MenuManager.instance != null)
+            {
+                MenuManager.instance.CloseAllMenus();
+            }
+            else
+            {
+                Debug.LogError("MenuManager.instance null, CloseAllMenus çağrılmadı.");
+            }
             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerControllerManager"), Vector3.zero, Quaternion.identity);
         }
     }

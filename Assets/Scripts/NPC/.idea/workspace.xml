@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5a5f720d-7ddc-485a-b63d-38459ab5f601" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../NPCScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../NPCScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Robot.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Robot.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../RobotController.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../RobotController.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Multiplayer/Launcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Multiplayer/Launcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Multiplayer/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Multiplayer/RoomManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WanderAI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WanderAI.cs.meta" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../Multiplayer/Launcher.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Multiplayer/RoomManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WanderAI.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2zjl1MKMwhTtxgBDAPs5Wa7p0Lx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Test__Sprint1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5a5f720d-7ddc-485a-b63d-38459ab5f601" name="Changes" comment="" />
+      <created>1752252147374</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1752252147374</updated>
+      <workItem from="1752252148871" duration="2046000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

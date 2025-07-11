@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class RobotController : MonoBehaviour
+public class WanderAI : MonoBehaviour
 {
     public float wanderRadius = 30f;
     public float wanderTimer = 5f;
@@ -41,7 +41,6 @@ public class RobotController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 5f);
         }
     }
-//deneme 
 
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
     {

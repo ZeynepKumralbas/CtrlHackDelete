@@ -50,6 +50,8 @@ public class Launcher : MonoBehaviourPunCallbacks
     void Start()
     {
         Debug.Log("Connecting to Master...");
+        PhotonNetwork.GameVersion = "1.0"; // versiyonlar farklıysa oyuncular birbirini göremez
+        PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = "eu"; // <- Region burada ayarlanıyor
         PhotonNetwork.ConnectUsingSettings();
     }
 
