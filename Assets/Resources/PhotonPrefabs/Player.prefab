@@ -502,6 +502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6570950201932869155}
   - component: {fileID: 1991386612868917554}
+  - component: {fileID: -4040970148194281782}
   - component: {fileID: 632812999782027102}
   - component: {fileID: 32285131712612002}
   - component: {fileID: 3918155850930718545}
@@ -564,6 +565,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-4040970148194281782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4393589522285472711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ddb253cb6dc844c994aa0c1aec9bd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  target: {fileID: 6570950201932869155}
+  cam: {fileID: 0}
+  fadedAlpha: 0.33
+  retainShadows: 1
+  targetPositionOffset: {x: 0, y: 1, z: 0}
+  fadeSpeed: 1
+  objectBlockingView: []
+  view: {fileID: 3553726884540960953}
 --- !u!114 &632812999782027102
 MonoBehaviour:
   m_ObjectHideFlags: 0
