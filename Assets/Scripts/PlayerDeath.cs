@@ -24,6 +24,7 @@ public class PlayerDeath : MonoBehaviour
 
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<PlayerInteraction>().enabled = false;
+        GetComponent<PlayerSkills>().enabled = false;
 
     }
 }

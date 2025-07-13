@@ -47,6 +47,10 @@ MonoBehaviour:
   - SmashAnimation
   - Die
   - StartCheckForObjects
+  - Skill_WatcherFreeze_Start
+  - Skill_WatcherVisibilityBlock_Start
+  - Skill_WatcherFreeze_End
+  - Skill_WatcherVisibilityBlock_End
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

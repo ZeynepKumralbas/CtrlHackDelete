@@ -6,6 +6,8 @@ namespace YourNamespaceHere
 {
     public class ModularRobotRandomizer : MonoBehaviourPun
     {
+        public static ModularRobotRandomizer Instance;
+
         private List<GameObject> heads = new List<GameObject>();
         private List<GameObject> bodies = new List<GameObject>();
         private List<GameObject> armsL = new List<GameObject>();
@@ -28,6 +30,8 @@ namespace YourNamespaceHere
 
         private void Start()
         {
+            Instance = this;
+
             if (view.IsMine)
             {
                 // Ýlk rastgele rengi sadece kendi objen için oluþtur ve tüm oyunculara gönder
@@ -40,10 +44,10 @@ namespace YourNamespaceHere
             if (!view.IsMine)
                 return;
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            /*if (Input.GetKeyDown(KeyCode.Space))
             {
                 RandomizeMaterialOffsets();
-            }
+            }*/
         }
 
         private void OrganizeRobotParts()
@@ -65,7 +69,7 @@ namespace YourNamespaceHere
             }
         }
 
-        private void RandomizeMaterialOffsets()
+        public void RandomizeMaterialOffsets()
         {
             //Rastgele birer offset degeri belirle
             float[] possibleValues = { 0f, 0.205078125f, 0.41015625f };

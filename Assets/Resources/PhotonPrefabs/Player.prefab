@@ -508,6 +508,7 @@ GameObject:
   - component: {fileID: 3918155850930718545}
   - component: {fileID: 2316663676027000614}
   - component: {fileID: 6343026175655327703}
+  - component: {fileID: 3831593352520378460}
   - component: {fileID: 7483565426481108542}
   - component: {fileID: 104279816549139487}
   - component: {fileID: 3553726884540960953}
@@ -683,6 +684,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   view: {fileID: 3553726884540960953}
+--- !u!114 &3831593352520378460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4393589522285472711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7316476237e8f0458d84eebebb7a8f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skills:
+  - {fileID: 8886317318536750535, guid: ea4520b54ecebc74090193008a65810a, type: 3}
+  - {fileID: 3778770881309564509, guid: ea4520b54ecebc74090193008a65810a, type: 3}
+  - {fileID: 2804295542459837143, guid: ea4520b54ecebc74090193008a65810a, type: 3}
+  cooldownsForSkills:
+  - 5
+  - 5
+  - 5
+  txtTimersForSkills: []
+  activeCooldownsForSkills: []
+  view: {fileID: 3553726884540960953}
+  watcherView: {fileID: 5241064141482982936, guid: 5174f4b82e4f57e4f9defdb3eb0e6ea4,
+    type: 3}
 --- !u!54 &7483565426481108542
 Rigidbody:
   m_ObjectHideFlags: 0
