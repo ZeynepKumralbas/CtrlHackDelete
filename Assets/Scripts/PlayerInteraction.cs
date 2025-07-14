@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviourPun
 {
+    public static PlayerInteraction Instance;
+
     private MissionManager missionManager;
 
     [SerializeField] private InputActionReference interaction;
@@ -17,6 +19,8 @@ public class PlayerInteraction : MonoBehaviourPun
     private Animator _animator;
 
     private float defaultInteractionTime;
+
+    public int finishedMissionCounter = 0;
 
     private bool isInMissionPoint = false;
     private bool isHolding = false;
@@ -31,6 +35,8 @@ public class PlayerInteraction : MonoBehaviourPun
 
     void Start()
     {
+        Instance = this;
+
         _animator = GetComponent<Animator>();
         missionManager = FindObjectOfType<MissionManager>();
 
@@ -116,6 +122,7 @@ public class PlayerInteraction : MonoBehaviourPun
 
         Debug.Log("Görev tamamlandı!");
         view.RPC("SetInteractingAnim", RpcTarget.All, false);
+        finishedMissionCounter++;
         isHolding = false;
 
         if (missionCompletePercentSlider != null)

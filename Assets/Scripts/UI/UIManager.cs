@@ -22,5 +22,14 @@ public class UIManager : MonoBehaviour
     {
         Instance = this;
     }
+    private void Start()
+    {
+        for(int i = 0; i < humanSkills.Length; i++)
+        {
+            Color color = humanSkills[i].GetComponent<Image>().color;
+            color.a = 0.1f;
+            humanSkills[i].GetComponent<Image>().color = color;
+        }
+    }
 }
 
