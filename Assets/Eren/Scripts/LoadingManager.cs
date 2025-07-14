@@ -21,8 +21,15 @@ public class LoadingManager : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         statusText.text = "Connected!";
+
+        var cg = continueButton.GetComponent<CanvasGroup>();
+
+        // Hýzlý ve doðrudan görünür ve etkileþimli yap
+        cg.alpha = 1f;
+        cg.interactable = true;
+        cg.blocksRaycasts = true;
+
         continueButton.interactable = true;
-        continueButton.GetComponent<CanvasGroup>().DOFade(1f, 1f);
     }
 
     public void LoadLobby()
