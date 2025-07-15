@@ -28,6 +28,11 @@ public class Launcher : MonoBehaviourPunCallbacks
     public Transform humansTeamContent;
     public Transform watchersTeamContent;
 
+    // room cache
+    private Dictionary<string, RoomInfo> cachedRoomList = new Dictionary<string, RoomInfo>();
+    private Dictionary<string, GameObject> roomUIElements = new Dictionary<string, GameObject>();
+
+
     /*   void Awake()
        {
            instance = this;
@@ -73,8 +78,10 @@ public class Launcher : MonoBehaviourPunCallbacks
         {
             MenuManager.instance.OpenMenu("TitleMenu");
         }
-        startButton.interactable = false; // Önce kapat
+        startButton.interactable = false;
         UpdateStartButtonState();
+
+        cachedRoomList.Clear();
     }
 
     public void CreateRoom()
@@ -84,7 +91,14 @@ public class Launcher : MonoBehaviourPunCallbacks
             return;
         }
 
-        PhotonNetwork.CreateRoom(roomNameInputField.text);
+        RoomOptions roomOptions = new RoomOptions()
+        {
+            IsVisible = true,
+            IsOpen = true,
+            MaxPlayers = 5
+        };
+
+        PhotonNetwork.CreateRoom(roomNameInputField.text, roomOptions);
         MenuManager.instance.OpenMenu("LoadingMenu");
     }
 
@@ -95,17 +109,21 @@ public class Launcher : MonoBehaviourPunCallbacks
 
         Player[] players = PhotonNetwork.PlayerList;
 
-        foreach (Transform child in playerListContent)
-        {
-            Destroy(child.gameObject);
-        }
+    //    foreach (Transform child in playerListContent)
+    //    {
+    //        Destroy(child.gameObject);
+    //    }
 
-        for (int i = 0; i < players.Count(); i++)
-        {
+        ExitGames.Client.Photon.Hashtable props = new ExitGames.Client.Photon.Hashtable();
+        props["Team"] = "None";
+        PhotonNetwork.LocalPlayer.SetCustomProperties(props);
+
+        //    for (int i = 0; i < players.Count(); i++)
+        //    {
         //    int teamNumber = GetNextTeamMember();
-            Instantiate(playerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(players[i], "None");
-        }
-        
+        //        Instantiate(playerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(players[i], "None");
+        //    }
+        UpdatePlayerList();
         startButton.gameObject.SetActive(PhotonNetwork.IsMasterClient);
     }
 
@@ -153,9 +171,16 @@ public class Launcher : MonoBehaviourPunCallbacks
         // PhotonNetwork.LeaveRoom();
     }
 
+    public override void OnLeftLobby()
+    {
+        cachedRoomList.Clear();
+    }
+
     public override void OnLeftRoom()
     {
         Debug.Log("OnLeftRoom");
+        //    PhotonNetwork.JoinLobby();
+
         if (returnToMenuScene)
         {
             Debug.Log("Return to menu scene");
@@ -168,6 +193,8 @@ public class Launcher : MonoBehaviourPunCallbacks
             MenuManager.instance.OpenMenu("TitleMenu");
         }
         returnToMenuScene = false;
+
+        cachedRoomList.Clear();
     }
 
     private IEnumerator LoadScene(string scene)
@@ -183,35 +210,110 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
+        Debug.Log("Room List Updated:");
+        /*
         foreach (Transform trans in roomListContent)
         {
             Destroy(trans.gameObject);
         }
 
+        Debug.Log("roomList.Count:" + roomList.Count);
         for (int i = 0; i < roomList.Count; i++)
         {
+            Debug.Log($"Room: {roomList[i].Name} | Open: {roomList[i].IsOpen} | Visible: {roomList[i].IsVisible} | Removed: {roomList[i].RemovedFromList}");
             if (roomList[i].RemovedFromList)
             {
+                Debug.Log(roomList[i].Name + "already removed, continue");
                 continue;
             }
+            Debug.Log("Instantiate i:" + i + " name:" + roomList[i].Name);
             Instantiate(roomListItemPrefab, roomListContent).GetComponent<RoomListItem>().SetUp(roomList[i]);
+        }*/
+
+        foreach (RoomInfo info in roomList)
+        {
+            if (info.RemovedFromList || !info.IsOpen || !info.IsVisible || info.PlayerCount == 0)
+            {
+                if (cachedRoomList.ContainsKey(info.Name))
+                {
+                    Debug.Log($"Removing invalid/closed room: {info.Name}");
+                    cachedRoomList.Remove(info.Name);
+                }
+            }
+            else
+            {
+                cachedRoomList[info.Name] = info;
+            }
+        }
+
+        UpdateRoomListUI();
+    }
+
+    private void UpdateRoomListUI()
+    {
+        /*
+        foreach (Transform trans in roomListContent)
+        {
+            Destroy(trans.gameObject);
+        }
+
+        foreach (RoomInfo roomInfo in cachedRoomList.Values)
+        {
+            // Oda gerçekten aktif mi?
+            if (!roomInfo.IsOpen || !roomInfo.IsVisible || roomInfo.PlayerCount == 0)
+            {
+                Debug.Log($"Room {roomInfo.Name} is invalid. Skipping.");
+                continue;
+            }
+
+            Instantiate(roomListItemPrefab, roomListContent).GetComponent<RoomListItem>().SetUp(roomInfo);
+        }*/
+        
+
+        // Check rooms
+        foreach (var pair in cachedRoomList)
+        {
+            string roomName = pair.Key;
+            RoomInfo info = pair.Value;
+
+            if (roomUIElements.ContainsKey(roomName))
+            {
+                // UI already exists, update
+                roomUIElements[roomName].GetComponent<RoomListItem>().SetUp(info);
+            }
+            else
+            {
+                // Create new UI
+                GameObject roomItem = Instantiate(roomListItemPrefab, roomListContent);
+                roomItem.GetComponent<RoomListItem>().SetUp(info);
+                roomUIElements[roomName] = roomItem;
+            }
+        }
+
+        // Remove UI of deleted rooms
+        List<string> toRemove = new List<string>();
+        foreach (var kvp in roomUIElements)
+        {
+            if (!cachedRoomList.ContainsKey(kvp.Key))
+            {
+                Destroy(kvp.Value);
+                toRemove.Add(kvp.Key);
+            }
+        }
+
+        foreach (string key in toRemove)
+        {
+            roomUIElements.Remove(key);
         }
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         //    int teamNumber = GetNextTeamMember();
-        GameObject playerItem = Instantiate(playerListItemPrefab, playerListContent);
-        playerItem.GetComponent<PlayerListItem>().SetUp(newPlayer, "None");
+        //    GameObject playerItem = Instantiate(playerListItemPrefab, playerListContent);
+        //    playerItem.GetComponent<PlayerListItem>().SetUp(newPlayer, "None");
         UpdatePlayerList();
         UpdateStartButtonState();
-    }
-
-    private int GetNextTeamMember()
-    {
-        int teamMember = nextTeamNumber;
-        nextTeamNumber = 3 - nextTeamNumber;
-        return teamMember;
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
@@ -246,7 +348,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
 
         Debug.Log("Update Player List");
-        // Önce hepsini temizle
+        // Clear all
         foreach (Transform t in humansTeamContent) Destroy(t.gameObject);
         foreach (Transform t in watchersTeamContent) Destroy(t.gameObject);
         foreach (Transform t in playerListContent) Destroy(t.gameObject);
@@ -308,7 +410,7 @@ public class Launcher : MonoBehaviourPunCallbacks
             }
             else
             {
-                bufferCount++; // Eğer hiç takım ayarlanmamışsa, buffer say
+                bufferCount++; // If no team is selected, count as None
             }
         }
 
