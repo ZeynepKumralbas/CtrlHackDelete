@@ -21,8 +21,8 @@ TagManager:
   - VisibleForHumans
   - VisibleForWatchers
   - 
-  - 
-  - 
+  - WatcherLayer_forLobby
+  - PlayerLayer_forLobby
   - 
   - 
   - 
