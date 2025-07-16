@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 242788677}
   m_Layer: 0
   m_Name: MissionPoint (1)
-  m_TagString: MissionPoint
+  m_TagString: TaskPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -714,6 +714,61 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].Name
+      value: Blend
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Name
+      value: Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Name
+      value: isWalking
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Name
+      value: isWorking
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].SynchronizeType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].SynchronizeType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 215848423595301518, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -769,6 +824,31 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 220200869262978249, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1850432401}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 242788680}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1343691460}
     - target: {fileID: 8650789915277913133, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_Name
@@ -921,6 +1001,61 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].Name
+      value: Blend
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Name
+      value: Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Name
+      value: isWalking
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Name
+      value: isWorking
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].SynchronizeType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].SynchronizeType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 215848423595301518, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -976,6 +1111,26 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 220200869262978249, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1850432401}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 242788680}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1343691460}
     - target: {fileID: 8650789915277913133, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_Name
@@ -1593,6 +1748,61 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].Name
+      value: Blend
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Name
+      value: Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Name
+      value: isWalking
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Name
+      value: isWorking
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].SynchronizeType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].SynchronizeType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 215848423595301518, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1648,6 +1858,26 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 220200869262978249, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1850432401}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 242788680}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1343691460}
     - target: {fileID: 8650789915277913133, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_Name
@@ -2019,6 +2249,61 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].Name
+      value: Blend
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Name
+      value: Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Name
+      value: isWalking
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Name
+      value: isWorking
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].SynchronizeType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].SynchronizeType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 215848423595301518, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2074,6 +2359,26 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 220200869262978249, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1850432401}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 242788680}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1343691460}
     - target: {fileID: 8650789915277913133, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_Name
@@ -2092,6 +2397,61 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].Name
+      value: Blend
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Name
+      value: Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Name
+      value: isWalking
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Name
+      value: isWorking
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].SynchronizeType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].SynchronizeType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 215848423595301518, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2147,6 +2507,26 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 220200869262978249, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1850432401}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 242788680}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1343691460}
     - target: {fileID: 8650789915277913133, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_Name
@@ -2171,7 +2551,7 @@ GameObject:
   - component: {fileID: 1343691457}
   m_Layer: 0
   m_Name: MissionPoint (2)
-  m_TagString: MissionPoint
+  m_TagString: TaskPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3477,6 +3857,61 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].Name
+      value: Blend
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Name
+      value: Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Name
+      value: isWalking
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Name
+      value: isWorking
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].SynchronizeType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].SynchronizeType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 215848423595301518, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3532,6 +3967,26 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 220200869262978249, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1850432401}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 242788680}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1343691460}
     - target: {fileID: 8650789915277913133, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_Name
@@ -3931,7 +4386,7 @@ GameObject:
   - component: {fileID: 1850432398}
   m_Layer: 0
   m_Name: MissionPoint
-  m_TagString: MissionPoint
+  m_TagString: TaskPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4078,6 +4533,61 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].Name
+      value: Blend
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Name
+      value: Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Name
+      value: isWalking
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Name
+      value: isWorking
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].SynchronizeType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8739613159871195943, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].SynchronizeType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 215848423595301518, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4133,6 +4643,26 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 220200869262978249, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1850432401}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 242788680}
+    - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1343691460}
     - target: {fileID: 8650789915277913133, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_Name

@@ -8,6 +8,9 @@ TagManager:
   - HardMission
   - EasyMission
   - NormalMission
+  - CinemachineTarget
+  - Bullet
+  - TaskPoint
   layers:
   - Default
   - TransparentFX

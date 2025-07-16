@@ -1063,6 +1063,7 @@ GameObject:
   - component: {fileID: 220200869262978249}
   - component: {fileID: 8102906875589361942}
   - component: {fileID: 5276344958224025579}
+  - component: {fileID: -8739613159871195943}
   m_Layer: 0
   m_Name: RobotPhoton
   m_TagString: Untagged
@@ -1102,7 +1103,7 @@ Animator:
   m_GameObject: {fileID: 8650789915277913133}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6d94d67ffaeb24ba3b54edc30677e65f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 283eacc8107f94a2a8388583767aabe8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1169,6 +1170,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 8102906875589361942}
+  - {fileID: -8739613159871195943}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -1219,6 +1221,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wanderRadius: 30
   wanderTimer: 5
+  taskPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  taskChance: 0.3
+  taskDuration: 5
+--- !u!114 &-8739613159871195943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8650789915277913133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &9092734842849660484
 GameObject:
   m_ObjectHideFlags: 0
