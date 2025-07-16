@@ -281,3 +281,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNameText: {fileID: 2088752459066040737}
+  tooltipPrefab: {fileID: 631803258312275697, guid: ca64cc31e7d63e1c6ae19a32e00ddc70,
+    type: 3}

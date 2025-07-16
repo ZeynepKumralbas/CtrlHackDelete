@@ -22,7 +22,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public Button startButton;
     int nextTeamNumber = 1;
     public bool hasEnteredUsernameThisSession = false;
-    bool returnToMenuScene = false;
+    public bool returnToMenuScene = false;
 
     // Team selection
     public Transform humansTeamContent;
@@ -91,11 +91,16 @@ public class Launcher : MonoBehaviourPunCallbacks
             return;
         }
 
+        ExitGames.Client.Photon.Hashtable customProps = new ExitGames.Client.Photon.Hashtable();
+        customProps["GameStarted"] = false;
+
         RoomOptions roomOptions = new RoomOptions()
         {
             IsVisible = true,
             IsOpen = true,
-            MaxPlayers = 5
+            MaxPlayers = 5,
+            CustomRoomProperties = customProps,
+            CustomRoomPropertiesForLobby = new string[] { "GameStarted" }
         };
 
         PhotonNetwork.CreateRoom(roomNameInputField.text, roomOptions);
@@ -140,6 +145,14 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public void JoinRoom(RoomInfo info)
     {
+         if (info.PlayerCount >= info.MaxPlayers)
+        {
+            Debug.Log($"Room '{info.Name}' is full.");
+            errorText.text = $"Room '{info.Name}' is full. You cannot join.";
+            MenuManager.instance.OpenMenu("ErrorMenu");
+            return;
+        }
+
         PhotonNetwork.JoinRoom(info.Name);
         MenuManager.instance.OpenMenu("LoadingMenu");
     }
@@ -147,8 +160,24 @@ public class Launcher : MonoBehaviourPunCallbacks
     public void StartGame()
     {
         Debug.Log("Start Game..");
+
+        PhotonNetwork.CurrentRoom.IsOpen = false;
+        PhotonNetwork.CurrentRoom.IsVisible = true;
+
+        ExitGames.Client.Photon.Hashtable props = new ExitGames.Client.Photon.Hashtable();
+        props["GameStarted"] = true;
+        PhotonNetwork.CurrentRoom.SetCustomProperties(props);
+
         PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
         MenuManager.instance.CloseAllMenus();
+    }
+
+    public override void OnRoomPropertiesUpdate(ExitGames.Client.Photon.Hashtable propertiesThatChanged)
+    {
+        if (propertiesThatChanged.ContainsKey("GameStarted"))
+        {
+            Debug.Log("GameStarted property updated: " + propertiesThatChanged["GameStarted"]);
+        }
     }
 
     public void LeaveRoom()
@@ -185,7 +214,8 @@ public class Launcher : MonoBehaviourPunCallbacks
         {
             Debug.Log("Return to menu scene");
             //  GameObject obj = new GameObject("SceneLoader");
-            StartCoroutine(LoadScene("Menu"));
+            PhotonNetwork.LoadLevel("Menu");
+        //    StartCoroutine(LoadScene("Menu"));
             Destroy(RoomManager.instance.gameObject);
         }
         else
@@ -232,7 +262,8 @@ public class Launcher : MonoBehaviourPunCallbacks
 
         foreach (RoomInfo info in roomList)
         {
-            if (info.RemovedFromList || !info.IsOpen || !info.IsVisible || info.PlayerCount == 0)
+            if (info.RemovedFromList || //!info.IsOpen ||
+            !info.IsVisible || info.PlayerCount == 0)
             {
                 if (cachedRoomList.ContainsKey(info.Name))
                 {
@@ -243,6 +274,10 @@ public class Launcher : MonoBehaviourPunCallbacks
             else
             {
                 cachedRoomList[info.Name] = info;
+                if (info.CustomProperties != null && info.CustomProperties.ContainsKey("GameStarted"))
+                {
+                    Debug.Log($"Room {info.Name} GameStarted: {info.CustomProperties["GameStarted"]}");
+                }
             }
         }
 
@@ -296,6 +331,10 @@ public class Launcher : MonoBehaviourPunCallbacks
         {
             if (!cachedRoomList.ContainsKey(kvp.Key))
             {
+                if (TooltipManager.instance.IsShowingTooltipFor(kvp.Value))
+                {
+                    TooltipManager.instance.HideTooltip();
+                }
                 Destroy(kvp.Value);
                 toRemove.Add(kvp.Key);
             }
@@ -321,6 +360,19 @@ public class Launcher : MonoBehaviourPunCallbacks
         UpdatePlayerList();
         RoomMenuUIController.instance.UpdateButtonVisibility();
         UpdateStartButtonState();
+
+
+        Debug.Log("OnPlayerLeftRoom");
+        // if one player leaves the game, end it for all
+        if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue("GameStarted", out object startedObj)
+            && startedObj is bool started && started)
+        {
+            GameManager gm = FindObjectOfType<GameManager>();
+            if (gm != null && gm.photonView != null)
+            {
+                gm.photonView.RPC("RPC_ShowExitReasonAndEnd", RpcTarget.All, "One player has left the game.");
+            }
+        }
     }
 
     public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
