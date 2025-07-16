@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("LoadingScene"); // oyun sahnenin adýný yaz
+        SceneManager.LoadScene("LoadingScene"); // oyun sahnesine geç
     }
 
     public void QuitGame()
@@ -16,11 +16,16 @@ public class MainMenu : MonoBehaviour
 
     public void OpenSettings()
     {
-        SceneManager.LoadScene("SettingsMenu"); // Ayarlar sahnesine geç
+        SceneManager.LoadScene("SettingsMenu"); // ayarlar sahnesine geç
     }
 
     public void OpenControls()
     {
-        SceneManager.LoadScene("Controls"); // Kontroller sahnesine geç
+        SceneManager.LoadScene("Controls"); // kontroller sahnesine geç
+    }
+
+    public void OpenCredits()
+    {
+        SceneManager.LoadScene("Credits"); // yeni ekleyeceðin Credits sahnesine geç
     }
 }
