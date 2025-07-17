@@ -938,11 +938,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: faaff014-4bcd-4eb0-9c42-39e6917b76a0
+  cloudProjectId: 5a0245c7-895b-4909-868e-ee8cde3b2598
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: CtrlHackDelete 2025-06-24_01-31-49
-  organizationId: zeyyk
+  projectName: CtrlHackDelete
+  organizationId: iamsevvalarslan
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

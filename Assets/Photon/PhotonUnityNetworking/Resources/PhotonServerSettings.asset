@@ -54,6 +54,7 @@ MonoBehaviour:
   - RPC_EndGameForAll
   - RPC_EndGame
   - RPC_ShowExitReasonAndEnd
+  - SetInteracting
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

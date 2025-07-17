@@ -11,6 +11,9 @@ TagManager:
   - PlayerEyes
   - HumanUI
   - WatcherUI
+  - CinemachineTarget
+  - Bullet
+  - TaskPoint
   layers:
   - Default
   - TransparentFX
