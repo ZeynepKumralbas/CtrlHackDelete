@@ -35,7 +35,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        if (scene.name == "Game")
+        //Degistirilecek
+        if (scene.name == "Furkan")
         {
             if(MenuManager.instance != null)
             {

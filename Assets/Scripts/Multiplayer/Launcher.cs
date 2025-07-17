@@ -188,8 +188,8 @@ public class Launcher : MonoBehaviourPunCallbacks
 
         Debug.Log($"InRoom: {PhotonNetwork.InRoom}, IsConnected: {PhotonNetwork.IsConnected}");
 
-        //    MenuManager.instance.OpenMenu("LoadingMenu");
-        if (SceneManager.GetActiveScene().name == "Game")
+        //    MenuManager.instance.OpenMenu("LoadingMenu"); DEGİSTIRİLECEK
+        if (SceneManager.GetActiveScene().name == "Furkan")
         {
             returnToMenuScene = true;
         }

@@ -8801,7 +8801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c47071ffe722885c48e74d63eda9a982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingNextButton: {fileID: 0}
+  loadingNextButton: {fileID: 311457564}
   roomNameInputField: {fileID: 307381131}
   roomNameText: {fileID: 615356716}
   errorText: {fileID: 1050129189}
@@ -8813,6 +8813,7 @@ MonoBehaviour:
     type: 3}
   startButton: {fileID: 1033030846}
   hasEnteredUsernameThisSession: 0
+  returnToMenuScene: 0
   humansTeamContent: {fileID: 919134192}
   watchersTeamContent: {fileID: 160687577}
 --- !u!114 &1992220756
