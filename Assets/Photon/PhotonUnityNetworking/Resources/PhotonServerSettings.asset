@@ -19,7 +19,7 @@ MonoBehaviour:
     AppIdVoice: 
     AppVersion: 
     UseNameServer: 1
-    FixedRegion: 
+    FixedRegion: EU
     Server: 
     Port: 0
     ProxyServer: 
@@ -51,6 +51,9 @@ MonoBehaviour:
   - Skill_WatcherVisibilityBlock_Start
   - Skill_WatcherFreeze_End
   - Skill_WatcherVisibilityBlock_End
+  - RPC_EndGameForAll
+  - RPC_EndGame
+  - RPC_ShowExitReasonAndEnd
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
