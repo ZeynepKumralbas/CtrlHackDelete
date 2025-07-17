@@ -24,6 +24,9 @@ TagManager:
   - Floor
   - 
   - 
+  - WatcherLayer_forLobby
+  - PlayerLayer_forLobby
+  - 
   - 
   - 
   - 

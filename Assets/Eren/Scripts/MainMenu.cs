@@ -5,22 +5,27 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Menu"); // oyun sahnenin adýný yaz
+        SceneManager.LoadScene("Menu"); // oyun sahnenin adï¿½nï¿½ yaz
     }
 
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Oyun kapatýldý.");
+        Debug.Log("Oyun kapatï¿½ldï¿½.");
     }
 
     public void OpenSettings()
     {
-        SceneManager.LoadScene("SettingsMenu"); // Ayarlar sahnesine geç
+        SceneManager.LoadScene("SettingsMenu"); // ayarlar sahnesine geï¿½
     }
 
     public void OpenControls()
     {
-        SceneManager.LoadScene("Controls"); // Kontroller sahnesine geç
+        SceneManager.LoadScene("Controls"); // kontroller sahnesine geï¿½
+    }
+
+    public void OpenCredits()
+    {
+        SceneManager.LoadScene("Credits"); // yeni ekleyeceï¿½in Credits sahnesine geï¿½
     }
 }
