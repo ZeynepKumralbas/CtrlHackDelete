@@ -509,6 +509,7 @@ GameObject:
   - component: {fileID: 2316663676027000614}
   - component: {fileID: 6343026175655327703}
   - component: {fileID: 3831593352520378460}
+  - component: {fileID: -312859795480237835}
   - component: {fileID: 7483565426481108542}
   - component: {fileID: 104279816549139487}
   - component: {fileID: 3553726884540960953}
@@ -710,6 +711,28 @@ MonoBehaviour:
   view: {fileID: 3553726884540960953}
   watcherView: {fileID: 5241064141482982936, guid: 5174f4b82e4f57e4f9defdb3eb0e6ea4,
     type: 3}
+--- !u!114 &-312859795480237835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4393589522285472711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71113fa39b4e07341b741360df493a8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xOffsets:
+  - 0
+  - 0
+  - 0
+  - 0
+  yOffsets:
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!54 &7483565426481108542
 Rigidbody:
   m_ObjectHideFlags: 0

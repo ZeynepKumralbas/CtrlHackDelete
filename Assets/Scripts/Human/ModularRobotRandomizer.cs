@@ -23,6 +23,9 @@ namespace YourNamespaceHere
         //Multiplayer
         public PhotonView view;
 
+        private float previousX = -1f;
+        private float previousY = -1f;
+
         private void Awake()
         {
             OrganizeRobotParts(); //Robot parçalarýný listelere yerleþtir
@@ -69,20 +72,40 @@ namespace YourNamespaceHere
             }
         }
 
+        /*public void RandomizeMaterialOffsets()
+        {
+            //Renk deðiþikliðini tüm oyunculara bildir
+            view.RPC("ApplyMaterialOffsets", RpcTarget.AllBuffered,
+                RandomColorSelecter.Instance.xOffsets[Random.Range(0, RandomColorSelecter.Instance.xOffsets.Length)],
+                RandomColorSelecter.Instance.yOffsets[Random.Range(0, RandomColorSelecter.Instance.yOffsets.Length)]);
+        }*/
         public void RandomizeMaterialOffsets()
         {
-            //Rastgele birer offset degeri belirle
-            float[] possibleValues = { 0f, 0.205078125f, 0.41015625f };
-            float randomX = possibleValues[Random.Range(0, possibleValues.Length)];
-            float randomY = Random.Range(0, 32) * 0.03125f;
+            int randomRange = RandomColorSelecter.Instance.xOffsets.Length;
 
-            //Renk deðiþikliðini tüm oyunculara bildir
-            view.RPC("ApplyMaterialOffsets", RpcTarget.AllBuffered, randomX, randomY);
+            float newX, newY;
+            int attempt = 0;
+            const int maxAttempts = 10; // Sonsuz döngüden kaçýnmak için güvenlik sýnýrý
+
+            do
+            {
+                int index = Random.Range(0, randomRange);
+                newX = RandomColorSelecter.Instance.xOffsets[index];
+                newY = RandomColorSelecter.Instance.yOffsets[index];
+                attempt++;
+            }
+            while ((newX == previousX && newY == previousY) && attempt < maxAttempts);
+
+            previousX = newX;
+            previousY = newY;
+
+            view.RPC("ApplyMaterialOffsets", RpcTarget.AllBuffered, newX, newY);
         }
-
         [PunRPC]
         void ApplyMaterialOffsets(float offsetX, float offsetY)
         {
+            Debug.Log("x: " + offsetX + "\n" + "y: " + offsetY);
+
             foreach (GameObject part in activeParts)
             {
                 if (part != null)
