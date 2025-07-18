@@ -387,6 +387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inHitbox: 0
+  isPlayer: 0
   targetView: {fileID: 0}
 --- !u!1 &622649899183535991
 GameObject:

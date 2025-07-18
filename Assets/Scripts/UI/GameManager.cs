@@ -66,13 +66,16 @@ public class GameManager : MonoBehaviourPunCallbacks
     [PunRPC]
     public void RPC_ShowExitReasonAndEnd(string reason)
     {
+        Debug.Log("RPC_ShowExitReasonAndEnd");
         StartCoroutine(ShowEndMessageAndExit(reason));
     }
 
     private IEnumerator ShowEndMessageAndExit(string reason)
     {
+        Debug.Log("ShowEndMessageAndExit");
         if (gameEndPanel != null && gameEndReasonText != null)
         {
+            Debug.Log("not menu");
             gameEndPanel.SetActive(true);
             gameEndReasonText.text = reason + "\nReturning to menu...";
 

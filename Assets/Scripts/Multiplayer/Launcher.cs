@@ -368,6 +368,7 @@ public class Launcher : MonoBehaviourPunCallbacks
             && startedObj is bool started && started)
         {
             GameManager gm = FindObjectOfType<GameManager>();
+            Debug.Log("gm!!!:" + gm);
             if (gm != null && gm.photonView != null)
             {
                 gm.photonView.RPC("RPC_ShowExitReasonAndEnd", RpcTarget.All, "One player has left the game.");

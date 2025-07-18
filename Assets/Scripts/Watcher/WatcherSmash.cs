@@ -24,8 +24,18 @@ public class WatcherSmash : MonoBehaviour
         {
             if (interaction.action.IsPressed())
             {
-                view.RPC("SmashAnimation", RpcTarget.All);
-                WatcherInteraction.Instance.targetView.RPC("Die", RpcTarget.All);
+                if (WatcherInteraction.Instance.isPlayer)
+                {
+                    view.RPC("SmashAnimation", RpcTarget.All);
+                    WatcherInteraction.Instance.targetView.RPC("Die", RpcTarget.All);
+                }
+
+                /*    else
+                    {
+                        
+                    }
+                */   
+            
             }
         }
     }
