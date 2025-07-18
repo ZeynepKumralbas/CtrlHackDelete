@@ -1058,12 +1058,12 @@ GameObject:
   m_Component:
   - component: {fileID: 215848423595301518}
   - component: {fileID: 8331343365226209404}
-  - component: {fileID: 5679249001092112414}
   - component: {fileID: 6992163645924861399}
   - component: {fileID: 220200869262978249}
   - component: {fileID: 8102906875589361942}
   - component: {fileID: 5276344958224025579}
   - component: {fileID: -8739613159871195943}
+  - component: {fileID: 3618182368846773946}
   m_Layer: 0
   m_Name: NpcRobotPhoton
   m_TagString: Untagged
@@ -1114,20 +1114,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5679249001092112414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8650789915277913133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 547a3a5865c201e42b933cbf702a40ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  materialNameToModify: M_Atlas2
-  materialToModify: {fileID: 2100000, guid: b155bbc5f87677d47a8fcce7466463d3, type: 2}
 --- !u!195 &6992163645924861399
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1224,8 +1210,6 @@ MonoBehaviour:
   interactionDuration: 3
   taskPoints:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &-8739613159871195943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1253,6 +1237,20 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
+--- !u!114 &3618182368846773946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8650789915277913133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c92c4187bb8ce309b25da919532af28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialNameToModify: M_AtlasOffset
+  materialToModify: {fileID: 2100000, guid: b155bbc5f87677d47a8fcce7466463d3, type: 2}
 --- !u!1 &9092734842849660484
 GameObject:
   m_ObjectHideFlags: 0

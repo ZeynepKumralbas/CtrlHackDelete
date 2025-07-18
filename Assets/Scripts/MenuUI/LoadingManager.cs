@@ -15,7 +15,7 @@ public class LoadingManager : MonoBehaviourPunCallbacks
     {
         statusText.text = "Connecting to server...";
         continueButton.interactable = false;
-        PhotonNetwork.ConnectUsingSettings(); // Baðlantýyý baþlat
+        PhotonNetwork.ConnectUsingSettings(); // Baï¿½lantï¿½yï¿½ baï¿½lat
     }
 
     public override void OnConnectedToMaster()
@@ -24,7 +24,7 @@ public class LoadingManager : MonoBehaviourPunCallbacks
 
         var cg = continueButton.GetComponent<CanvasGroup>();
 
-        // Hýzlý ve doðrudan görünür ve etkileþimli yap
+        // Hï¿½zlï¿½ ve doï¿½rudan gï¿½rï¿½nï¿½r ve etkileï¿½imli yap
         cg.alpha = 1f;
         cg.interactable = true;
         cg.blocksRaycasts = true;

@@ -55,8 +55,6 @@ public class Launcher : MonoBehaviourPunCallbacks
     void Start()
     {
         Debug.Log("Connecting to Master...");
-        PhotonNetwork.GameVersion = "1.0"; // versiyonlar farklıysa oyuncular birbirini göremez
-        PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = "eu"; // <- Region burada ayarlanıyor
         PhotonNetwork.ConnectUsingSettings();
     }
 
@@ -188,8 +186,8 @@ public class Launcher : MonoBehaviourPunCallbacks
 
         Debug.Log($"InRoom: {PhotonNetwork.InRoom}, IsConnected: {PhotonNetwork.IsConnected}");
 
-        //    MenuManager.instance.OpenMenu("LoadingMenu"); DEGİSTIRİLECEK
-        if (SceneManager.GetActiveScene().name == "Furkan")
+        //    MenuManager.instance.OpenMenu("LoadingMenu");
+        if (SceneManager.GetActiveScene().name == "Game")
         {
             returnToMenuScene = true;
         }

@@ -57,11 +57,11 @@ public class PlayerControllerManager : MonoBehaviourPunCallbacks
         {
             string team = PhotonNetwork.LocalPlayer.CustomProperties["Team"].ToString();
 
-            // Varsayýlan olarak tüm UI'leri kapat
+            // Varsayï¿½lan olarak tï¿½m UI'leri kapat
             if (humanUI != null) humanUI.SetActive(false);
             if (watcherUI != null) watcherUI.SetActive(false);
 
-            // Rol bazlý açýlacak olanlarý aktif et
+            // Rol bazlï¿½ aï¿½ï¿½lacak olanlarï¿½ aktif et
             if (team == "Humans" && humanUI != null)
                 humanUI.SetActive(true);
             else if (team == "Watchers" && watcherUI != null)
@@ -105,6 +105,7 @@ public class PlayerControllerManager : MonoBehaviourPunCallbacks
             if (controller.GetComponent<PhotonView>().IsMine)
             {
                 CinemachineVirtualCamera cam = FindObjectOfType<CinemachineVirtualCamera>();
+                Debug.Log("cam:" + cam);
                 cam.Follow = controller.transform;
 
                 var brain = Camera.main.GetComponent<CinemachineBrain>();
