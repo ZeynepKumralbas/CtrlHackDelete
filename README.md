@@ -151,7 +151,7 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
   </p>
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/NPCsWanderingAround.png" alt="NPCs Wandering Around" width="400"/>
+    <img src="https://media.githubusercontent.com/media/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/NPCsWanderingAround.png" alt="NPCs Wandering Around" width="400"/>
     <br/><em>Figure 1.7: NPCs Wandering Around</em>
   </p>
     
