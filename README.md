@@ -117,12 +117,12 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
   Task categories on the Trello board are color-coded for clarity:
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/TrelloBoard/ColorLegend.png" alt="Trello Board Color Legend" style="width:50%;"  />
+    <img src="https://media.githubusercontent.com/media/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/TrelloBoard/ColorLegend.png" alt="Trello Board Color Legend" style="width:50%;"  />
     <br/><em>Figure 1.1: Trello Board Color Legend</em>
   </p>
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/TrelloBoard/TrelloBoardUpdate.png" alt="Trello Board" width="400" />
+    <img src="https://media.githubusercontent.com/media/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/TrelloBoard/TrelloBoardUpdate.png" alt="Trello Board" width="400" />
     <br/><em>Figure 1.2: Trello Board</em>
   </p>
 
@@ -131,22 +131,22 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
   <br/>
   <br/>
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/RobotAsset.png" alt="Robot Asset" width="400" />
+    <img src="https://media.githubusercontent.com/media/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/RobotAsset.png" alt="Robot Asset" width="400" />
     <br/><em>Figure 1.3: Robot Asset</em>
   </p>
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuFindRoom.png" alt="Find Room" width="400"/>
+    <img src="https://media.githubusercontent.com/media/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuFindRoom.png" alt="Find Room" width="400"/>
     <br/><em>Figure 1.4: Find Room Menu</em>
   </p>
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuTeamSelection.png" alt="Team Selection Menu" width="400"/>
+    <img src="https://media.githubusercontent.com/media/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuTeamSelection.png" alt="Team Selection Menu" width="400"/>
     <br/><em>Figure 1.5: Team Selection Menu</em>
   </p>
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/GameStatusScreenshots/GameWith2OnlinePlayers.png" alt="Game Scene with 2 Online Players" width="400"/>
+    <img src="https://media.githubusercontent.com/media/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/GameWith2OnlinePlayers.png" alt="Game Scene with 2 Online Players" width="400"/>
     <br/><em>Figure 1.6: Game Scene with 2 Online Players</em>
   </p>
 
