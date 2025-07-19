@@ -171,3 +171,39 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
   </ul>
   <p>These insights will help guide improvements in workflow and collaboration throughout the rest of the project.</p>
   </details>
+
+
+<br/>
+<details>
+  <summary><span style="font-size: 1.8em; font-weight: bold;"><strong> Sprint 2 </strong> </span></summary>
+  <br/>
+
+  <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Notes:</strong></span>
+  <ul>
+    <li>The first sprint runs from 07.07.2025 to 20.07.2025.</li>
+    
+  </ul>
+
+  <span style="font-size: 1.3em; font-weight: bold;"><strong>Estimated Points to Complete:</strong></span>
+    /164
+
+  <span style="font-size: 1.3em; font-weight: bold;"><strong>Point Completion Logic:</strong></span>
+  
+  <span style="font-size: 1.3em; font-weight: bold;"><strong>Daily Scrum:</strong></span>
+  Daily updates and quick discussions are shared through WhatsApp, and meetings take place on Slack. <a href="https://github.com/ZeynepKumralbas/CtrlHackDelete/tree/main/ProjectManagement/Sprint2/DailyScrum" target="_blank">Sprint 2 Daily Scrum</a>
+
+  <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Board Update:</strong></span>
+
+  <br/>
+  <span style="font-size: 1.3em; font-weight: bold;"><strong>Game Status Screenshots:</strong></span>
+  <br/>
+     
+  <br/>
+  <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Review:</strong></span>
+ 
+  <br/>
+  <br/>
+  <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Retrospective:</strong></span>
+  
+</details>
+
