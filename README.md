@@ -212,8 +212,7 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Point Completion Logic:</strong></span>
   The task points were estimated using the Fibonacci-based point system.
   A total of 133 points remain across Sprint 2 and Sprint 3.
-  This includes 6 points carried over from Sprint 1 and 72 points newly assigned to Sprint 2.
-  In total, 78 points were planned for this sprint.
+  For this sprint, 78 points were planned, including 6 points carried over from Sprint 1 and 72 points newly assigned to Sprint 2.
 
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Daily Scrum:</strong></span>
   Daily updates and quick discussions are shared through WhatsApp, and meetings take place on Slack. <a href="https://github.com/ZeynepKumralbas/CtrlHackDelete/tree/main/ProjectManagement/Sprint2/DailyScrum" target="_blank">Sprint 2 Daily Scrum</a>
@@ -281,15 +280,16 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
     Most of the planned goals were successfully completed and integrated into the game. A new playable prototype now includes NPCs with basic task-based behaviors and Watcher-player interactions.
     Minor bugs and optimization issues were noted and will be addressed during Sprint 3.
     Some tasks planned for Sprint 2 could not be completed due to the environment not being fully implemented.
-    All remaining tasks from Sprint 1 have been completed. The tasks remaining from Sprint 1 are completed. 
+    All remaining tasks from Sprint 1 have been completed.
     The team was able to complete 57 out of the estimated 78 points for this sprint.
   <br/>
   <br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Retrospective:</strong></span>
   <ul>  
-    <li>The team maintained strong collaboration and daily communication helped resolve blockers quickly.</li>
-    <li>Due to the increasing progress and the need for multiple developers to now work within the same scene, potential merge conflicts became a concern.</li>
+    <li>The team maintained strong collaboration, and daily communication helped resolve blockers quickly.</li>
+    <li>As development progressed and the need for multiple developers to now work within the same scene, potential merge conflicts became a concern.</li>
     <li>To minimize these conflicts, the team decided to work with modular prefabs inside the shared scene, allowing individual components to be edited independently.</li>
+    <li>The remaining tasks from Sprint 2 have been prioritized and are scheduled for completion in the early days of Sprint 3.</li>
   </ul>
 </details>
 
