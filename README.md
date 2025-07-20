@@ -117,12 +117,12 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
   Task categories on the Trello board are color-coded for clarity:
 
   <p align="center">
-    <img src="https://media.githubusercontent.com/media/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/TrelloBoard/ColorLegend.png" alt="Trello Board Color Legend" style="width:50%;"  />
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint1/TrelloBoard/ColorLegend.png" alt="Trello Board Color Legend" style="width:50%;"  />
     <br/><em>Figure 1.1: Trello Board Color Legend</em>
   </p>
 
   <p align="center">
-    <img src="https://media.githubusercontent.com/media/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/TrelloBoard/TrelloBoardUpdate.png" alt="Trello Board" width="400" />
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/TrelloBoard/TrelloBoardUpdate.png" alt="Trello Board" width="400" />
     <br/><em>Figure 1.2: Trello Board</em>
   </p>
 
@@ -131,27 +131,27 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
   <br/>
   <br/>
   <p align="center">
-    <img src="https://media.githubusercontent.com/media/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/RobotAsset.png" alt="Robot Asset" width="400" />
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/RobotAsset.png" alt="Robot Asset" width="400" />
     <br/><em>Figure 1.3: Robot Asset</em>
   </p>
 
   <p align="center">
-    <img src="https://media.githubusercontent.com/media/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuFindRoom.png" alt="Find Room" width="400"/>
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuFindRoom.png" alt="Find Room" width="400"/>
     <br/><em>Figure 1.4: Find Room Menu</em>
   </p>
 
   <p align="center">
-    <img src="https://media.githubusercontent.com/media/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuTeamSelection.png" alt="Team Selection Menu" width="400"/>
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/MenuTeamSelection.png" alt="Team Selection Menu" width="400"/>
     <br/><em>Figure 1.5: Team Selection Menu</em>
   </p>
 
   <p align="center">
-    <img src="https://media.githubusercontent.com/media/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/GameWith2OnlinePlayers.png" alt="Game Scene with 2 Online Players" width="400"/>
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/GameWith2OnlinePlayers.png" alt="Game Scene with 2 Online Players" width="400"/>
     <br/><em>Figure 1.6: Game Scene with 2 Online Players</em>
   </p>
 
   <p align="center">
-    <img src="https://media.githubusercontent.com/media/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/NPCsWanderingAround.png" alt="NPCs Wandering Around" width="400"/>
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/main/ProjectManagement/Sprint1/GameStatusScreenshots/NPCsWanderingAround.png" alt="NPCs Wandering Around" width="400"/>
     <br/><em>Figure 1.7: NPCs Wandering Around</em>
   </p>
     
@@ -180,7 +180,29 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
 
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Notes:</strong></span>
   <ul>
-    <li>The first sprint runs from 07.07.2025 to 20.07.2025.</li>
+    <li>The second sprint runs from 07.07.2025 to 20.07.2025.</li>
+    <li>The team decided to meet daily to speed up the development process and resolve blockers more efficiently.</li>
+    <li>WhatsApp is used for daily updates, while Slack is used for regular meetings.<li>
+      The goals for this sprint include:
+      <ul>
+        <li>Testing the game developed during Sprint 1 and fixing any identified bugs,</li>
+        <li>Developing the Watcher role and its interaction with players,</li>
+        <li>Implementing the player sabotage mechanic towards the Watcher,</li>
+        <li>Creating task-based NPCs with animation support,</li>
+        <li>Designing and refining the game scene, and</li>
+        <li>Improving the main menu UI.</li>
+      </ul>
+    <li>
+      By the end of the sprint, the team aims to deliver a playable multiplayer prototype, featuring:
+      <ul>
+        <li>Player and Watcher interaction,</li>
+        <li>Task-based NPCs functioning within the game scene,</li>
+        <li>A fully designed and functional main menu, and</li>
+        <li>A complete game environment where the main gameplay takes place.</li>
+      </ul>
+    </li>
+  <li> Potential risks include slower progress from the team members who are currently working.
+
     
   </ul>
 
@@ -188,22 +210,77 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
     /164
 
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Point Completion Logic:</strong></span>
-  
+  The task points were selected based on the Fibonacci-based point system.
+  For this sprint, .. points were allocated based on the relative complexity of each task.
+
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Daily Scrum:</strong></span>
   Daily updates and quick discussions are shared through WhatsApp, and meetings take place on Slack. <a href="https://github.com/ZeynepKumralbas/CtrlHackDelete/tree/main/ProjectManagement/Sprint2/DailyScrum" target="_blank">Sprint 2 Daily Scrum</a>
 
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Board Update:</strong></span>
+  Task categories on the Trello board are updated. Color-coding is used to clearly indicate task status and priority:
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/TrelloBoard/ColorLegend.png" alt="Trello Board Color Legend" style="width:50%;"  />
+    <br/><em>Figure 2.1: Trello Board Color Legend</em>
+  </p>
+
 
   <br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Game Status Screenshots:</strong></span>
   <br/>
-     
+
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/WatcherAndRobotAssets.png" alt="Robot Asset" width="400" />
+    <br/><em>Figure 2.3: Watcher and Robot Asset</em>
+  </p>
+
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/MainMenu.jpeg" alt="Robot Asset" width="400" />
+    <br/><em>Figure 2.4: Main Menu</em>
+  </p>
+
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/TeamSelection.jpeg" alt="Robot Asset" width="400" />
+    <br/><em>Figure 2.5: Team Selection Menu</em>
+  </p>
+
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/WatcherSabotage1.png" alt="Robot Asset" width="400" />
+    <br/><em>Figure 2.6: Human Sabotage to Watcher 1</em>
+  </p>
+
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/WatcherSabotage2.png" alt="Robot Asset" width="400" />
+    <br/><em>Figure 2.7: Human Sabotage to Watcher 2</em>
+  </p>
+
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/WatcherSabotage3.png" alt="Robot Asset" width="400" />
+    <br/><em>Figure 2.8: Human Sabotage to Watcher 3</em>
+  </p>
+
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/TaskBasedNPC.png" alt="Robot Asset" width="400" />
+    <br/><em>Figure 2.9: Task-based NPCs</em>
+  </p>
+
+  <p align="center">
+    <img src="http://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/GameScene.png" alt="Robot Asset" width="400" />
+    <br/><em>Figure 2.10: Basic Game Scene</em>
+  </p>
+
   <br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Review:</strong></span>
- 
+    The team aimed to implement Watcher control mechanics, task-based NPCs, the sabotage system, and enhancements to the main menu and environment.
+    Most of the planned goals were successfully completed and integrated into the game. A new playable prototype now includes NPCs with basic mission behaviors and Watcher-player interactions.
+    Minor bugs and optimization issues were noted, which will be addressed during Sprint 3.
+    Due to limited availability of some team members, caused by ongoing work, the team was able to complete .. out of the estimated .. points for this sprint, still covering nearly all core objectives.
   <br/>
   <br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Retrospective:</strong></span>
-  
+  <ul>  
+    <li>The team maintained strong collaboration and daily communication helped resolve blockers quickly.</li>
+    <li>Due to the increasing progress and the need for multiple developers to now work within the same scene, potential merge conflicts became a concern.</li>
+    <li>To minimize these conflicts, the team decided to work with modular prefabs inside the shared scene, allowing individual components to be edited independently.</li>
+  </ul>
 </details>
 
