@@ -207,11 +207,13 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
   </ul>
 
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Estimated Points to Complete:</strong></span>
-    /164
+   78/133
 
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Point Completion Logic:</strong></span>
-  The task points were selected based on the Fibonacci-based point system.
-  For this sprint, .. points were allocated based on the relative complexity of each task.
+  The task points were estimated using the Fibonacci-based point system.
+  A total of 133 points remain across Sprint 2 and Sprint 3.
+  This includes 6 points carried over from Sprint 1 and 72 points newly assigned to Sprint 2.
+  In total, 78 points were planned for this sprint.
 
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Daily Scrum:</strong></span>
   Daily updates and quick discussions are shared through WhatsApp, and meetings take place on Slack. <a href="https://github.com/ZeynepKumralbas/CtrlHackDelete/tree/main/ProjectManagement/Sprint2/DailyScrum" target="_blank">Sprint 2 Daily Scrum</a>
@@ -223,9 +225,14 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
     <br/><em>Figure 2.1: Trello Board Color Legend</em>
   </p>
 
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/TrelloBoard/TrelloBoardUpdate.png" alt="Trello Board Color Legend" style="width:50%;"  />
+    <br/><em>Figure 2.1: Trello Board</em>
+  </p>
 
   <br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Game Status Screenshots:</strong></span>
+  <br/>
   <br/>
 
   <p align="center">
@@ -245,17 +252,17 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
 
   <p align="center">
     <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/WatcherSabotage1.png" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.6: Human Sabotage to Watcher 1</em>
+    <br/><em>Figure 2.6: Human Sabotage 1 to Watcher</em>
   </p>
 
   <p align="center">
     <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/WatcherSabotage2.png" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.7: Human Sabotage to Watcher 2</em>
+    <br/><em>Figure 2.7: Human Sabotage 2 to Watcher</em>
   </p>
 
   <p align="center">
     <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/WatcherSabotage3.png" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.8: Human Sabotage to Watcher 3</em>
+    <br/><em>Figure 2.8: Human Sabotage 3 to Watcher</em>
   </p>
 
   <p align="center">
@@ -270,10 +277,12 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
 
   <br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Review:</strong></span>
-    The team aimed to implement Watcher control mechanics, task-based NPCs, the sabotage system, and enhancements to the main menu and environment.
-    Most of the planned goals were successfully completed and integrated into the game. A new playable prototype now includes NPCs with basic mission behaviors and Watcher-player interactions.
-    Minor bugs and optimization issues were noted, which will be addressed during Sprint 3.
-    Due to limited availability of some team members, caused by ongoing work, the team was able to complete .. out of the estimated .. points for this sprint, still covering nearly all core objectives.
+    The team aimed to implement Watcher control mechanics, task-based NPCs, the sabotage system, enhancements to the main menu and designing the environment.
+    Most of the planned goals were successfully completed and integrated into the game. A new playable prototype now includes NPCs with basic task-based behaviors and Watcher-player interactions.
+    Minor bugs and optimization issues were noted and will be addressed during Sprint 3.
+    Some tasks planned for Sprint 2 could not be completed due to the environment not being fully implemented.
+    All remaining tasks from Sprint 1 have been completed. The tasks remaining from Sprint 1 are completed. 
+    The team was able to complete 57 out of the estimated 78 points for this sprint.
   <br/>
   <br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Retrospective:</strong></span>
