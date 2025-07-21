@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - MissionPoint
+  - HardMission
+  - EasyMission
+  - NormalMission
+  - PlayerEyes
+  - HumanUI
+  - WatcherUI
+  - CinemachineTarget
+  - Bullet
+  - TaskPoint
   layers:
   - Default
   - TransparentFX
@@ -11,11 +21,14 @@ TagManager:
   - 
   - Water
   - UI
+  - VisibleForHumans
+  - VisibleForWatchers
+  - Roof
+  - Floor
   - 
   - 
-  - 
-  - 
-  - 
+  - WatcherLayer_forLobby
+  - PlayerLayer_forLobby
   - 
   - 
   - 

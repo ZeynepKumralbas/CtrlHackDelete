@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: eb53a035af462a1439ad491dfc244e1f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - interaction: {fileID: 887825616124189473, guid: ea4520b54ecebc74090193008a65810a,
+      type: 3}
+  - txtInteractionButton: {instanceID: 0}
+  - missionCompletePercentSlider: {instanceID: 0}
+  - view: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
