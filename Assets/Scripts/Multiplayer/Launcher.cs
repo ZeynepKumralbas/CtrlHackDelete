@@ -185,8 +185,11 @@ public class Launcher : MonoBehaviourPunCallbacks
         PhotonNetwork.CurrentRoom.IsOpen = false;
         PhotonNetwork.CurrentRoom.IsVisible = true;
 
+        double startTime = PhotonNetwork.Time;
+
         ExitGames.Client.Photon.Hashtable props = new ExitGames.Client.Photon.Hashtable();
         props["GameStarted"] = true;
+        props["StartTime"] = startTime;
         PhotonNetwork.CurrentRoom.SetCustomProperties(props);
 
         MenuManager.instance.OpenMenu("VideoBackground");
