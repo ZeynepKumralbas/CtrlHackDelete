@@ -247,7 +247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &273698298
 RectTransform:
   m_ObjectHideFlags: 0
@@ -415,7 +415,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2049e4fea824d2d4e8454d0ca8b38b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &288931617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1004,7 +1003,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2049e4fea824d2d4e8454d0ca8b38b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &692478966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,7 +1373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2049e4fea824d2d4e8454d0ca8b38b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &853478745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1747,7 +1744,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2049e4fea824d2d4e8454d0ca8b38b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1475218157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,7 +1938,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2049e4fea824d2d4e8454d0ca8b38b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
