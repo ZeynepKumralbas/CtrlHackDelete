@@ -12,6 +12,8 @@ public class Launcher : MonoBehaviourPunCallbacks
 {
     public static Launcher instance;
     public Button loadingNextButton;
+    public TextMeshProUGUI statusText;
+    public Button continueButton;
     public TMP_InputField roomNameInputField;
     public TextMeshProUGUI roomNameText;
     public TextMeshProUGUI errorText;
@@ -56,6 +58,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         Debug.Log("Connecting to Master...");
         PhotonNetwork.ConnectUsingSettings();
+        continueButton.interactable = false;
     }
 
     public override void OnConnectedToMaster()
@@ -63,6 +66,15 @@ public class Launcher : MonoBehaviourPunCallbacks
         Debug.Log("Connected to Master");
         PhotonNetwork.JoinLobby();
         PhotonNetwork.AutomaticallySyncScene = true;
+
+        var cg = continueButton.GetComponent<CanvasGroup>();
+
+        // H�zl� ve do�rudan g�r�n�r ve etkile�imli yap
+        cg.alpha = 1f;
+        cg.interactable = true;
+        cg.blocksRaycasts = true;
+
+        continueButton.interactable = true;
     }
 
     public override void OnJoinedLobby()
@@ -76,6 +88,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         }
         else
         {
+            MenuManager.instance.OpenMenu("VideoBackground");
             MenuManager.instance.OpenMenu("TitleMenu");
         }
         startButton.interactable = false;
@@ -104,11 +117,14 @@ public class Launcher : MonoBehaviourPunCallbacks
         };
 
         PhotonNetwork.CreateRoom(roomNameInputField.text, roomOptions);
+        MenuManager.instance.OpenMenu("VideoBackground");
         MenuManager.instance.OpenMenu("LoadingMenu");
     }
 
     public override void OnJoinedRoom()
     {
+        Debug.Log("OnJoinedRoom");
+        MenuManager.instance.OpenMenu("VideoBackground");
         MenuManager.instance.OpenMenu("RoomMenu");
         roomNameText.text = PhotonNetwork.CurrentRoom.Name;
 
@@ -140,20 +156,25 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnCreateRoomFailed(short returnCode, string errorMessage)
     {
         errorText.text = "Room Generation Unsuccesfull" + errorMessage;
+        MenuManager.instance.OpenMenu("VideoBackground");
         MenuManager.instance.OpenMenu("ErrorMenu");
     }
 
     public void JoinRoom(RoomInfo info)
     {
-         if (info.PlayerCount >= info.MaxPlayers)
+        Debug.Log("JoinRoom");
+        if (info.PlayerCount >= info.MaxPlayers)
         {
             Debug.Log($"Room '{info.Name}' is full.");
             errorText.text = $"Room '{info.Name}' is full. You cannot join.";
+            MenuManager.instance.OpenMenu("VideoBackground");
             MenuManager.instance.OpenMenu("ErrorMenu");
+
             return;
         }
 
         PhotonNetwork.JoinRoom(info.Name);
+        MenuManager.instance.OpenMenu("VideoBackground");
         MenuManager.instance.OpenMenu("LoadingMenu");
     }
 
@@ -164,14 +185,18 @@ public class Launcher : MonoBehaviourPunCallbacks
         PhotonNetwork.CurrentRoom.IsOpen = false;
         PhotonNetwork.CurrentRoom.IsVisible = true;
 
+        double startTime = PhotonNetwork.Time;
+
         ExitGames.Client.Photon.Hashtable props = new ExitGames.Client.Photon.Hashtable();
         props["GameStarted"] = true;
+        props["StartTime"] = startTime;
         PhotonNetwork.CurrentRoom.SetCustomProperties(props);
 
+        MenuManager.instance.OpenMenu("VideoBackground");
         PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
-        MenuManager.instance.CloseAllMenus();
+    //    MenuManager.instance.CloseAllMenus();
     }
-
+    
     public override void OnRoomPropertiesUpdate(ExitGames.Client.Photon.Hashtable propertiesThatChanged)
     {
         if (propertiesThatChanged.ContainsKey("GameStarted"))
@@ -214,12 +239,14 @@ public class Launcher : MonoBehaviourPunCallbacks
         {
             Debug.Log("Return to menu scene");
             //  GameObject obj = new GameObject("SceneLoader");
+            MenuManager.instance.OpenMenu("VideoBackground");
             PhotonNetwork.LoadLevel("Menu");
-        //    StartCoroutine(LoadScene("Menu"));
+            //    StartCoroutine(LoadScene("Menu"));
             Destroy(RoomManager.instance.gameObject);
         }
         else
         {
+            MenuManager.instance.OpenMenu("VideoBackground");
             MenuManager.instance.OpenMenu("TitleMenu");
         }
         returnToMenuScene = false;
@@ -286,6 +313,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     private void UpdateRoomListUI()
     {
+        Debug.Log("UpdateRoomListUI");
         /*
         foreach (Transform trans in roomListContent)
         {
@@ -303,7 +331,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 
             Instantiate(roomListItemPrefab, roomListContent).GetComponent<RoomListItem>().SetUp(roomInfo);
         }*/
-        
+
 
         // Check rooms
         foreach (var pair in cachedRoomList)

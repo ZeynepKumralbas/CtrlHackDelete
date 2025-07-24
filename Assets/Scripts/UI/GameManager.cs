@@ -39,8 +39,8 @@ public class GameManager : MonoBehaviourPunCallbacks
             }
         }
 
-        Cursor.lockState = isPaused ? CursorLockMode.Locked : CursorLockMode.None;
-        Cursor.visible = !isPaused;
+    //    Cursor.lockState = isPaused ? CursorLockMode.Locked : CursorLockMode.None;
+    //    Cursor.visible = !isPaused;
         //    AudioListener.pause = !isPaused;
     }
 
@@ -59,7 +59,9 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         //    }
         Launcher.instance.returnToMenuScene = true;
+        MenuManager.instance.OpenMenu("VideoBackground");
         PhotonNetwork.LeaveRoom();
+        //photonView.RPC("RPC_ShowExitReasonAndEnd", RpcTarget.All);
 
     }
 
@@ -92,12 +94,4 @@ public class GameManager : MonoBehaviourPunCallbacks
         Application.Quit();
     }
 
-    [PunRPC]
-    void RPC_EndGame()
-    {
-        Debug.Log("Game is ending for everyone...");
-
-        Launcher.instance.returnToMenuScene = true;
-        PhotonNetwork.LeaveRoom();
-    }
 }

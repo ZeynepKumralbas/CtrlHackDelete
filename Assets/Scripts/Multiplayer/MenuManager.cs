@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MenuManager : MonoBehaviour
@@ -7,6 +8,8 @@ public class MenuManager : MonoBehaviour
     public static MenuManager instance;
 
     public Menu[] menus;
+
+    public Menu videoBackground;
 
     /*   void Awake()
        {
@@ -42,6 +45,10 @@ public class MenuManager : MonoBehaviour
                 CloseMenu(menus[i]);
             }
         }
+        if (videoBackground != null)
+        {
+            videoBackground.Open();
+        }
     }
 
     public void OpenMenu(Menu menu)
@@ -53,7 +60,14 @@ public class MenuManager : MonoBehaviour
                 CloseMenu(menus[i]);
             }
         }
+
+        if (videoBackground != null)
+        {
+            videoBackground.Open();
+        }
+
         menu.Open();
+
     }
 
     public void CloseMenu(Menu menu)
