@@ -27,7 +27,8 @@ public class MissionManager : MonoBehaviour
 
         for(int i = 0; i < transform.childCount; i++)
         {
-            transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(i).gameObject.SetActive(false);
+            //transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.SetActive(false);
         }
         for(int i = 0; i < transform.childCount; i++)
         {
@@ -37,7 +38,8 @@ public class MissionManager : MonoBehaviour
             int randomChoice = Random.Range(0, transform.childCount);
             if (!transform.GetChild(randomChoice).gameObject.activeSelf)
             {
-                transform.GetChild(randomChoice).gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                transform.GetChild(i).gameObject.SetActive(true);
+                //transform.GetChild(randomChoice).gameObject.transform.GetChild(0).gameObject.SetActive(true);
             }
 
         }
