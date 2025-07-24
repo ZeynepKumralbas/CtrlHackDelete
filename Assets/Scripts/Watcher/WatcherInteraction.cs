@@ -15,35 +15,39 @@ public class WatcherInteraction : MonoBehaviour
 
     public PhotonView targetView;
 
-    void Start()
+    void Awake()
     {
         Instance = this;
+    }
+
+    void Start()
+    {
         hitboxCollider = GetComponent<Collider>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.Contains("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             inHitbox = true;
             targetView = other.gameObject.GetComponent<PhotonView>();
             isPlayer = true;
         }
-
-        if (other.gameObject.name.Contains("NPC"))
+        else if (other.gameObject.CompareTag("NPC"))
         {
             inHitbox = true;
+            targetView = other.gameObject.GetComponent<PhotonView>();
             isPlayer = false;
         }
-
-
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name.Contains("Player"))
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("NPC"))
         {
             inHitbox = false;
+            targetView = null;
+            isPlayer = false;
         }
     }
 }
