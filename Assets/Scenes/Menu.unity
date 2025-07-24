@@ -8802,6 +8802,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingNextButton: {fileID: 311457564}
+  statusText: {fileID: 0}
+  continueButton: {fileID: 0}
   roomNameInputField: {fileID: 307381131}
   roomNameText: {fileID: 615356716}
   errorText: {fileID: 1050129189}
@@ -8926,6 +8928,7 @@ MonoBehaviour:
   - {fileID: 174032789}
   - {fileID: 1485210462}
   - {fileID: 1386524405}
+  videoBackground: {fileID: 0}
 --- !u!114 &1992220761
 MonoBehaviour:
   m_ObjectHideFlags: 0

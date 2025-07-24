@@ -44,17 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aeedfc73c487f34da087feda4b4d363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txtInteractionButton: {fileID: 9211821411828166128, guid: a82976effd6124d9dba86e00e0a20425,
-    type: 3}
-  missionCompletePercentSlider: {fileID: 835650195443303131, guid: fc935da9517948457a4490abc0dec43c,
-    type: 3}
-  missionListDropdown: {fileID: 8213561150991802268, guid: d855506f82c769cfd9f32a651aa115e6,
-    type: 3}
-  imgMissionPointer: {fileID: 3022595166229817854, guid: a76bee3818f5d44aea889c57ce34bb57,
-    type: 3}
-  pnlWatcherVisibilityBlocker: {fileID: 2637712173293574046, guid: 035f86ec23096af928aa6d1372f92e7a,
-    type: 3}
+  txtInteractionButton: {fileID: 0}
+  missionCompletePercentSlider: {fileID: 0}
+  missionListDropdown: {fileID: 0}
+  imgMissionPointer: {fileID: 0}
+  pnlWatcherVisibilityBlocker: {fileID: 0}
   humanSkills:
-  - {fileID: 5798519489021942540, guid: 347c6ccca8b00c875b4cfe30df2d3bcf, type: 3}
-  - {fileID: 1384019868679526262, guid: bb13567ada17f502aa7ced8fdeb11d3e, type: 3}
-  - {fileID: 4386365295880467201, guid: 8d63170f5fef85e7a8c773d1ed4b8616, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
