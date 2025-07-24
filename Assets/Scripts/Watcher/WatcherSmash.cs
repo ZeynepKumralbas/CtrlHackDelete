@@ -30,12 +30,14 @@ public class WatcherSmash : MonoBehaviour
                     WatcherInteraction.Instance.targetView.RPC("Die", RpcTarget.All);
                 }
 
-                /*    else
+                else
+                {
+                    if (WatcherInteraction.Instance.targetView != null)
                     {
-                        
+                        view.RPC("SmashAnimation", RpcTarget.All);
+                        WatcherInteraction.Instance.targetView.RPC("Die", RpcTarget.All);
                     }
-                */   
-            
+                }
             }
         }
     }

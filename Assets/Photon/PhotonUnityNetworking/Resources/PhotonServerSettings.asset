@@ -55,6 +55,12 @@ MonoBehaviour:
   - RPC_EndGame
   - RPC_ShowExitReasonAndEnd
   - SetInteracting
+  - OccupyTaskPointRPC
+  - ReleaseTaskPointRPC
+  - SetInteractingRPC
+  - DieRPC
+  - SetSpeedRPC
+  - SetInteractingState
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
