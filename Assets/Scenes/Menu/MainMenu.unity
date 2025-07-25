@@ -415,6 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2049e4fea824d2d4e8454d0ca8b38b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &288931617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1003,6 +1004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2049e4fea824d2d4e8454d0ca8b38b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &692478966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,6 +1375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2049e4fea824d2d4e8454d0ca8b38b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &853478745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1488,7 +1491,7 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
@@ -1496,7 +1499,7 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: file:///home/zeynepkumralbas/Documents/Google YZTA/Bootcamp/Project/ctrl-merge3_2/CtrlHackDelete/Assets/StreamingAssets/BackgroundAnim_1_1_n.webm
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -1744,6 +1747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2049e4fea824d2d4e8454d0ca8b38b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1475218157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,6 +1942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2049e4fea824d2d4e8454d0ca8b38b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
