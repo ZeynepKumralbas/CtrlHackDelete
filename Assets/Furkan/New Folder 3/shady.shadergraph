@@ -17,6 +17,9 @@
         },
         {
             "m_Id": "682b8ee1d573473cb2709448d2a7caa6"
+        },
+        {
+            "m_Id": "9967f2a529ef453a8c6a12f05444cb91"
         }
     ],
     "m_Keywords": [],
@@ -366,8 +369,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 1746.4000244140625,
-            "y": 205.59996032714845
+            "x": 1981.599853515625,
+            "y": 202.3999786376953
         },
         "m_Blocks": [
             {
@@ -383,8 +386,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 1746.4000244140625,
-            "y": 405.5999755859375
+            "x": 1981.599853515625,
+            "y": 402.3999328613281
         },
         "m_Blocks": [
             {
@@ -1696,6 +1699,36 @@
 }
 
 {
+    "m_SGVersion": 3,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
+    "m_ObjectId": "9967f2a529ef453a8c6a12f05444cb91",
+    "m_Guid": {
+        "m_GuidSerialized": "5fc80565-722a-4d66-890a-23b31a0ac2af"
+    },
+    "m_Name": "ColorAlpha",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "ColorAlpha",
+    "m_DefaultReferenceName": "_ColorAlpha",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+    },
+    "isMainColor": false,
+    "m_ColorMode": 0
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "9d23b3c86161451e9fc8ded9939acbe2",
@@ -2445,6 +2478,9 @@
         },
         {
             "m_Id": "682b8ee1d573473cb2709448d2a7caa6"
+        },
+        {
+            "m_Id": "9967f2a529ef453a8c6a12f05444cb91"
         }
     ]
 }

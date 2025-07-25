@@ -22,13 +22,19 @@ public class PlayerInteraction : MonoBehaviourPun
 
     public int finishedMissionCounter = 0;
 
+    public string roomTag = "";
+
     private bool isInMissionPoint = false;
     private bool isHolding = false;
+    public bool isCompleted = false;
 
     private Coroutine holdCoroutine;
 
     private GameObject currentMissionPoint;
     private string currentMissionPointName;
+
+    private GameObject environment;
+    private GameObject roomColliders;
 
     // Multiplayer
     public PhotonView view;
@@ -39,6 +45,9 @@ public class PlayerInteraction : MonoBehaviourPun
 
         _animator = GetComponent<Animator>();
         missionManager = FindObjectOfType<MissionManager>();
+
+        environment = GameObject.Find("Environment");
+        roomColliders = environment.transform.Find("RoomColliders").gameObject;
 
         defaultInteractionTime = interactionTime;
 
@@ -81,10 +90,19 @@ public class PlayerInteraction : MonoBehaviourPun
                 Debug.Log("Tuş erken bırakıldı, işlem iptal.");
             }
         }
+        for(int i = 0; i < roomColliders.transform.childCount; i++)
+        {
+            if (GetComponent<Collider>().bounds.Intersects(roomColliders.transform.GetChild(i).GetComponent<Collider>().bounds))
+            {
+                roomTag = roomColliders.transform.GetChild(i).tag;
+            }
+        }
+        
     }
 
     private IEnumerator HoldInteraction()
     {
+
         isHolding = true;
         view.RPC("SetInteractingAnim", RpcTarget.All, true);
         float holdTime = 0f;
@@ -125,6 +143,7 @@ public class PlayerInteraction : MonoBehaviourPun
         finishedMissionCounter++;
         isHolding = false;
 
+
         if (missionCompletePercentSlider != null)
         {
             missionCompletePercentSlider.gameObject.SetActive(false);
@@ -161,6 +180,8 @@ public class PlayerInteraction : MonoBehaviourPun
     private void SetInteractingAnim(bool isInteracting)
     {
         _animator.SetBool("isInteracting", isInteracting);
+        isCompleted = !isInteracting;
+        Debug.Log("isCompleted: " + isCompleted);
     }
     [PunRPC]
     private void SetMissionVisibility(int missionPhotonViewId, bool isVisible)

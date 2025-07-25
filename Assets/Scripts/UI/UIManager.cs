@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public Image imgMissionPointer;
 
     public GameObject pnlWatcherVisibilityBlocker;
+    public GameObject pnlNotification;
 
     public Image[] humanSkills;
 

@@ -15,6 +15,13 @@ TagManager:
   - Bullet
   - TaskPoint
   - NPC
+  - Room1
+  - Room2
+  - Room3
+  - Room4
+  - Room5
+  - Room6
+  - Environment
   layers:
   - Default
   - TransparentFX
@@ -26,7 +33,7 @@ TagManager:
   - VisibleForWatchers
   - Roof
   - Floor
-  - 
+  - Wall
   - 
   - WatcherLayer_forLobby
   - PlayerLayer_forLobby

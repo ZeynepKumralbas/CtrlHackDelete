@@ -581,7 +581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1024
   target: {fileID: 6570950201932869155}
   cam: {fileID: 0}
   fadedAlpha: 0.33
@@ -651,8 +651,8 @@ MonoBehaviour:
   _moveDirection: {x: 0, y: 0}
   move: {fileID: -5292346432101451338, guid: ea4520b54ecebc74090193008a65810a, type: 3}
   run: {fileID: -4869941760319455703, guid: ea4520b54ecebc74090193008a65810a, type: 3}
-  walkSpeed: 3
-  runSpeed: 8
+  walkSpeed: 2.5
+  runSpeed: 7
   view: {fileID: 3553726884540960953}
 --- !u!114 &2316663676027000614
 MonoBehaviour:
@@ -672,6 +672,8 @@ MonoBehaviour:
   txtInteractionButton: {fileID: 0}
   missionCompletePercentSlider: {fileID: 0}
   finishedMissionCounter: 0
+  roomTag: 
+  isCompleted: 0
   view: {fileID: 3553726884540960953}
 --- !u!114 &6343026175655327703
 MonoBehaviour:
