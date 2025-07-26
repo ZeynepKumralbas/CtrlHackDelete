@@ -51,8 +51,8 @@ public class Launcher : MonoBehaviourPunCallbacks
 
         instance = this;
         DontDestroyOnLoad(gameObject);
-        PhotonNetwork.SendRate = 20;
-        PhotonNetwork.SerializationRate = 10;
+        PhotonNetwork.SendRate = 60;
+        PhotonNetwork.SerializationRate = 30;
     }
 
     // Start is called before the first frame update
