@@ -806,6 +806,7 @@ MonoBehaviour:
   - {fileID: 3918155850930718545}
   - {fileID: 5395210920505537411}
   - {fileID: -7082580781545425778}
+  - {fileID: -2109442064158796066}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -888,6 +889,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interpolationBackTime: 0.1
+  snapThreshold: 0.001
+  enableDebugDraw: 0
 --- !u!1 &4644778070499559366
 GameObject:
   m_ObjectHideFlags: 0
