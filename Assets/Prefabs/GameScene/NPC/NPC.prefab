@@ -166,6 +166,11 @@ PrefabInstance:
       propertyPath: taskPoints.Array.size
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6417160694922048425, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.size
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8650789915277913133, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_Name
@@ -310,6 +315,11 @@ PrefabInstance:
       propertyPath: taskPoints.Array.size
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6417160694922048425, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.size
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8650789915277913133, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_Name
@@ -453,6 +463,11 @@ PrefabInstance:
         type: 3}
       propertyPath: taskPoints.Array.size
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417160694922048425, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.size
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8650789915277913133, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
@@ -631,6 +646,11 @@ PrefabInstance:
       propertyPath: taskPoints.Array.size
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6417160694922048425, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.size
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8650789915277913133, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_Name
@@ -775,6 +795,11 @@ PrefabInstance:
       propertyPath: taskPoints.Array.size
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6417160694922048425, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.size
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8650789915277913133, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: m_Name
@@ -858,6 +883,11 @@ PrefabInstance:
         type: 3}
       propertyPath: taskPoints.Array.size
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417160694922048425, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.size
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8650789915277913133, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
@@ -1002,6 +1032,11 @@ PrefabInstance:
         type: 3}
       propertyPath: taskPoints.Array.size
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417160694922048425, guid: 877308fa1c0564e26acf1ac91964399d,
+        type: 3}
+      propertyPath: taskPoints.Array.size
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8650789915277913133, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}

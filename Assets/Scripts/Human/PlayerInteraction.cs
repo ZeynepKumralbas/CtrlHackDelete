@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
@@ -22,7 +23,7 @@ public class PlayerInteraction : MonoBehaviourPun
 
     public int finishedMissionCounter = 0;
 
-    public string roomTag = "";
+    public string roomName;
 
     private bool isInMissionPoint = false;
     private bool isHolding = false;
@@ -33,9 +34,6 @@ public class PlayerInteraction : MonoBehaviourPun
     private GameObject currentMissionPoint;
     private string currentMissionPointName;
 
-    private GameObject environment;
-    private GameObject roomColliders;
-
     // Multiplayer
     public PhotonView view;
 
@@ -45,9 +43,6 @@ public class PlayerInteraction : MonoBehaviourPun
 
         _animator = GetComponent<Animator>();
         missionManager = FindObjectOfType<MissionManager>();
-
-        environment = GameObject.Find("Environment");
-        roomColliders = environment.transform.Find("RoomColliders").gameObject;
 
         defaultInteractionTime = interactionTime;
 
@@ -90,14 +85,6 @@ public class PlayerInteraction : MonoBehaviourPun
                 Debug.Log("Tuş erken bırakıldı, işlem iptal.");
             }
         }
-        for(int i = 0; i < roomColliders.transform.childCount; i++)
-        {
-            if (GetComponent<Collider>().bounds.Intersects(roomColliders.transform.GetChild(i).GetComponent<Collider>().bounds))
-            {
-                roomTag = roomColliders.transform.GetChild(i).tag;
-            }
-        }
-        
     }
 
     private IEnumerator HoldInteraction()
@@ -207,6 +194,8 @@ public class PlayerInteraction : MonoBehaviourPun
             isInMissionPoint = true;
             currentMissionPoint = other.gameObject;
 
+            roomName = currentMissionPoint.transform.parent.gameObject.GetComponent<TaskPoint>().roomName;
+
             string difficulty = currentMissionPoint.transform.parent.tag;
 
             switch (difficulty)
@@ -233,7 +222,6 @@ public class PlayerInteraction : MonoBehaviourPun
             Debug.Log("Görev alanına girildi");
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (!view.IsMine) return;

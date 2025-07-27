@@ -27,25 +27,6 @@ public class MissionManager : MonoBehaviour
 
         for(int i = 0; i < transform.childCount; i++)
         {
-            transform.GetChild(i).gameObject.SetActive(false);
-            //transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        }
-        for(int i = 0; i < transform.childCount; i++)
-        {
-            if (i > (transform.childCount / 2) + 1)
-                break;
-
-            int randomChoice = Random.Range(0, transform.childCount);
-            if (!transform.GetChild(randomChoice).gameObject.activeSelf)
-            {
-                transform.GetChild(i).gameObject.SetActive(true);
-                //transform.GetChild(randomChoice).gameObject.transform.GetChild(0).gameObject.SetActive(true);
-            }
-
-        }
-
-        for(int i = 0; i < transform.childCount; i++)
-        {
             if (transform.GetChild(i).gameObject.activeSelf)
             {
                 missionList.Add(transform.GetChild(i).gameObject.name);

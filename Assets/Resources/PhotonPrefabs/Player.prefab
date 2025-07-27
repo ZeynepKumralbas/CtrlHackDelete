@@ -673,7 +673,7 @@ MonoBehaviour:
   txtInteractionButton: {fileID: 0}
   missionCompletePercentSlider: {fileID: 0}
   finishedMissionCounter: 0
-  roomTag: 
+  roomName: 
   isCompleted: 0
   view: {fileID: 3553726884540960953}
 --- !u!114 &6343026175655327703

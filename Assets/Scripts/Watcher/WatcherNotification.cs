@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -9,43 +8,55 @@ public class WatcherNotification : MonoBehaviour
     public int notificationScreenTime = 5;
 
     private GameObject pnlNotification;
+
+    private bool isNotifying = false; // Coroutine'in çalýþýp çalýþmadýðýný takip etmek için
+    private bool previousMissionCompleted = false; // Daha önce tamamlanmýþ mýydý
+
     void Start()
     {
         pnlNotification = UIManager.Instance.pnlNotification;
     }
+
     void Update()
     {
-        if (PlayerInteraction.Instance.isCompleted)
+        if (PlayerInteraction.Instance != null)
         {
-            StartCoroutine(Notification_MissionComplete());
-            StopCoroutine(Notification_MissionComplete());
+            if (PlayerInteraction.Instance.isCompleted && !isNotifying && !previousMissionCompleted)
+            {
+                StartCoroutine(Notification_MissionComplete());
+                isNotifying = true;
+                previousMissionCompleted = true;
+            }
+            else if (!PlayerInteraction.Instance.isCompleted)
+            {
+                previousMissionCompleted = false;
+            }
         }
-        /*if (NPCdeðiþkeni)
-        {
-            StartCoroutine(Notification_OneMissionTwoRobot());
-        }*/
     }
 
     IEnumerator Notification_MissionComplete()
     {
-        string notificationMessage = PlayerInteraction.Instance.roomTag + " odasýnda birtakým sorunlar oluþtu";
+        string notificationMessage = "";
+
+        if (PlayerInteraction.Instance.roomName != null)
+        {
+            notificationMessage = PlayerInteraction.Instance.roomName + " odasýnda birtakým sorunlar oluþtu";
+        }
 
         Debug.Log("Delay Baþlangýç");
         yield return new WaitForSeconds(notificationDelay);
         Debug.Log("Delay bitiþ");
+
         Notification(true, notificationMessage);
 
         Debug.Log("Ekran süresi Baþlangýç");
         yield return new WaitForSeconds(notificationScreenTime);
-        Notification(false, "");
 
+        Notification(false, "");
+        
+        isNotifying = false;
+        PlayerInteraction.Instance.isCompleted = false;
     }
-    /*IEnumerator Notification_OneMissionTwoRobot()
-    {
-        Notification();
-        yield return new WaitForSeconds(notificationScreenTime);
-        Notification();
-    }*/
     public void Notification(bool setVisibilty, string notificationText)
     {
         pnlNotification.SetActive(setVisibilty);

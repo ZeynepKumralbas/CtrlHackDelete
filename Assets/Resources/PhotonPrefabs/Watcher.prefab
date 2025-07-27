@@ -5134,6 +5134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interaction: {fileID: 887825616124189473, guid: ea4520b54ecebc74090193008a65810a,
     type: 3}
+  watcherHealth: 10
   view: {fileID: 5241064141482982936}
 --- !u!114 &-2720385178934555382
 MonoBehaviour:

@@ -8,6 +8,8 @@ public class WatcherSmash : MonoBehaviour
 {
     [SerializeField] private InputActionReference interaction;
 
+    [SerializeField] private int watcherHealth = 10;
+
     private Animator animator;
 
     public PhotonView view;
@@ -36,6 +38,13 @@ public class WatcherSmash : MonoBehaviour
                     {
                         view.RPC("SmashAnimation", RpcTarget.All);
                         WatcherInteraction.Instance.targetView.RPC("Die", RpcTarget.All);
+
+                        watcherHealth--;
+
+                        if(watcherHealth == 0)
+                        {
+                            view.RPC("Die", RpcTarget.All);
+                        }
                     }
                 }
             }
