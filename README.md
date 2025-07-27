@@ -336,7 +336,6 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
   Daily updates and quick discussions are shared through WhatsApp, and meetings take place on Slack. <a href="https://github.com/ZeynepKumralbas/CtrlHackDelete/tree/main/ProjectManagement/Sprint3/DailyScrum" target="_blank">Sprint 3 Daily Scrum</a>
 
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Board Update:</strong></span>
-
   Task categories on the Trello board unchanged. Color-coding is used to clearly indicate task status and priority:
   <p align="center">
     <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/TrelloBoard/ColorLegend.png" alt="Trello Board Color Legend" style="width:50%;"  />
