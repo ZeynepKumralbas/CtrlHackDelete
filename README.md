@@ -15,6 +15,7 @@ aBUGames
 ## Game Name
 CTRL HACK DELETE
 
+<!--
 ## 🎮 Game Description
 **CTRL HACK DELETE** is a multiplayer stealth and deduction game  for 2 to 5 players, where humans disguise themselves as robots to sneak through a machine-controlled world.
 
@@ -52,6 +53,64 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
 - 👥 Small friend groups looking for fun, short multiplayer sessions  
 - 💻 Indie game lovers interested in creative mechanics  
 - 🔞 Recommended for ages 13 and up
+-->
+
+## 🎮 Game Description
+**CTRL HACK DELETE** is a multiplayer stealth and deduction game for 2 to 5 players, where humans disguise themselves as robots to sneak through a machine-controlled world, while one of them, the Watcher, hunts them down before they erase the system.
+
+👤 **Humans**:
+- Mimic robotic behaviors
+- Blend in among NPC robots
+- Complete data-wipe tasks by deleting sensitive information previously uploaded by real robots
+- Unlock temporary abilities to block The Watcher by progressing through objectives
+- Reach the Core without being caught
+- Execute the final command: CTRL. HACK. DELETE.
+
+🔎 **Watcher**:
+- A human who has turned to the dark side
+- Observe all players carefully
+- Use your knowledge of human behavior to catch the human imposters
+- Detect and expose the imposters before they reach the Core
+- Be quick! The more data is erased, the weaker the system becomes...
+
+## 📖 Game Story
+In a dark future ruled by artificial intelligence, nearly all humans are gone.  
+The machines have taken everything, not with fire, but with understanding.
+They gather data: memories, behaviors, voices, habits, emotions.
+They don't just control humans. They study them.
+
+And deep inside the Core, that data is stored, training the system to manipulate, predict, and dominate whatever remains of humanity.
+
+But hope remains.  
+A small resistance has survived and their plan is simple but risky: act like a robot and sneak into the heart of the system.
+
+Your goal is clear: Erase the data. Reach the **Core** and shut down the system by issuing the command that could end the machine rule:  
+**CTRL. HACK. DELETE.**
+
+But someone is watching. The Watcher, once human, now loyal to the system, patrols the area, analyzing every move.  
+One wrong move... and your cover is blown.
+
+This isn’t just stealth.  
+This is a **Reverse Turing Test:** 
+Can a robot find a human… hidden among its own?
+
+Will you blend in well enough to survive? Or spot the intruders before it’s too late?
+
+## 🧩 Game Features
+- 🧍‍♂️ 3D isometric camera  
+- 🎮 Multiplayer for 2 to 5 players
+- 🕹️ Asymmetric roles: Humans vs Watcher
+- 🧠 Social deduction with stealth mechanics
+- 🤖 Reverse Turing Test concept
+
+## 🎯 Target Audience
+- 🎭 Fans of stealth and social deduction games like *Among Us*, *West Hunt*, *SpyParty*, or *Project Winter*  
+- 👀 Players who enjoy watching and analyzing others' behavior  
+- 🧠 Gamers who like outsmarting friends with clever tricks  
+- 👥 Small friend groups looking for fun, short multiplayer sessions  
+- 💻 Indie game lovers interested in creative mechanics  
+- 🔞 Recommended for ages 13 and up
+
 
 ## 🗃️ Product Backlog
 [Trello](https://trello.com/invite/b/68582bb91c557a8922e77594/ATTIdcd19b358bfb2d774811755d1cf56501AEFE1FCE/yzta-bootcamp)
