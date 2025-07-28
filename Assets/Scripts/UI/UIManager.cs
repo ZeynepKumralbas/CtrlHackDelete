@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
 
     public GameObject pnlWatcherVisibilityBlocker;
     public GameObject pnlNotification;
+    public Slider watcherHealthSlider;
 
     public Image[] humanSkills;
 

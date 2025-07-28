@@ -4928,11 +4928,11 @@ GameObject:
   - component: {fileID: 8496349273119952663}
   - component: {fileID: 5831787166594858693}
   - component: {fileID: 1559627193770070458}
-  - component: {fileID: 1945685341231762626}
   - component: {fileID: 9032785780720851191}
   - component: {fileID: -1229672250921716841}
   - component: {fileID: -2720385178934555382}
   - component: {fileID: 2057876124143767223}
+  - component: {fileID: 6112227816570279905}
   - component: {fileID: 5241064141482982936}
   - component: {fileID: 6118003260468375174}
   - component: {fileID: 3094564772769063099}
@@ -5079,29 +5079,6 @@ MonoBehaviour:
   fadeSpeed: 1
   objectBlockingView: []
   view: {fileID: 5241064141482982936}
---- !u!114 &1945685341231762626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7368434588244195641}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbb6cae19ece4b848b976432ca8b3cfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  albedoList:
-  - {fileID: 2800000, guid: fb6e06c953f0d8045bc58e0f5a640f07, type: 3}
-  - {fileID: 2800000, guid: c9fd4ccfc3404b04eae3cd87e40a8e2e, type: 3}
-  - {fileID: 2800000, guid: 10c532508a2453a48aa766e69193d105, type: 3}
-  - {fileID: 2800000, guid: f61e83171850a834788a4664dbb54eae, type: 3}
-  eyeColors:
-  - {r: 0, g: 1.4666667, b: 2, a: 1}
-  - {r: 2, g: 0.25882354, b: 0.25882354, a: 1}
-  - {r: 0.72790754, g: 2, b: 0.26178014, a: 1}
-  - {r: 2, g: 0.87978274, b: 0.26178014, a: 1}
-  eyeState: 0
 --- !u!114 &9032785780720851191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5134,7 +5111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interaction: {fileID: 887825616124189473, guid: ea4520b54ecebc74090193008a65810a,
     type: 3}
-  watcherHealth: 10
+  watcherHealth: 3
   view: {fileID: 5241064141482982936}
 --- !u!114 &-2720385178934555382
 MonoBehaviour:
@@ -5163,6 +5140,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notificationDelay: 1
   notificationScreenTime: 5
+--- !u!114 &6112227816570279905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7368434588244195641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ecf9a8382ca9e4b9b10be39516ab98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathDelay: 1
+  view: {fileID: 5241064141482982936}
 --- !u!114 &5241064141482982936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5185,6 +5176,7 @@ MonoBehaviour:
   - {fileID: 9032785780720851191}
   - {fileID: 6118003260468375174}
   - {fileID: 3094564772769063099}
+  - {fileID: -5716271283001397007}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
