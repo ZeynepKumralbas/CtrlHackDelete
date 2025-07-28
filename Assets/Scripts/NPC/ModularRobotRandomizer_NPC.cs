@@ -1,9 +1,10 @@
+using Photon.Pun;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace YourNamespaceHere
 {
-    public class ModularRobotRandomizer_NPC : MonoBehaviour
+    public class ModularRobotRandomizer_NPC : MonoBehaviourPun, IPunObservable
     {
         private List<GameObject> heads = new List<GameObject>();
         private List<GameObject> bodies = new List<GameObject>();
@@ -11,11 +12,15 @@ namespace YourNamespaceHere
         private List<GameObject> armsR = new List<GameObject>();
         private List<GameObject> legsL = new List<GameObject>();
         private List<GameObject> legsR = new List<GameObject>();
-
         private List<GameObject> activeParts = new List<GameObject>();
 
-        [SerializeField] private string materialNameToModify = "M_AtlasOffset"; // // Material name
-        [SerializeField] private Material materialToModify; // Optional material reference
+        [SerializeField] private string materialNameToModify = "M_AtlasOffset";
+        [SerializeField] private Material materialToModify;
+
+        private float offsetX;
+        private float offsetY;
+
+        private bool colorAssigned = false;
 
         private void Awake()
         {
@@ -24,22 +29,23 @@ namespace YourNamespaceHere
 
         private void Start()
         {
-            RandomizeMaterialOffsets();
+            if (photonView.IsMine)
+            {
+                AssignNewColor(); // Sadece sahibi rengi belirler
+            }
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && photonView.IsMine)
             {
-                RandomizeMaterialOffsets();
+                AssignNewColor();
             }
         }
 
         private void OrganizeRobotParts()
         {
-            Transform parent = this.gameObject.transform;
-
-            foreach (Transform part in parent)
+            foreach (Transform part in transform)
             {
                 string partName = part.name;
 
@@ -54,29 +60,33 @@ namespace YourNamespaceHere
             }
         }
 
-        private void RandomizeMaterialOffsets()
+        public void AssignNewColor()
         {
-            float[] possibleValues = { 0f, 0.205078125f, 0.41015625f };
-            float randomX = possibleValues[Random.Range(0, possibleValues.Length)];
+            if (colorAssigned) return;
 
-            float randomY = Random.Range(0, 32) * 0.03125f; // Generate values between 0 and 1 on steps of 0.03125
+            float[] possibleX = { 0f, 0.205078125f, 0.41015625f, 0.63895625f };
 
+            offsetX = possibleX[Random.Range(0, possibleX.Length)];
+            offsetY = Random.Range(0, 32) * 0.03125f;
+
+            colorAssigned = true;
+            ApplyOffsetToAllParts(offsetX, offsetY);
+        }
+
+        private void ApplyOffsetToAllParts(float x, float y)
+        {
             foreach (GameObject part in activeParts)
             {
-                if (part != null)
-                {
-                    SkinnedMeshRenderer renderer = part.GetComponent<SkinnedMeshRenderer>();
-                    if (renderer != null)
-                    {
-                        int materialIndex = GetMaterialIndex(renderer);
-                        if (materialIndex != -1) // Material found on material list
-                        {
-                            Material mat = renderer.materials[materialIndex];
+                if (part == null) continue;
 
-                            mat.SetVector("_UV_Offset", new Vector2(randomX, randomY));
-                        }
-                    }
-                }
+                SkinnedMeshRenderer renderer = part.GetComponent<SkinnedMeshRenderer>();
+                if (renderer == null) continue;
+
+                int index = GetMaterialIndex(renderer);
+                if (index == -1) continue;
+
+                Material mat = renderer.materials[index];
+                mat.SetVector("_UV_Offset", new Vector2(x, y));
             }
         }
 
@@ -85,14 +95,28 @@ namespace YourNamespaceHere
             for (int i = 0; i < renderer.materials.Length; i++)
             {
                 Material mat = renderer.materials[i];
-
                 if ((materialToModify != null && mat == materialToModify) || mat.name.Contains(materialNameToModify))
                 {
-                    return i; // Return material index
+                    return i;
                 }
             }
-            return -1; // Material not found
+            return -1;
+        }
+
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            if (stream.IsWriting)
+            {
+                stream.SendNext(offsetX);
+                stream.SendNext(offsetY);
+            }
+            else
+            {
+                offsetX = (float)stream.ReceiveNext();
+                offsetY = (float)stream.ReceiveNext();
+
+                ApplyOffsetToAllParts(offsetX, offsetY);
+            }
         }
     }
 }
-
