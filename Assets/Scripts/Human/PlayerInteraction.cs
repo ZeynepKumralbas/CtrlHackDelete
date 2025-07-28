@@ -129,6 +129,7 @@ public class PlayerInteraction : MonoBehaviourPun
         view.RPC("SetInteractingAnim", RpcTarget.All, false);
         finishedMissionCounter++;
         isHolding = false;
+        MissionManager.Instance.missionCount--;
 
 
         if (missionCompletePercentSlider != null)

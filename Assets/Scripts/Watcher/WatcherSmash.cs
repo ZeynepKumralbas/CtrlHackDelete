@@ -16,6 +16,8 @@ public class WatcherSmash : MonoBehaviour
     private Animator animator;
 
     public PhotonView view;
+
+    private int playerCount;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -23,6 +25,8 @@ public class WatcherSmash : MonoBehaviour
         watcherHealthSlider = UIManager.Instance.watcherHealthSlider;
         watcherHealthSlider.maxValue = watcherHealth;
         watcherHealthSlider.value = watcherHealth;
+
+        playerCount = PhotonNetwork.CurrentRoom.PlayerCount - 1;
     }
 
     void Update()
@@ -31,15 +35,27 @@ public class WatcherSmash : MonoBehaviour
 
         if (WatcherInteraction.Instance.inHitbox)
         {
-            if (interaction.action.IsPressed())
+            if (interaction.action.IsPressed()) //Player'a vurma
             {
                 if (WatcherInteraction.Instance.isPlayer)
                 {
                     view.RPC("SmashAnimation", RpcTarget.All);
                     WatcherInteraction.Instance.targetView.RPC("Die", RpcTarget.All);
+
+
+                    /* OYUN SONU SENARYOSU ---> TUM PLAYER'LAR OLURSE*/
+                    playerCount--;
+
+                    if(playerCount == 0)
+                    {
+                        if (!GameEndManager.Instance.gameEnded)
+                        {
+                            GameEndManager.Instance.photonView.RPC("RPC_EndGame", RpcTarget.All, "WatcherWin");
+                        }
+                    }
                 }
 
-                else
+                else //NPC'ye vurma
                 {
                     if (WatcherInteraction.Instance.targetView != null)
                     {
@@ -55,10 +71,21 @@ public class WatcherSmash : MonoBehaviour
                         if(watcherHealth == 0)
                         {
                             view.RPC("Die", RpcTarget.All);
+
+                            Invoke(nameof(WatcherSceneTransition), 1.0f);
                         }
                     }
                 }
             }
+        }
+    }
+    public void WatcherSceneTransition()
+    {
+        /* OYUN SONU SENARYOSU ---> WATCHER OLURSE*/
+
+        if (!GameEndManager.Instance.gameEnded)
+        {
+            GameEndManager.Instance.photonView.RPC("RPC_EndGame", RpcTarget.All, "WatcherLose");
         }
     }
 

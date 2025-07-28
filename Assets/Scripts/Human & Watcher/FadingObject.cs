@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FadingObject : MonoBehaviour, IEquatible<FadingObject>
+public class FadingObject : MonoBehaviour, IEquatable<FadingObject>
 {
     public List<Renderer> renderers = new List<Renderer>();
     public Vector3 position;
@@ -24,7 +24,6 @@ public class FadingObject : MonoBehaviour, IEquatible<FadingObject>
         }
         initialAlpha = materials[0].color.a;
     }
-
     public bool Equals(FadingObject others)
     {
         return position.Equals(others.position);

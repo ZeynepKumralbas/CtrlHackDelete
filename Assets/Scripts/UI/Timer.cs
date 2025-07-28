@@ -8,7 +8,8 @@ public class Timer : MonoBehaviourPunCallbacks
     public TextMeshProUGUI timerText;
 
     private double startTime;
-    private double roundDuration = 600.0; // 10 dakika
+    [Header("Timer Settings")]
+    public double roundDuration = 600.0; // 10 dakika
     private bool timerStarted = false;
 
     void Start()
@@ -31,8 +32,10 @@ public class Timer : MonoBehaviourPunCallbacks
         if (remaining <= 0)
         {
             remaining = 0;
-            // Opsiyonel: süre bittiğinde bir şey yap
-            // GameManager.Instance.EndGame();
+            if (!GameEndManager.Instance.gameEnded)
+            {
+                GameEndManager.Instance.photonView.RPC("RPC_EndGame", RpcTarget.All, "TimeIsUp");
+            }
         }
 
         UpdateTimerText(remaining);

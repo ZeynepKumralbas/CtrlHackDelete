@@ -48,6 +48,7 @@ public class FadeObjectBlockingObject : MonoBehaviour
     }
     private IEnumerator CheckForObjects()
     {
+
         while (true)
         {
             int hits = Physics.RaycastNonAlloc(
@@ -63,7 +64,7 @@ public class FadeObjectBlockingObject : MonoBehaviour
                 for(int i = 0; i < hits; i++)
                 {
                     FadingObject fadingObject = GetFadingObjectFromHit(raycastHits[i]);
-
+                    Debug.Log(fadingObject.name);
                     if(fadingObject != null && !objectBlockingView.Contains(fadingObject))
                     {
                         if (runningCoroutines.ContainsKey(fadingObject))
@@ -74,16 +75,15 @@ public class FadeObjectBlockingObject : MonoBehaviour
                             }
                             runningCoroutines.Remove(fadingObject);
                         }
-                        runningCoroutines.Add(fadingObject, StartCoroutine(FadeObjectOut(fadingObject)));
-                        objectBlockingView.Add(fadingObject);
                     }
-
+                    runningCoroutines.Add(fadingObject, StartCoroutine(FadeObjectOut(fadingObject)));
+                    objectBlockingView.Add(fadingObject);
                 }
-
             }
             FadeObjectsNoLongerBeingHit();
 
             ClearHits();
+
             yield return null;
         }
     }
@@ -118,13 +118,9 @@ public class FadeObjectBlockingObject : MonoBehaviour
                 objectsToRemove.Add(fadingObject);
             }
         }
-        /**********************/
-        Debug.Log("deneme");
-        /**********************/
         foreach (FadingObject removeObject in objectsToRemove)
         {
             objectBlockingView.Remove(removeObject);
-            Debug.Log("Silme deneme");
         }
     }
     private IEnumerator FadeObjectOut(FadingObject fadingObject)
@@ -220,6 +216,6 @@ public class FadeObjectBlockingObject : MonoBehaviour
     }
     private FadingObject GetFadingObjectFromHit(RaycastHit hit)
     {
-        return hit.collider != null ? hit.collider.GetComponent<FadingObject>() : null;
+        return hit.collider != null ? hit.collider.GetComponentInParent<FadingObject>() : null;
     }
 }

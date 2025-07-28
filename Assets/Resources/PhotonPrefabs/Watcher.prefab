@@ -5070,7 +5070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1024
   target: {fileID: 2290804137345502363}
   cam: {fileID: 0}
   fadedAlpha: 0.33
@@ -5232,6 +5232,9 @@ MonoBehaviour:
   - Type: 9
     SynchronizeType: 0
     Name: isSmashing
+  - Type: 9
+    SynchronizeType: 0
+    Name: getHit
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0

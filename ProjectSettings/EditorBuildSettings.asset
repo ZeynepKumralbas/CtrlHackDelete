@@ -20,6 +20,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu/SettingsMenu.unity
     guid: bae47462a896d1c49848e8bd399cf848
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/HumansWin.unity
+    guid: 11a851c0be014db47bd171cd6870b577
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/TimeIsUp.unity
+    guid: 51ef3dc5e34cc3149ad34f7132d76010
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/WatcherLose.unity
+    guid: 46c063c47af999141a38ff9cf0250ddd
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/WatcherWin.unity
+    guid: 9de49946afd553645ba08ac7d99e3dd1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: ea4520b54ecebc74090193008a65810a,
       type: 3}

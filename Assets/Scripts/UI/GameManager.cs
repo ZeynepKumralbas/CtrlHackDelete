@@ -9,8 +9,8 @@ public class GameManager : MonoBehaviourPunCallbacks
 {
     public bool IsMenuOpened = false;
     public GameObject pauseMenu;
-    public GameObject gameEndPanel;
-    public TMPro.TMP_Text gameEndReasonText;
+   // public GameObject gameEndPanel;
+   // public TMPro.TMP_Text gameEndReasonText;
 
     void Update()
     {
@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     }
 
+/*
     [PunRPC]
     public void RPC_ShowExitReasonAndEnd(string reason)
     {
@@ -87,7 +88,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         Launcher.instance.returnToMenuScene = true;
         PhotonNetwork.LeaveRoom();
     }
-
+*/
     public void QuitGame()
     {
         Debug.Log("GameLeaved");

@@ -9,6 +9,8 @@ using UnityEngine.UI;
 
 public class MissionManager : MonoBehaviour
 {
+    public static MissionManager Instance;
+
     private TMP_Dropdown drnMissionList;
     private Image missionPointer;
 
@@ -17,9 +19,15 @@ public class MissionManager : MonoBehaviour
 
     [SerializeField] private List<string> missionList = new List<string>();
 
+    public int missionCount;
+
     public PhotonView view;
     void Start()
     {
+        Instance = this;
+
+        missionCount = transform.childCount;
+
         drnMissionList = UIManager.Instance.missionListDropdown;
         missionPointer = UIManager.Instance.imgMissionPointer;
 
@@ -44,6 +52,16 @@ public class MissionManager : MonoBehaviour
     void Update()
     {
         if (!view.IsMine || selectedMission == null) return;
+
+
+        /* OYUN SONU SENARYOSU ---> GOREVLER BITIRILIRSE*/
+        if (missionCount == 0)
+        {
+            if (!GameEndManager.Instance.gameEnded)
+            {
+                GameEndManager.Instance.photonView.RPC("RPC_EndGame", RpcTarget.All, "HumansWin");
+            }
+        }
 
         MissionPointerRotation();
 

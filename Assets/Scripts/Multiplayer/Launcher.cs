@@ -397,12 +397,19 @@ public class Launcher : MonoBehaviourPunCallbacks
         if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue("GameStarted", out object startedObj)
             && startedObj is bool started && started)
         {
-            GameManager gm = FindObjectOfType<GameManager>();
-            Debug.Log("gm!!!:" + gm);
-            if (gm != null && gm.photonView != null)
+            /*    GameManager gm = FindObjectOfType<GameManager>();
+                Debug.Log("gm!!!:" + gm);
+                if (gm != null && gm.photonView != null)
+                {
+                    gm.photonView.RPC("RPC_ShowExitReasonAndEnd", RpcTarget.All, "One player has left the game.");
+                }
+            */
+            GameEndManager gmEnd = FindObjectOfType<GameEndManager>();
+            if (gmEnd != null)
             {
-                gm.photonView.RPC("RPC_ShowExitReasonAndEnd", RpcTarget.All, "One player has left the game.");
+                gmEnd.photonView.RPC("RPC_EndGame", RpcTarget.All, "Player Left");
             }
+
         }
     }
 
