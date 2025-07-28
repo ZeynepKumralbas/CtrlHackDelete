@@ -2,33 +2,41 @@ using UnityEngine;
 
 public class TaskPoint : MonoBehaviour
 {
-    public static TaskPoint Instance;
-
-    private bool isOccupied = false;
-    private GameObject occupier;
-
-    public bool IsOccupied => isOccupied;
+    private GameObject currentOccupant = null;
 
     public string roomName;
 
-    public bool TryOccupy(GameObject who)
+    public bool TryOccupy(GameObject npc)
     {
-        if (isOccupied) return false;
+        // Eğer boşsa bu NPC alsın
+        if (currentOccupant == null)
+        {
+            currentOccupant = npc;
+            Debug.Log($"{npc.name} -> {gameObject.name} görevini aldı.");
+            return true;
+        }
 
-        Instance = this;
+        // Zaten bu NPC geldiyse, tekrar izin ver
+        if (currentOccupant == npc)
+        {
+            return true;
+        }
 
-        isOccupied = true;
-        occupier = who;
-        return true;
+        // Doluysa reddet
+        return false;
     }
 
-    public void Release(GameObject who)
+    public void Release(GameObject npc)
     {
-        if (isOccupied && occupier == who)
+        if (currentOccupant == npc)
         {
-            isOccupied = false;
-            occupier = null;
+            Debug.Log($"{npc.name} -> {gameObject.name} görevini bıraktı.");
+            currentOccupant = null;
         }
     }
-}
 
+    public bool IsOccupied()
+    {
+        return currentOccupant != null;
+    }
+}
