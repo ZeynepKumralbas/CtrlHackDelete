@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
-using Photon.Pun;  // Photon namespace'i ekle
+using Photon.Pun;
 
-public class NpcWalk : MonoBehaviourPun  // MonoBehaviourPun olarak değiştir
+public class NpcWalk : MonoBehaviourPun
 {
     public float wanderRadius = 30f;
     public float wanderTimer = 5f;
@@ -16,7 +16,7 @@ public class NpcWalk : MonoBehaviourPun  // MonoBehaviourPun olarak değiştir
     private float idleTimer = 0f;
     private Transform currentTarget;
 
-    private NpcInteraction npcInteraction; // Interaction scriptine erişim
+    private NpcInteraction npcInteraction;
 
     void Start()
     {
@@ -25,18 +25,19 @@ public class NpcWalk : MonoBehaviourPun  // MonoBehaviourPun olarak değiştir
 
         wanderTimer = Random.Range(3f, 8f);
         agent.avoidancePriority = Random.Range(10, 99);
-        agent.speed = 1.5f;
+        agent.speed = 3f;
 
-        npcInteraction = GetComponent<NpcInteraction>(); // Interaction script cache
+        npcInteraction = GetComponent<NpcInteraction>();
     }
 
     void Update()
     {
-        if (!photonView.IsMine) return;  // Sadece sahibi NPC yürüsün ve animasyonları tetiklesin
+        if (!photonView.IsMine) return;
 
         if (npcInteraction != null && npcInteraction.IsInteracting())
         {
             animator.SetFloat("Speed", 0f);
+            agent.isStopped = true;
             return;
         }
 
@@ -59,7 +60,15 @@ public class NpcWalk : MonoBehaviourPun  // MonoBehaviourPun olarak değiştir
 
         bool hasReachedDestination = !agent.pathPending &&
                                      agent.remainingDistance <= agent.stoppingDistance &&
-                                     (!agent.hasPath || agent.velocity.sqrMagnitude == 0f);
+                                     (!agent.hasPath || agent.velocity.sqrMagnitude == 0.10f);//durma koşulunu daha erken fark et
+
+        // Göreve ulaştıysa görevi bırak
+        if (hasReachedDestination && currentTarget != null)
+        {
+            TaskPoint taskScript = currentTarget.GetComponent<TaskPoint>();
+            taskScript?.Release(gameObject);
+            currentTarget = null;
+        }
 
         if (timer >= wanderTimer || hasReachedDestination)
         {
@@ -67,6 +76,7 @@ public class NpcWalk : MonoBehaviourPun  // MonoBehaviourPun olarak değiştir
 
             if (actionChoice < 0.1f)
             {
+                LeaveCurrentTask();  // Boşta dolaşmaya başlamadan önce görevi bırak
                 isIdle = true;
                 idleTimer = Random.Range(2f, 5f);
                 agent.ResetPath();
@@ -77,7 +87,6 @@ public class NpcWalk : MonoBehaviourPun  // MonoBehaviourPun olarak değiştir
 
             if (actionChoice < 0.8f && taskPoints.Length > 0)
             {
-                // taskPoints listesini karıştır ve uygun olan ilk görevi seç
                 List<Transform> shuffledPoints = new List<Transform>(taskPoints);
                 for (int i = 0; i < shuffledPoints.Count; i++)
                 {
@@ -87,29 +96,42 @@ public class NpcWalk : MonoBehaviourPun  // MonoBehaviourPun olarak değiştir
                     shuffledPoints[randomIndex] = temp;
                 }
 
+                bool foundTask = false;
+
                 foreach (Transform candidate in shuffledPoints)
                 {
                     TaskPoint taskScript = candidate.GetComponent<TaskPoint>();
                     if (taskScript != null && taskScript.TryOccupy(gameObject))
                     {
+                        LeaveCurrentTask(); // Önce eski görevi bırak
                         currentTarget = candidate;
                         agent.SetDestination(currentTarget.position);
                         npcInteraction?.SetTarget(currentTarget);
+                        foundTask = true;
                         break;
                     }
+                }
+
+                if (!foundTask)
+                {
+                    LeaveCurrentTask(); // Hiç görev bulunamadıysa eski görevi bırak
+                    currentTarget = null;
+                    Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
+                    agent.SetDestination(newPos);
+                    npcInteraction?.SetTarget(null);
                 }
             }
             else
             {
+                LeaveCurrentTask(); // Boşta dolaşmaya başlamadan önce görevi bırak
                 currentTarget = null;
                 Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
                 agent.SetDestination(newPos);
-
-                npcInteraction?.SetTarget(null); // Etkileşim olmayacak
+                npcInteraction?.SetTarget(null);
             }
 
             wanderTimer = Random.Range(3f, 8f);
-            agent.speed = 1.5f;
+            agent.speed = 3f;
             agent.isStopped = false;
             timer = 0f;
         }
@@ -124,6 +146,16 @@ public class NpcWalk : MonoBehaviourPun  // MonoBehaviourPun olarak değiştir
         }
     }
 
+    private void LeaveCurrentTask()
+    {
+        if (currentTarget != null)
+        {
+            TaskPoint taskScript = currentTarget.GetComponent<TaskPoint>();
+            taskScript?.Release(gameObject);
+            currentTarget = null;
+        }
+    }
+
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
     {
         Vector3 randDirection = Random.insideUnitSphere * dist;
@@ -132,4 +164,3 @@ public class NpcWalk : MonoBehaviourPun  // MonoBehaviourPun olarak değiştir
         return navHit.position;
     }
 }
-
