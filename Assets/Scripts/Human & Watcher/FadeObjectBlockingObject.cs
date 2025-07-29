@@ -42,13 +42,13 @@ public class FadeObjectBlockingObject : MonoBehaviour
             StartCheckForObjects();
         }
     }
+
     private void StartCheckForObjects()
     {
         StartCoroutine(CheckForObjects());
     }
     private IEnumerator CheckForObjects()
     {
-
         while (true)
         {
             int hits = Physics.RaycastNonAlloc(
@@ -64,7 +64,9 @@ public class FadeObjectBlockingObject : MonoBehaviour
                 for(int i = 0; i < hits; i++)
                 {
                     FadingObject fadingObject = GetFadingObjectFromHit(raycastHits[i]);
-                    Debug.Log(fadingObject.name);
+                    /***********************************************/
+                    Debug.Log(fadingObject.name.ToUpper());
+                    /***********************************************/
                     if(fadingObject != null && !objectBlockingView.Contains(fadingObject))
                     {
                         if (runningCoroutines.ContainsKey(fadingObject))
@@ -216,6 +218,25 @@ public class FadeObjectBlockingObject : MonoBehaviour
     }
     private FadingObject GetFadingObjectFromHit(RaycastHit hit)
     {
-        return hit.collider != null ? hit.collider.GetComponentInParent<FadingObject>() : null;
+        FadingObject fadingObject = hit.collider.GetComponent<FadingObject>();
+        if (fadingObject == null)
+        {
+            Debug.LogWarning("NULL HATASI");
+            return null;
+        }
+
+        return fadingObject;
+
+        //return hit.collider != null ? hit.collider.GetComponent<FadingObject>() : null;
     }
+    private void OnDrawGizmos()
+    {
+        if (cam != null && target != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(cam.transform.position, target.transform.position + targetPositionOffset);
+        }
+    }
+
+
 }
