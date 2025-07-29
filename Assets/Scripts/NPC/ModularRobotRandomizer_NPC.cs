@@ -1,4 +1,5 @@
 using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,12 +28,12 @@ namespace YourNamespaceHere
             OrganizeRobotParts();
         }
 
-        private void Start()
+        private IEnumerator Start()
         {
-            if (photonView.IsMine)
-            {
-                AssignNewColor(); // Sadece sahibi rengi belirler
-            }
+            // RandomColorSelecter sahneye instantiate edildiyse onu bekle
+            yield return new WaitUntil(() => RandomColorSelecter.Instance != null);
+
+            AssignNewColor(); // Sahiplik kontrolüne gerek yok artık
         }
 
         private void Update()
@@ -64,12 +65,21 @@ namespace YourNamespaceHere
         {
             if (colorAssigned) return;
 
-            float[] possibleX = { 0f, 0.205078125f, 0.41015625f, 0.63895625f };
+            //    float[] possibleX = { 0f, 0.205078125f, 0.41015625f, 0.63895625f };
 
-            offsetX = possibleX[Random.Range(0, possibleX.Length)];
-            offsetY = Random.Range(0, 32) * 0.03125f;
+            /*    int randomRange = RandomColorSelecter.Instance.xOffsets.Length;
 
+                int index = Random.Range(0, randomRange);
+                offsetX = RandomColorSelecter.Instance.xOffsets[index];
+                offsetY = RandomColorSelecter.Instance.yOffsets[index];
+            */
+            List<Vector2> availableOffsets = RandomColorSelecter.Instance.AvailableColorOffsets;
+            Vector2 selectedOffset = availableOffsets[Random.Range(0, availableOffsets.Count)];
+
+            offsetX = selectedOffset.x;
+            offsetY = selectedOffset.y;
             colorAssigned = true;
+
             ApplyOffsetToAllParts(offsetX, offsetY);
         }
 

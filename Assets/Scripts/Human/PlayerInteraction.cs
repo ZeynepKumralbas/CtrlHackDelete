@@ -200,10 +200,8 @@ public class PlayerInteraction : MonoBehaviourPun
 
         if (PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue("Team", out object role))
         {
-            Debug.Log("gidek1");
             if (role.ToString() == "Watchers")
             {
-                Debug.Log("gidek2");
                 WatcherNotification.Instance?.ShowNotification(room);
             }
         }
