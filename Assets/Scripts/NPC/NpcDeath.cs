@@ -38,6 +38,11 @@ public class NpcDeath : MonoBehaviourPun
 
         // ⏳ Animasyon süresini al, yoksa yedek süre kullan
         float dieAnimLength = GetAnimationClipLength("Die");
+        if (PhotonNetwork.IsMasterClient)
+        {
+        NpcSpawnManager.Instance.RespawnNpc();
+        }
+
         StartCoroutine(DestroyAfterDelay(dieAnimLength));
     }
 
