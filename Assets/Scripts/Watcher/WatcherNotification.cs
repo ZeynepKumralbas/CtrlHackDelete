@@ -1,6 +1,17 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+
+[System.Serializable]
+public class RoomStatusUI
+{
+    public string roomName;
+    public Image circle;
+}
+
 
 public class WatcherNotification : MonoBehaviour
 {
@@ -9,57 +20,126 @@ public class WatcherNotification : MonoBehaviour
 
     private GameObject pnlNotification;
 
-    private bool isNotifying = false; // Coroutine'in çalýþýp çalýþmadýðýný takip etmek için
-    private bool previousMissionCompleted = false; // Daha önce tamamlanmýþ mýydý
+    private bool isNotifying = false; // Coroutine'in ï¿½alï¿½ï¿½ï¿½p ï¿½alï¿½ï¿½madï¿½ï¿½ï¿½nï¿½ takip etmek iï¿½in
+    private bool previousMissionCompleted = false; // Daha ï¿½nce tamamlanmï¿½ï¿½ mï¿½ydï¿½
+
+    public List<RoomStatusUI> roomStatuses;
+
+    public static WatcherNotification Instance { get; private set; }
+
+    void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
 
     void Start()
     {
         pnlNotification = UIManager.Instance.pnlNotification;
     }
-
-    void Update()
-    {
-        if (PlayerInteraction.Instance != null)
+    /*
+        void Update()
         {
-            if (PlayerInteraction.Instance.isCompleted && !isNotifying && !previousMissionCompleted)
+            if (PlayerInteraction.Instance != null)
             {
-                StartCoroutine(Notification_MissionComplete());
-                isNotifying = true;
-                previousMissionCompleted = true;
-            }
-            else if (!PlayerInteraction.Instance.isCompleted)
-            {
-                previousMissionCompleted = false;
+                if (PlayerInteraction.Instance.isCompleted && !isNotifying && !previousMissionCompleted)
+                {
+                    StartCoroutine(Notification_MissionComplete());
+                    isNotifying = true;
+                    previousMissionCompleted = true;
+                }
+                else if (!PlayerInteraction.Instance.isCompleted)
+                {
+                    previousMissionCompleted = false;
+                }
             }
         }
-    }
+    */
+    /*   IEnumerator Notification_MissionComplete()
+       {
+           string notificationMessage = "";
 
-    IEnumerator Notification_MissionComplete()
+           if (PlayerInteraction.Instance.roomName != null)
+           {
+               notificationMessage = PlayerInteraction.Instance.roomName + " odasï¿½nda birtakï¿½m sorunlar oluï¿½tu";
+           }
+
+           Debug.Log("Delay Baï¿½langï¿½ï¿½");
+           yield return new WaitForSeconds(notificationDelay);
+           Debug.Log("Delay bitiï¿½");
+
+           Notification(true, notificationMessage);
+
+           Debug.Log("Ekran sï¿½resi Baï¿½langï¿½ï¿½");
+           yield return new WaitForSeconds(notificationScreenTime);
+
+           Notification(false, "");
+
+           isNotifying = false;
+           PlayerInteraction.Instance.isCompleted = false;
+       }
+   */
+
+    IEnumerator Notification_MissionComplete(string roomName)
     {
-        string notificationMessage = "";
+        string notificationMessage = roomName + " odasÄ±nda bazÄ± sorunlar oluÅŸtu";
 
-        if (PlayerInteraction.Instance.roomName != null)
-        {
-            notificationMessage = PlayerInteraction.Instance.roomName + " odasýnda birtakým sorunlar oluþtu";
-        }
-
-        Debug.Log("Delay Baþlangýç");
         yield return new WaitForSeconds(notificationDelay);
-        Debug.Log("Delay bitiþ");
 
         Notification(true, notificationMessage);
 
-        Debug.Log("Ekran süresi Baþlangýç");
         yield return new WaitForSeconds(notificationScreenTime);
 
         Notification(false, "");
-        
-        isNotifying = false;
-        PlayerInteraction.Instance.isCompleted = false;
     }
+
+/*    public void ShowNotification(string roomName)
+    {
+        StartCoroutine(Notification_MissionComplete(roomName));
+    }
+*/
     public void Notification(bool setVisibilty, string notificationText)
     {
         pnlNotification.SetActive(setVisibilty);
         pnlNotification.GetComponentInChildren<TextMeshProUGUI>().text = notificationText;
     }
+
+    public void ShowNotification(string roomName)
+    {
+        StartCoroutine(FlashRoomIndicator(roomName));
+    }
+
+    private IEnumerator FlashRoomIndicator(string roomName)
+    {
+        RoomStatusUI roomUI = roomStatuses.FirstOrDefault(r => r.roomName == roomName);
+
+        if (roomUI != null && roomUI.circle != null)
+        {
+            float duration = notificationScreenTime;
+            float elapsed = 0f;
+            float flashInterval = 0.5f; // her yarÄ±m saniyede bir deÄŸiÅŸtir
+
+            Color red = new Color(1, 0, 0, 1);
+            Color white = new Color(1, 1, 1, 1);
+
+            bool isRed = true;
+
+            while (elapsed < duration)
+            {
+                roomUI.circle.color = isRed ? red : white;
+                isRed = !isRed;
+
+                yield return new WaitForSeconds(flashInterval);
+                elapsed += flashInterval;
+            }
+
+            // SÃ¼re bitince beyaza sabitle
+            roomUI.circle.color = white;
+        }
+        else
+        {
+            Debug.LogWarning("Room UI bulunamadÄ±: " + roomName);
+        }
+    }
+
 }
