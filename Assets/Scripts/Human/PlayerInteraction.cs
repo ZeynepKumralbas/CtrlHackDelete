@@ -67,6 +67,7 @@ public class PlayerInteraction : MonoBehaviourPun
     {
         if (!view.IsMine) return;
         if (!isInMissionPoint) return;
+        if (GetComponent<PlayerStateManager>().currentState == PlayerState.Ghost) return; // 👻 Etkileşim engeli
 
         if (interaction.action.WasPressedThisFrame())
         {

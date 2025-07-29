@@ -4938,7 +4938,7 @@ GameObject:
   - component: {fileID: -5716271283001397007}
   m_Layer: 0
   m_Name: Watcher
-  m_TagString: Untagged
+  m_TagString: Watcher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

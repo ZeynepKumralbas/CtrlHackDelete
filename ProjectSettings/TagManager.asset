@@ -23,6 +23,7 @@ TagManager:
   - Room6
   - Environment
   - Room
+  - Watcher
   layers:
   - Default
   - TransparentFX

@@ -58,8 +58,9 @@ public class PlayerSkills : MonoBehaviour
     private void Update()
     {
         if (!view.IsMine) return;
+        if (GetComponent<PlayerStateManager>().currentState == PlayerState.Ghost) return; // ðŸ‘» Beceri engeli
 
-        // Cooldown'larý azalt ve UI'yi güncelle
+        // Cooldown'larï¿½ azalt ve UI'yi gï¿½ncelle
         for (int i = 0; i < activeCooldownsForSkills.Length; i++)
         {
             if (activeCooldownsForSkills[i] > 0)

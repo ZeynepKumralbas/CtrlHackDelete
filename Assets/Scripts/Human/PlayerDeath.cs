@@ -14,17 +14,28 @@ public class PlayerDeath : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    /*    [PunRPC]
+        public void Die()
+        {
+            if(isDead) return;
+            isDead = true;
+
+            animator.SetTrigger("getHit");
+
+            GetComponent<PlayerMovement>().enabled = false;
+            GetComponent<PlayerInteraction>().enabled = false;
+            GetComponent<PlayerSkills>().enabled = false;
+
+        }
+    */
+    
     [PunRPC]
     public void Die()
     {
-        if(isDead) return;
+        if (isDead) return;
         isDead = true;
 
-        animator.SetTrigger("getHit");
-
-        GetComponent<PlayerMovement>().enabled = false;
-        GetComponent<PlayerInteraction>().enabled = false;
-        GetComponent<PlayerSkills>().enabled = false;
-
+        GetComponent<PlayerStateManager>().photonView.RPC("DieAndBecomeGhost", RpcTarget.All);
     }
+
 }
