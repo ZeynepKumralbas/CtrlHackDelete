@@ -15,7 +15,6 @@ aBUGames
 ## Game Name
 CTRL HACK DELETE
 
-<!--
 ## 🎮 Game Description
 **CTRL HACK DELETE** is a multiplayer stealth and deduction game  for 2 to 5 players, where humans disguise themselves as robots to sneak through a machine-controlled world.
 
@@ -26,7 +25,7 @@ CTRL HACK DELETE
 
 🔎 **Watcher**:
 - Observe all players carefully
-- Detect and expose the human imposters before they reach the Core
+- Detect and expose the human impostors before they reach the Core
 
 ## 📖 Game Story
 In a dark future ruled by artificial intelligence, nearly all humans are gone.  
@@ -53,64 +52,6 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
 - 👥 Small friend groups looking for fun, short multiplayer sessions  
 - 💻 Indie game lovers interested in creative mechanics  
 - 🔞 Recommended for ages 13 and up
--->
-
-## 🎮 Game Description
-**CTRL HACK DELETE** is a multiplayer stealth and deduction game for 2 to 5 players, where humans disguise themselves as robots to sneak through a machine-controlled world, while one of them, the Watcher, hunts them down before they erase the system.
-
-👤 **Humans**:
-- Mimic robotic behaviors
-- Blend in among NPC robots
-- Complete data-wipe tasks by deleting sensitive information previously uploaded by real robots
-- Unlock temporary abilities to block The Watcher by progressing through objectives
-- Reach the Core without being caught
-- Execute the final command: CTRL. HACK. DELETE.
-
-🔎 **Watcher**:
-- A human who has turned to the dark side
-- Observe all players carefully
-- Use your knowledge of human behavior to catch the human imposters
-- Detect and expose the imposters before they reach the Core
-- Be quick! The more data is erased, the weaker the system becomes...
-
-## 📖 Game Story
-In a dark future ruled by artificial intelligence, nearly all humans are gone.  
-The machines have taken everything, not with fire, but with understanding.
-They gather data: memories, behaviors, voices, habits, emotions.
-They don't just control humans. They study them.
-
-And deep inside the Core, that data is stored, training the system to manipulate, predict, and dominate whatever remains of humanity.
-
-But hope remains.  
-A small resistance has survived and their plan is simple but risky: act like a robot and sneak into the heart of the system.
-
-Your goal is clear: Erase the data. Reach the **Core** and shut down the system by issuing the command that could end the machine rule:  
-**CTRL. HACK. DELETE.**
-
-But someone is watching. The Watcher, once human, now loyal to the system, patrols the area, analyzing every move.  
-One wrong move... and your cover is blown.
-
-This isn’t just stealth.  
-This is a **Reverse Turing Test:** 
-Can a robot find a human… hidden among its own?
-
-Will you blend in well enough to survive? Or spot the intruders before it’s too late?
-
-## 🧩 Game Features
-- 🧍‍♂️ 3D isometric camera  
-- 🎮 Multiplayer for 2 to 5 players
-- 🕹️ Asymmetric roles: Humans vs Watcher
-- 🧠 Social deduction with stealth mechanics
-- 🤖 Reverse Turing Test concept
-
-## 🎯 Target Audience
-- 🎭 Fans of stealth and social deduction games like *Among Us*, *West Hunt*, *SpyParty*, or *Project Winter*  
-- 👀 Players who enjoy watching and analyzing others' behavior  
-- 🧠 Gamers who like outsmarting friends with clever tricks  
-- 👥 Small friend groups looking for fun, short multiplayer sessions  
-- 💻 Indie game lovers interested in creative mechanics  
-- 🔞 Recommended for ages 13 and up
-
 
 ## 🗃️ Product Backlog
 [Trello](https://trello.com/invite/b/68582bb91c557a8922e77594/ATTIdcd19b358bfb2d774811755d1cf56501AEFE1FCE/yzta-bootcamp)
@@ -266,12 +207,12 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
   </ul>
 
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Estimated Points to Complete:</strong></span>
-   79/133
+   78/133
 
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Point Completion Logic:</strong></span>
   The task points were estimated using the Fibonacci-based point system.
   A total of 133 points remain across Sprint 2 and Sprint 3.
-  For this sprint, 79 points were planned, including 7 points carried over from Sprint 1 and 72 points newly assigned to Sprint 2.
+  For this sprint, 78 points were planned, including 6 points carried over from Sprint 1 and 72 points newly assigned to Sprint 2.
 
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Daily Scrum:</strong></span>
   Daily updates and quick discussions are shared through WhatsApp, and meetings take place on Slack. <a href="https://github.com/ZeynepKumralbas/CtrlHackDelete/tree/main/ProjectManagement/Sprint2/DailyScrum" target="_blank">Sprint 2 Daily Scrum</a>
@@ -285,7 +226,7 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
 
   <p align="center">
     <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/TrelloBoard/TrelloBoardUpdate.png" alt="Trello Board Color Legend" style="width:50%;"  />
-    <br/><em>Figure 2.2: Trello Board</em>
+    <br/><em>Figure 2.1: Trello Board</em>
   </p>
 
   <br/>
@@ -340,7 +281,7 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
     Minor bugs and optimization issues were noted and will be addressed during Sprint 3.
     Some tasks planned for Sprint 2 could not be completed due to the environment not being fully implemented.
     All remaining tasks from Sprint 1 have been completed.
-    The team was able to complete 57 out of the estimated 79 points for this sprint.
+    The team was able to complete 57 out of the estimated 78 points for this sprint.
   <br/>
   <br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Retrospective:</strong></span>
@@ -352,121 +293,3 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
   </ul>
 </details>
 
-<br/>
-<details>
-  <summary><span style="font-size: 1.8em; font-weight: bold;"><strong> Sprint 3 </strong> </span></summary>
-  <br/>
-
-  <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Notes:</strong></span>
-  <ul>
-    <li>The third sprint runs from 21.07.2025 to 03.08.2025.</li>
-    <li>WhatsApp is used for daily updates, while Slack is used for regular meetings.<li>
-      The goals for this sprint include:
-      <ul>
-        <li>Testing the game developed during Sprint 2 and fixing any identified bugs,</li>
-        <li>Complete any unfinished tasks from Sprint 2 in the early days of Sprint 3,</li>
-        <li>Integrate VFX and sound effects to enhance game feedback and atmosphere,</li>
-        <li>Establish the narrative structure of the game through cutscenes,</li>
-        <li>Conduct multiplayer testing, including synchronization of the players,</li>
-        <li>Perform final polishing to improve overall gameplay experience.</li>
-      </ul>
-    <li>
-      By the end of the sprint, the team aims to deliver a playable multiplayer prototype, featuring:
-      <ul>
-        <li>A fully implemented and tested game,</li>
-        <li>Functional Human (imposter), NPC and Watcher mechanics,</li>
-        <li>Integrated cutscenes, VFX, and audio for a complete game experience.</li>
-      </ul>
-    </li>
-  <li> Potential risks include slower progress from the team members who are currently working.
-
-    
-  </ul>
-
-  <span style="font-size: 1.3em; font-weight: bold;"><strong>Estimated Points to Complete:</strong></span>
-   76/76
-
-  <span style="font-size: 1.3em; font-weight: bold;"><strong>Point Completion Logic:</strong></span>
-  The task points were estimated using the Fibonacci-based point system.
-  A total of 76 points remain across Sprint 3.
-  For this sprint, 76 points were planned, including 22 points carried over from Sprint 2 and 55 points newly assigned to Sprint 3.
-
-  <span style="font-size: 1.3em; font-weight: bold;"><strong>Daily Scrum:</strong></span>
-  Daily updates and quick discussions are shared through WhatsApp, and meetings take place on Slack. <a href="https://github.com/ZeynepKumralbas/CtrlHackDelete/tree/main/ProjectManagement/Sprint3/DailyScrum" target="_blank">Sprint 3 Daily Scrum</a>
-
-  <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Board Update:</strong></span>
-  Task categories on the Trello board unchanged. Color-coding is used to clearly indicate task status and priority:
-  <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/TrelloBoard/ColorLegend.png" alt="Trello Board Color Legend" style="width:50%;"  />
-    <br/><em>Figure 3.1: Trello Board Color Legend</em>
-  </p>
-  
-<!--
-  <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/TrelloBoard/TrelloBoardUpdate.png" alt="Trello Board Color Legend" style="width:50%;"  />
-    <br/><em>Figure 3.2: Trello Board</em>
-  </p>
-  -->
-
-  <br/>
-  <span style="font-size: 1.3em; font-weight: bold;"><strong>Game Status Screenshots:</strong></span>
-  <br/>
-  <br/>
-
-  <!--
-  <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/WatcherAndRobotAssets.png" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.3: Watcher and Robot Asset</em>
-  </p>
-
-  <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/MainMenu.jpeg" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.4: Main Menu</em>
-  </p>
-
-  <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/TeamSelection.jpeg" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.5: Team Selection Menu</em>
-  </p>
-
-  <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/WatcherSabotage1.png" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.6: Human Sabotage 1 to Watcher</em>
-  </p>
-
-  <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/WatcherSabotage2.png" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.7: Human Sabotage 2 to Watcher</em>
-  </p>
-
-  <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/WatcherSabotage3.png" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.8: Human Sabotage 3 to Watcher</em>
-  </p>
-
-  <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/TaskBasedNPC.png" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.9: Task-based NPCs</em>
-  </p>
-
-  <p align="center">
-    <img src="http://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/GameScene.png" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.10: Basic Game Scene</em>
-  </p>
-  -->
-  
-  <br/>
-  <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Review:</strong></span>
-    The team focused on finalizing the gameplay mechanics, integrating audio, polishing the overall gameplay experience, and delivering a stable multiplayer game. 
-    Planned goals, including all remaining tasks from Sprint 2 and tasks defined in Sprint 3, were successfully completed and integrated into the game. 
-    A final playable version of the game now includes the core mechanics envisioned in the GDD.
-    The team was able to complete ... out of the estimated 76 points for this sprint.
-  <br/>
-  <br/>
-  <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Retrospective:</strong></span>
-  <ul>  
-    <li>The team maintained strong collaboration, and daily communication helped resolve blockers quickly.</li>
-    <li>More time could have been allocated for balancing gameplay and testing edge cases.</li>
-    <li>As the final sprint of the project, team members congratulated each other for their collaboration and dedication throughout the development process.</li>
-  </ul>
-</details>

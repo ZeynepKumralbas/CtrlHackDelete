@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f3758f8f58fdef43803eb9be1df0608, type: 3}
+  m_Name: PhotonServerSettings
+  m_EditorClassIdentifier: 
+  AppSettings:
+    AppIdRealtime: 8af3e6bf-f382-4d59-93e5-fe2554e891d9
+    AppIdFusion: 
+    AppIdChat: 
+    AppIdVoice: 
+    AppVersion: 
+    UseNameServer: 1
+    FixedRegion: tr
+    Server: 
+    Port: 0
+    ProxyServer: 
+    Protocol: 0
+    EnableProtocolFallback: 1
+    AuthMode: 0
+    EnableLobbyStatistics: 0
+    NetworkLogging: 1
+  DevRegion: tr
+  PunLogging: 0
+  EnableSupportLogger: 0
+  RunInBackground: 1
+  StartInOfflineMode: 0
+  RpcList:
+  - ClickRpc
+  - DestroyRpc
+  - DestroySpaceship
+  - Fire
+  - RespawnSpaceship
+  - RPC_DisableWatchersButton
+  - ApplyMaterialOffsets
+  - SetInteractingAnim
+  - ActivateMissionsForPlayer
+  - SetMissionVisibility
+  - SmashAnimation
+  - Die
+  - StartCheckForObjects
+  - Skill_WatcherFreeze_Start
+  - Skill_WatcherVisibilityBlock_Start
+  - Skill_WatcherFreeze_End
+  - Skill_WatcherVisibilityBlock_End
+  - RPC_EndGameForAll
+  - RPC_EndGame
+  - RPC_ShowExitReasonAndEnd
+  - SetInteracting
+  - OccupyTaskPointRPC
+  - ReleaseTaskPointRPC
+  - SetInteractingRPC
+  - DieRPC
+  - SetSpeedRPC
+  - SetInteractingState
+  DisableAutoOpenWizard: 1
+  ShowSettings: 1
+  DevRegionSetOnce: 1
