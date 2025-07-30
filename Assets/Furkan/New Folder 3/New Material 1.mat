@@ -12,24 +12,33 @@ Material:
     type: 3}
   m_Parent: {fileID: -876546973899608171, guid: 73c67c7c9c747e34987380a3fc003c8b,
     type: 3}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ModifiedSerializedProperties: 16
+  m_ValidKeywords:
+  - _ALPHATEST_ON
+  - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - DepthOnly
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
+    - _AlphaToMask: 0
+    - _DstBlend: 10
     - _QueueControl: 0
+    - _SrcBlend: 5
+    - _Surface: 1
+    - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.75608736, g: 0.78867924, b: 0.4211248, a: 1}
+    - _Color: {r: 0.75608736, g: 0.78867924, b: 0.42112485, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &6805105992993961883
 MonoBehaviour:
