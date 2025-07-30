@@ -10,8 +10,7 @@ Material:
   m_Name: New Material 2
   m_Shader: {fileID: -6465566751694194690, guid: 73c67c7c9c747e34987380a3fc003c8b,
     type: 3}
-  m_Parent: {fileID: -876546973899608171, guid: 73c67c7c9c747e34987380a3fc003c8b,
-    type: 3}
+  m_Parent: {fileID: 2100000, guid: 209d47ed117d76b4a80f8d8bc71731ca, type: 2}
   m_ModifiedSerializedProperties: 16
   m_ValidKeywords: []
   m_InvalidKeywords:
