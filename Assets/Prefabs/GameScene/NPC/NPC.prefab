@@ -2226,7 +2226,7 @@ PrefabInstance:
     - target: {fileID: 220200869262978249, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}
       propertyPath: ObservedComponents.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5276344958224025579, guid: 877308fa1c0564e26acf1ac91964399d,
         type: 3}

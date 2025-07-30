@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terminalText: {fileID: 7178218216395310046}
-  typingSpeed: 0.02
+  typingSpeed: 0.0001
 --- !u!1 &7297576879548642289
 GameObject:
   m_ObjectHideFlags: 0

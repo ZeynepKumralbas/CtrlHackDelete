@@ -36,11 +36,11 @@ public class NpcDeath : MonoBehaviourPun
         Collider col = GetComponent<Collider>();
         if (col != null) col.enabled = false;
 
-        // ⏳ Animasyon süresini al, yoksa yedek süre kullan
+        // Animasyon süresini al, yoksa yedek süre kullan
         float dieAnimLength = GetAnimationClipLength("Die");
         if (PhotonNetwork.IsMasterClient)
         {
-        NpcSpawnManager.Instance.RespawnNpc();
+            NpcSpawnManager.Instance.RespawnNpc();
         }
 
         StartCoroutine(DestroyAfterDelay(dieAnimLength));

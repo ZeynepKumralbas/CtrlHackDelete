@@ -737,6 +737,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  AvailableColorOffsets: []
 --- !u!54 &7483565426481108542
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -906,6 +907,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   view: {fileID: 3553726884540960953}
+  alpha: 0.3
+  emissionColor: 0.5
 --- !u!1 &4644778070499559366
 GameObject:
   m_ObjectHideFlags: 0

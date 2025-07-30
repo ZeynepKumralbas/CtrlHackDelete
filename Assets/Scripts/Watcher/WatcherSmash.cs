@@ -61,27 +61,27 @@ public class WatcherSmash : MonoBehaviour
                     }
                 }
 
-                    else //NPC'ye vurma
+                else //NPC'ye vurma
+                {
+                    if (WatcherInteraction.Instance.targetView != null)
                     {
-                        if (WatcherInteraction.Instance.targetView != null)
+                        view.RPC("SmashAnimation", RpcTarget.All);
+                        WatcherInteraction.Instance.targetView.RPC("Die", RpcTarget.All);
+
+                        watcherHealth--;
+                        watcherHealthSlider.value = watcherHealth;
+                        watcherHealthSlider.transform.Find("TxtWatcherHealth").
+                            gameObject.GetComponent<TextMeshProUGUI>().text = watcherHealth.ToString() + " / " + watcherHealthSlider.maxValue.ToString();
+
+
+                        if (watcherHealth == 0)
                         {
-                            view.RPC("SmashAnimation", RpcTarget.All);
-                            WatcherInteraction.Instance.targetView.RPC("Die", RpcTarget.All);
+                            view.RPC("Die", RpcTarget.All);
 
-                            watcherHealth--;
-                            watcherHealthSlider.value = watcherHealth;
-                            watcherHealthSlider.transform.Find("TxtWatcherHealth").
-                                gameObject.GetComponent<TextMeshProUGUI>().text = watcherHealth.ToString() + " / " + watcherHealthSlider.maxValue.ToString();
-
-
-                            if (watcherHealth == 0)
-                            {
-                                view.RPC("Die", RpcTarget.All);
-
-                                Invoke(nameof(WatcherSceneTransition), 1.0f);
-                            }
+                            Invoke(nameof(WatcherSceneTransition), 1.0f);
                         }
                     }
+                }
             }
         }
     }
