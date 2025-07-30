@@ -4931,7 +4931,6 @@ GameObject:
   - component: {fileID: 9032785780720851191}
   - component: {fileID: -1229672250921716841}
   - component: {fileID: -2720385178934555382}
-  - component: {fileID: 2057876124143767223}
   - component: {fileID: 6112227816570279905}
   - component: {fileID: 5241064141482982936}
   - component: {fileID: 6118003260468375174}
@@ -4939,7 +4938,7 @@ GameObject:
   - component: {fileID: -5716271283001397007}
   m_Layer: 0
   m_Name: Watcher
-  m_TagString: Untagged
+  m_TagString: Watcher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5126,20 +5125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   view: {fileID: 5241064141482982936}
---- !u!114 &2057876124143767223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7368434588244195641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9db4188c3347a445ab819c8dcd61a06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notificationDelay: 1
-  notificationScreenTime: 5
 --- !u!114 &6112227816570279905
 MonoBehaviour:
   m_ObjectHideFlags: 0

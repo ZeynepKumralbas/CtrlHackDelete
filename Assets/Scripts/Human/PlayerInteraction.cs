@@ -67,6 +67,7 @@ public class PlayerInteraction : MonoBehaviourPun
     {
         if (!view.IsMine) return;
         if (!isInMissionPoint) return;
+        if (GetComponent<PlayerStateManager>().currentState == PlayerState.Ghost) return; // 👻 Etkileşim engeli
 
         if (interaction.action.WasPressedThisFrame())
         {
@@ -131,6 +132,11 @@ public class PlayerInteraction : MonoBehaviourPun
         isHolding = false;
         MissionManager.Instance.missionCount--;
 
+        if (view.IsMine && !string.IsNullOrEmpty(roomName))
+        {
+            view.RPC("NotifyWatcherMissionComplete", RpcTarget.All, roomName);
+        }
+
 
         if (missionCompletePercentSlider != null)
         {
@@ -186,6 +192,21 @@ public class PlayerInteraction : MonoBehaviourPun
             }
         }
     }
+
+    [PunRPC]
+    public void NotifyWatcherMissionComplete(string room)
+    {
+        Debug.Log("Watcher'a görev bildirimi: " + room);
+
+        if (PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue("Team", out object role))
+        {
+            if (role.ToString() == "Watchers")
+            {
+                WatcherNotification.Instance?.ShowNotification(room);
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!view.IsMine) return;

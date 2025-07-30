@@ -39,43 +39,49 @@ public class WatcherSmash : MonoBehaviour
             {
                 if (WatcherInteraction.Instance.isPlayer)
                 {
-                    view.RPC("SmashAnimation", RpcTarget.All);
-                    WatcherInteraction.Instance.targetView.RPC("Die", RpcTarget.All);
+                    GameObject targetPlayer = WatcherInteraction.Instance.targetView.gameObject;
+                    PlayerStateManager stateManager = targetPlayer.GetComponent<PlayerStateManager>();
 
-
-                    /* OYUN SONU SENARYOSU ---> TUM PLAYER'LAR OLURSE*/
-                    playerCount--;
-
-                    if(playerCount == 0)
-                    {
-                        if (!GameEndManager.Instance.gameEnded)
-                        {
-                            GameEndManager.Instance.photonView.RPC("RPC_EndGame", RpcTarget.All, "WatcherWin");
-                        }
-                    }
-                }
-
-                else //NPC'ye vurma
-                {
-                    if (WatcherInteraction.Instance.targetView != null)
+                    if (stateManager != null && stateManager.currentState != PlayerState.Ghost)
                     {
                         view.RPC("SmashAnimation", RpcTarget.All);
                         WatcherInteraction.Instance.targetView.RPC("Die", RpcTarget.All);
 
-                        watcherHealth--;
-                        watcherHealthSlider.value = watcherHealth;
-                        watcherHealthSlider.transform.Find("TxtWatcherHealth").
-                            gameObject.GetComponent<TextMeshProUGUI>().text = watcherHealth.ToString() + " / " + watcherHealthSlider.maxValue.ToString();
-                        
 
-                        if(watcherHealth == 0)
+                        /* OYUN SONU SENARYOSU ---> TUM PLAYER'LAR OLURSE*/
+                        playerCount--;
+
+                        if (playerCount == 0)
                         {
-                            view.RPC("Die", RpcTarget.All);
-
-                            Invoke(nameof(WatcherSceneTransition), 1.0f);
+                            if (!GameEndManager.Instance.gameEnded)
+                            {
+                                GameEndManager.Instance.photonView.RPC("RPC_EndGame", RpcTarget.All, "WatcherWin");
+                            }
                         }
                     }
                 }
+
+                    else //NPC'ye vurma
+                    {
+                        if (WatcherInteraction.Instance.targetView != null)
+                        {
+                            view.RPC("SmashAnimation", RpcTarget.All);
+                            WatcherInteraction.Instance.targetView.RPC("Die", RpcTarget.All);
+
+                            watcherHealth--;
+                            watcherHealthSlider.value = watcherHealth;
+                            watcherHealthSlider.transform.Find("TxtWatcherHealth").
+                                gameObject.GetComponent<TextMeshProUGUI>().text = watcherHealth.ToString() + " / " + watcherHealthSlider.maxValue.ToString();
+
+
+                            if (watcherHealth == 0)
+                            {
+                                view.RPC("Die", RpcTarget.All);
+
+                                Invoke(nameof(WatcherSceneTransition), 1.0f);
+                            }
+                        }
+                    }
             }
         }
     }
