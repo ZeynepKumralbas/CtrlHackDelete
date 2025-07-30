@@ -111,10 +111,13 @@ public class PlayerControllerManager : MonoBehaviourPunCallbacks
                 var brain = Camera.main.GetComponent<CinemachineBrain>();
                 brain.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.Cut;
 
+                var mapCam = GameObject.Find("MapCam");
+
                 /* Layer based object visibility setting*/
                 if (team == "Watchers")
                 {
                     brain.GetComponent<Camera>().cullingMask &= ~(1 << LayerMask.NameToLayer("VisibleForHumans"));
+                    mapCam.GetComponent<Camera>().cullingMask &= ~(1 << LayerMask.NameToLayer("VisibleForHumans"));
                 }
                 /**********************************************/
             }

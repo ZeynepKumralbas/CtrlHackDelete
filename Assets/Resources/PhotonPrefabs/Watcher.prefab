@@ -4927,7 +4927,6 @@ GameObject:
   - component: {fileID: 2400662603823652361}
   - component: {fileID: 8496349273119952663}
   - component: {fileID: 5831787166594858693}
-  - component: {fileID: 1559627193770070458}
   - component: {fileID: 9032785780720851191}
   - component: {fileID: -1229672250921716841}
   - component: {fileID: -2720385178934555382}
@@ -4936,6 +4935,7 @@ GameObject:
   - component: {fileID: 6118003260468375174}
   - component: {fileID: 3094564772769063099}
   - component: {fileID: -5716271283001397007}
+  - component: {fileID: -3914771900228210016}
   m_Layer: 0
   m_Name: Watcher
   m_TagString: Watcher
@@ -5055,29 +5055,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6, y: 0.1, z: 0.75}
   m_Center: {x: 0, y: 0.06, z: 0.07}
---- !u!114 &1559627193770070458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7368434588244195641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2ddb253cb6dc844c994aa0c1aec9bd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  target: {fileID: 2290804137345502363}
-  cam: {fileID: 0}
-  fadedAlpha: 0.33
-  retainShadows: 1
-  targetPositionOffset: {x: 0, y: 1, z: 0}
-  fadeSpeed: 1
-  objectBlockingView: []
-  view: {fileID: 5241064141482982936}
 --- !u!114 &9032785780720851191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5094,7 +5071,7 @@ MonoBehaviour:
   move: {fileID: -5292346432101451338, guid: ea4520b54ecebc74090193008a65810a, type: 3}
   run: {fileID: -4869941760319455703, guid: ea4520b54ecebc74090193008a65810a, type: 3}
   walkSpeed: 3
-  runSpeed: 6
+  runSpeed: 7
   view: {fileID: 5241064141482982936}
 --- !u!114 &-1229672250921716841
 MonoBehaviour:
@@ -5238,6 +5215,29 @@ MonoBehaviour:
   interpolationBackTime: 0.1
   snapThreshold: 0.001
   enableDebugDraw: 0
+--- !u!114 &-3914771900228210016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7368434588244195641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ddb253cb6dc844c994aa0c1aec9bd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  target: {fileID: 2290804137345502363}
+  cam: {fileID: 0}
+  fadedAlpha: 0.33
+  retainShadows: 1
+  targetPositionOffset: {x: 0, y: 1, z: 0}
+  fadeSpeed: 1
+  objectBlockingView: []
+  view: {fileID: 5241064141482982936}
 --- !u!1 &7420957708180363229
 GameObject:
   m_ObjectHideFlags: 0

@@ -148,7 +148,7 @@ public class PlayerInteraction : MonoBehaviourPun
         {
             currentMissionPointName = currentMissionPoint.transform.parent.name;
 
-            PhotonView missionView = currentMissionPoint.GetComponentInParent<PhotonView>();
+            PhotonView missionView = currentMissionPoint.GetComponent<PhotonView>();
             if (missionView != null)
             {
                 view.RPC("SetMissionVisibility", RpcTarget.All, missionView.ViewID, false);
@@ -184,7 +184,7 @@ public class PlayerInteraction : MonoBehaviourPun
         if (missionView != null)
         {
             Transform missionTransform = missionView.transform;
-            Transform sphere = missionTransform.GetChild(0); // Child objesi
+            Transform sphere = missionTransform; // Child objesi
 
             if (sphere != null)
             {
@@ -216,7 +216,7 @@ public class PlayerInteraction : MonoBehaviourPun
             isInMissionPoint = true;
             currentMissionPoint = other.gameObject;
 
-            roomName = currentMissionPoint.transform.parent.gameObject.GetComponent<TaskPoint>().roomName;
+            roomName = currentMissionPoint.GetComponent<TaskPoint>().roomName;
 
             string difficulty = currentMissionPoint.transform.parent.tag;
 

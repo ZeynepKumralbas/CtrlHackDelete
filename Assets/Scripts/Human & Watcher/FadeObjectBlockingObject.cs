@@ -61,13 +61,13 @@ public class FadeObjectBlockingObject : MonoBehaviour
 
             if (hits > 0)
             {
-                for(int i = 0; i < hits; i++)
+                for (int i = 0; i < hits; i++)
                 {
                     FadingObject fadingObject = GetFadingObjectFromHit(raycastHits[i]);
                     /***********************************************/
                     Debug.Log(fadingObject.name.ToUpper());
                     /***********************************************/
-                    if(fadingObject != null && !objectBlockingView.Contains(fadingObject))
+                    if (fadingObject != null && !objectBlockingView.Contains(fadingObject))
                     {
                         if (runningCoroutines.ContainsKey(fadingObject))
                         {
@@ -218,13 +218,15 @@ public class FadeObjectBlockingObject : MonoBehaviour
     }
     private FadingObject GetFadingObjectFromHit(RaycastHit hit)
     {
-        FadingObject fadingObject = hit.collider.GetComponent<FadingObject>();
+        FadingObject fadingObject = hit.collider.gameObject.GetComponent<FadingObject>();
+
+        Debug.Log(hit.collider.name.ToUpper());
+
         if (fadingObject == null)
         {
             Debug.LogWarning("NULL HATASI");
             return null;
         }
-
         return fadingObject;
 
         //return hit.collider != null ? hit.collider.GetComponent<FadingObject>() : null;
