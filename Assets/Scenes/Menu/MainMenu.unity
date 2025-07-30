@@ -1481,7 +1481,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259173691}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: d5f4c34ab508aca47a85e3ae95fa00bc, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 5ce6819d16de3fc489717631a39b3620, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -1495,14 +1495,12 @@ VideoPlayer:
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
+  m_TargetAudioSources: []
+  m_DirectAudioVolumes: []
   m_Url: file:///home/zeynepkumralbas/Documents/Google YZTA/Bootcamp/Project/ctrl-merge3_2/CtrlHackDelete/Assets/StreamingAssets/BackgroundAnim_1_1_n.webm
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
-  m_ControlledAudioTrackCount: 1
+  m_EnabledAudioTracks: 
+  m_DirectAudioMutes: 
+  m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 1
