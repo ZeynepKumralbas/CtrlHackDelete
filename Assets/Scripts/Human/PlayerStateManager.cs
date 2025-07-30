@@ -1,5 +1,6 @@
 using UnityEngine;
 using Photon.Pun;
+using YourNamespaceHere;
 
 public enum PlayerState
 {
@@ -18,6 +19,8 @@ public class PlayerStateManager : MonoBehaviourPun
     private Animator animator;
     private Renderer[] renderers;
     public PhotonView view;
+    public float alpha = 0.3f;
+    public float emissionColor = 0.5f;
 
 
     private void Awake()
@@ -62,34 +65,119 @@ public class PlayerStateManager : MonoBehaviourPun
 
     private void ApplyGhostVisuals(bool ghost)
     {
-        SkinnedMeshRenderer rend = GetComponentInChildren<SkinnedMeshRenderer>();
-        //    foreach (var rend in renderers)
-        //    {
-        foreach (var mat in rend.materials)
-        {
-            /*    Color c = mat.color;
-                c.a = ghost ? 0.3f : 1f;
-                mat.color = c;
-*/
-            if (ghost)
+        /*    SkinnedMeshRenderer[] renderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+
+            foreach (SkinnedMeshRenderer rend in renderers)
             {
-                //    mat.shader = Shader.Find("Universal Render Pipeline/Lit");
-                // URP Lit shader ayarları
-                mat.shader = Shader.Find("Universal Render Pipeline/Lit");
+                Material[] newMaterials = new Material[rend.materials.Length];
 
-                Color ghostColor = new Color(1f, 1f, 1f, 0.3f); // Beyaz + %30 şeffaf
-                if (mat.HasProperty("_BaseColor"))
-                    mat.SetColor("_BaseColor", ghostColor);
-                else
-                    mat.color = ghostColor;
+                for (int i = 0; i < rend.materials.Length; i++)
+                {
+                    Material original = rend.materials[i];
+                    Material instanceMat = new Material(original); // ✨ instance
 
-                mat.SetFloat("_Surface", 1); // Transparent
-                mat.SetFloat("_Blend", 0);   // Alpha blend
-                mat.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
-                mat.renderQueue = 3000;
+                    instanceMat.shader = Shader.Find("Universal Render Pipeline/Lit");
+
+                    if (ghost)
+                    {
+                        Color ghostWhite = new Color(1f, 1f, 1f, 0.3f);
+
+                        if (instanceMat.HasProperty("_BaseColor"))
+                            instanceMat.SetColor("_BaseColor", ghostWhite);
+                        else
+                            instanceMat.color = ghostWhite;
+
+                        instanceMat.SetFloat("_Surface", 1); // Transparent
+                        instanceMat.SetFloat("_Blend", 0);   // Alpha blend
+                        instanceMat.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
+                        instanceMat.renderQueue = 3000;
+
+                        // Glow
+                        instanceMat.EnableKeyword("_EMISSION");
+                        instanceMat.SetColor("_EmissionColor", Color.white * 1.5f);
+                    }
+
+                    newMaterials[i] = instanceMat;
+                }
+
+                rend.materials = newMaterials; // 🚀 Her parçaya uygula
+            }*/
+        
+
+    // ⬇️ Robotun kendi UV offset'ini bul
+    Vector2 offset = Vector2.zero;
+    foreach (Renderer r in GetComponentsInChildren<Renderer>())
+    {
+        foreach (Material mat in r.materials)
+        {
+            if (mat.HasProperty("_UV_Offset"))
+            {
+                offset = mat.GetVector("_UV_Offset");
+                Debug.Log("offset:" + offset);
+                goto Found;
             }
         }
-        //   }
+    }
+
+        
+Found:;
+
+    foreach (SkinnedMeshRenderer rend in GetComponentsInChildren<SkinnedMeshRenderer>())
+    {
+        Material[] newMaterials = new Material[rend.materials.Length];
+
+        for (int i = 0; i < rend.materials.Length; i++)
+        {
+            Material original = rend.materials[i];
+            Material instanceMat = new Material(original); // Yeni material oluştur
+
+            instanceMat.shader = Shader.Find("Universal Render Pipeline/Lit");
+
+            // 💡 Renk offsetini koru
+            if (instanceMat.HasProperty("_UV_Offset"))
+                instanceMat.SetVector("_UV_Offset", offset);
+
+                if (ghost)
+                {
+                    // Şeffaflık ve glow
+                    instanceMat.SetFloat("_Surface", 1); // Transparent
+                    instanceMat.SetFloat("_Blend", 0);   // Alpha blend
+                    instanceMat.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
+                    instanceMat.renderQueue = 3000;
+
+
+
+                    if (instanceMat.HasProperty("_BaseColor"))
+                    {
+                        Color c = instanceMat.GetColor("_BaseColor");
+                        c.a = alpha;
+                        instanceMat.SetColor("_BaseColor", c);
+
+                        instanceMat.EnableKeyword("_EMISSION");
+                        instanceMat.SetColor("_EmissionColor", c * emissionColor);
+                    }
+            }
+
+            newMaterials[i] = instanceMat;
+        }
+
+        rend.materials = newMaterials;
+    }
+
+    // ... devamı zaten sende var
+
+
+
+
+
+
+
+    /*    if (ghost && photonView.IsMine)
+                {
+                    if (ModularRobotRandomizer.Instance != null)
+                        ModularRobotRandomizer.Instance.ApplyWhiteGhostLook();
+                }*/
+
 
         // Hayaleti Watcher ve NPC collider’larıyla çarpıştırma
         Collider myCol = GetComponent<Collider>();

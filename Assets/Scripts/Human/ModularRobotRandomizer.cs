@@ -28,7 +28,7 @@ namespace YourNamespaceHere
 
         private void Awake()
         {
-            OrganizeRobotParts(); //Robot parçalarýný listelere yerleþtir
+            OrganizeRobotParts(); //Robot parï¿½alarï¿½nï¿½ listelere yerleï¿½tir
         }
 
         private void Start()
@@ -37,7 +37,7 @@ namespace YourNamespaceHere
 
             if (view.IsMine)
             {
-                // Ýlk rastgele rengi sadece kendi objen için oluþtur ve tüm oyunculara gönder
+                // ï¿½lk rastgele rengi sadece kendi objen iï¿½in oluï¿½tur ve tï¿½m oyunculara gï¿½nder
                 RandomizeMaterialOffsets();
             }
         }
@@ -74,7 +74,7 @@ namespace YourNamespaceHere
 
         /*public void RandomizeMaterialOffsets()
         {
-            //Renk deðiþikliðini tüm oyunculara bildir
+            //Renk deï¿½iï¿½ikliï¿½ini tï¿½m oyunculara bildir
             view.RPC("ApplyMaterialOffsets", RpcTarget.AllBuffered,
                 RandomColorSelecter.Instance.xOffsets[Random.Range(0, RandomColorSelecter.Instance.xOffsets.Length)],
                 RandomColorSelecter.Instance.yOffsets[Random.Range(0, RandomColorSelecter.Instance.yOffsets.Length)]);
@@ -85,7 +85,7 @@ namespace YourNamespaceHere
 
             float newX, newY;
             int attempt = 0;
-            const int maxAttempts = 10; // Sonsuz döngüden kaçýnmak için güvenlik sýnýrý
+            const int maxAttempts = 10; // Sonsuz dï¿½ngï¿½den kaï¿½ï¿½nmak iï¿½in gï¿½venlik sï¿½nï¿½rï¿½
 
             do
             {
@@ -113,7 +113,7 @@ namespace YourNamespaceHere
                     SkinnedMeshRenderer renderer = part.GetComponent<SkinnedMeshRenderer>();
                     if (renderer != null)
                     {
-                        //Robot parçalarinin rendererlarinin index degerlerini al
+                        //Robot parï¿½alarinin rendererlarinin index degerlerini al
                         int materialIndex = GetMaterialIndex(renderer);
                         if (materialIndex != -1)
                         {
@@ -139,5 +139,83 @@ namespace YourNamespaceHere
             }
             return -1;
         }
+
+        public void SetGhostMaterialTransparency(bool isGhost)
+        {
+            foreach (GameObject part in activeParts)
+            {
+                if (part != null)
+                {
+                    SkinnedMeshRenderer renderer = part.GetComponent<SkinnedMeshRenderer>();
+                    if (renderer != null)
+                    {
+                        foreach (Material mat in renderer.materials)
+                        {
+                            if (isGhost)
+                            {
+                                // URP ÅŸeffaflÄ±k ayarlarÄ±
+                                mat.shader = Shader.Find("Universal Render Pipeline/Lit");
+
+                                Color currentColor;
+                                if (mat.HasProperty("_BaseColor"))
+                                    currentColor = mat.GetColor("_BaseColor");
+                                else
+                                    currentColor = mat.color;
+
+                                currentColor.a = 0.3f; // ðŸ”¹ sadece ÅŸeffaflÄ±k dÃ¼ÅŸÃ¼rÃ¼ldÃ¼
+
+                                if (mat.HasProperty("_BaseColor"))
+                                    mat.SetColor("_BaseColor", currentColor);
+                                else
+                                    mat.color = currentColor;
+
+                                mat.SetFloat("_Surface", 1); // Transparent
+                                mat.SetFloat("_Blend", 0);   // Alpha blend
+                                mat.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
+                                mat.renderQueue = 3000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public void ApplyWhiteGhostLook()
+        {
+            Debug.Log("ApplyWhiteGhostLook");
+            foreach (GameObject part in activeParts)
+            {
+                if (part != null)
+                {
+                    SkinnedMeshRenderer renderer = part.GetComponent<SkinnedMeshRenderer>();
+                    if (renderer != null)
+                    {
+                        foreach (Material mat in renderer.materials)
+                        {
+                            mat.shader = Shader.Find("Universal Render Pipeline/Lit");
+
+                            // Ana rengi saf beyaz + ÅŸeffaflÄ±k
+                            Color ghostWhite = new Color(1f, 1f, 1f, 0.3f); // %30 saydam beyaz
+
+                            if (mat.HasProperty("_BaseColor"))
+                                mat.SetColor("_BaseColor", ghostWhite);
+                            else
+                                mat.color = ghostWhite;
+
+                            // Emission (Ä±ÅŸÄ±k yayma) aÃ§Ä±k
+                            mat.EnableKeyword("_EMISSION");
+                            mat.SetColor("_EmissionColor", new Color(1f, 1f, 1f) * 2f); // ParlaklÄ±k
+
+                            // URP ÅŸeffaflÄ±k ayarlarÄ±
+                            mat.SetFloat("_Surface", 1); // Transparent
+                            mat.SetFloat("_Blend", 0);   // Alpha
+                            mat.renderQueue = 3000;
+                            mat.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
