@@ -128,7 +128,7 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
     <li>WhatsApp is chosen for daily communication, and Slack will be used for meetings.</li>
     <li>Trello is selected as the project management tool.</li>
     <li>The Unity version 2022.3.62f1 is selected for development.</li>
-    <li>All project-related documents-such as the GDD, assets, and useful tutorial links-are being collected in a shared drive, which will be made available here at the end of the project.</li>
+    <li>All project-related documents-such as the GDD, assets, and useful tutorial links-are being collected in a shared drive, which will be made available <a href="https://docs.google.com/spreadsheets/d/1UA6Lbe0VZeKEjKApvO1Zaipfry5AQ53mlFhx4ICyTPQ/edit?usp=sharing" target="_blank">here</a> at the end of the project.</li>
     <li>Responsibilities, including coding/development and design tasks, are assigned and shared among team members for this sprint.</li>
       <li>
       The goals for this sprint include:
