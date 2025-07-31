@@ -77,9 +77,10 @@ public class FadeObjectBlockingObject : MonoBehaviour
                             }
                             runningCoroutines.Remove(fadingObject);
                         }
+                        runningCoroutines.Add(fadingObject, StartCoroutine(FadeObjectOut(fadingObject)));
+                        objectBlockingView.Add(fadingObject);
                     }
-                    runningCoroutines.Add(fadingObject, StartCoroutine(FadeObjectOut(fadingObject)));
-                    objectBlockingView.Add(fadingObject);
+
                 }
             }
             FadeObjectsNoLongerBeingHit();
@@ -218,16 +219,14 @@ public class FadeObjectBlockingObject : MonoBehaviour
     }
     private FadingObject GetFadingObjectFromHit(RaycastHit hit)
     {
-        FadingObject fadingObject = hit.collider.gameObject.GetComponent<FadingObject>();
+        //Debug.Log(hit.collider.name.ToUpper());
+        return hit.collider != null ? hit.collider.transform.parent.gameObject.GetComponentInChildren<FadingObject>() : null;
 
-        Debug.Log(hit.collider.name.ToUpper());
-
-        if (fadingObject == null)
+        /*if (hit.collider == null)
         {
-            Debug.LogWarning("NULL HATASI");
-            return null;
-        }
-        return fadingObject;
+            return hit.collider != null ? hit.collider.transform.parent.gameObject.GetComponentInChildren<FadingObject>() : null;
+        }*/
+        //return fadingObject;
 
         //return hit.collider != null ? hit.collider.GetComponent<FadingObject>() : null;
     }
