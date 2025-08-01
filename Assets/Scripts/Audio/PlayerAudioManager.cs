@@ -38,8 +38,8 @@ public class PlayerAudioManager : MonoBehaviour
 
         playerAudioSource = GetComponent<AudioSource>();
 
-        settingsManager = FindObjectOfType<SettingsManager>();
-        playerAudioSource.volume = settingsManager.settingsVolume;
+        /*settingsManager = FindObjectOfType<SettingsManager>();
+        playerAudioSource.volume = settingsManager.settingsVolume;*/
     }
 
     public void PlayAudioClip(string audioName)
