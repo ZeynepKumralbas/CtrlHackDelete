@@ -32,8 +32,8 @@ public class NPCAudioManager : MonoBehaviour
 
         npcAudioSource = GetComponent<AudioSource>();
 
-        settingsManager = FindObjectOfType<SettingsManager>();
-        npcAudioSource.volume = settingsManager.settingsVolume;
+        /*settingsManager = FindObjectOfType<SettingsManager>();
+        npcAudioSource.volume = settingsManager.settingsVolume;*/
 
         if (!view.IsMine) return;
     }

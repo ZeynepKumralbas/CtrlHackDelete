@@ -37,8 +37,8 @@ public class WatcherAudioManager : MonoBehaviour
 
         watcherAudioSource = GetComponent<AudioSource>();
 
-        settingsManager = FindObjectOfType<SettingsManager>();
-        watcherAudioSource.volume = settingsManager.settingsVolume;
+        /*settingsManager = FindObjectOfType<SettingsManager>();
+        watcherAudioSource.volume = settingsManager.settingsVolume;*/
     }
 
     public void PlayAudioClip(string audioName)
