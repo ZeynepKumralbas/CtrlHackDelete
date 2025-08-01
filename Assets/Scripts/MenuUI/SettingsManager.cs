@@ -31,6 +31,10 @@ public class SettingsManager : MonoBehaviour
         PlayerPrefs.SetFloat("SFXVolume", volume);
         PlayerPrefs.Save();
 
+        PlayerAudioManager.Instance.playerAudioSource.volume = volume;
+        WatcherAudioManager.Instance.watcherAudioSource.volume = volume;
+        NPCAudioManager.Instance.npcAudioSource.volume = volume;
+
         // Burada kendi SFX ses kanalýna uygulaman gerekir
         Debug.Log("SFX volume: " + volume);
     }
@@ -39,6 +43,8 @@ public class SettingsManager : MonoBehaviour
     {
         PlayerPrefs.SetFloat("MusicVolume", volume);
         PlayerPrefs.Save();
+
+        AudioManager.Instance.gameAudioSource.volume = volume;
 
         // Burada müzik ses kanalýna uygulaman gerekir
         Debug.Log("Music volume: " + volume);
