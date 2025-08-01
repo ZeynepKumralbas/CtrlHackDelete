@@ -160,13 +160,13 @@ public class PlayerInteraction : MonoBehaviourPun
             if (txtInteractionButton != null)
                 txtInteractionButton.SetActive(false);
         }
-
-        if (missionManager != null && !string.IsNullOrEmpty(currentMissionPointName) && 
+/*
+        if (missionManager != null && !string.IsNullOrEmpty(currentMissionPointName) &&
             !currentMissionPoint.activeSelf)
         {
             missionManager.RemoveMissionAndRedirect(currentMissionPointName);
         }
-
+*/
 
     }
 
