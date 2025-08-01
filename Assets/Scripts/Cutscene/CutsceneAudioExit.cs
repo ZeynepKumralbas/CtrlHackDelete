@@ -13,8 +13,8 @@ public class CutsceneAutoExit : MonoBehaviour
         if (director == null)
             director = GetComponent<PlayableDirector>();
 
-        if (director != null)
-            director.stopped += OnCutsceneFinished;
+    //    if (director != null)
+      //      director.stopped += OnCutsceneFinished;
     }
 
     void Update()
