@@ -11,6 +11,10 @@ public class PlayerAudioManager : MonoBehaviour
 
     [SerializeField] private List<AudioClip> playerAudioSounds;
 
+    private AudioClip currentClip;
+
+    private SettingsManager settingsManager;
+
     public PhotonView view;
 
     /* PLAYER SESLERÝ -- 3D SES / 2D SES*/
@@ -33,12 +37,16 @@ public class PlayerAudioManager : MonoBehaviour
         Instance = this;
 
         playerAudioSource = GetComponent<AudioSource>();
+
+        settingsManager = FindObjectOfType<SettingsManager>();
+        playerAudioSource.volume = settingsManager.settingsVolume;
     }
 
     public void PlayAudioClip(string audioName)
     {
         foreach (AudioClip clip in playerAudioSounds)
         {
+            currentClip = clip;
             if (clip.name == audioName)
             {
                 if (clip.name.Contains("skill")) //2D  Ses
@@ -50,7 +58,7 @@ public class PlayerAudioManager : MonoBehaviour
                 }
                 else                        //3D Ses
                 {
-                    view.RPC("PlayClip", RpcTarget.All, clip);
+                    view.RPC("PlayClip", RpcTarget.All, clip.name);
                 }
                 break;
             }
@@ -58,10 +66,13 @@ public class PlayerAudioManager : MonoBehaviour
     }
 
     [PunRPC]
-    public void PlayClip(AudioClip clip)
+    public void PlayClip(string clipName)
     {
-        playerAudioSource.spatialBlend = 1f;
-        playerAudioSource.PlayOneShot(clip);
+        if(currentClip.name == clipName)
+        {
+            playerAudioSource.spatialBlend = 1f;
+            playerAudioSource.PlayOneShot(currentClip);
+        }
     }
     public void Play2DClip(AudioClip clip)
     {

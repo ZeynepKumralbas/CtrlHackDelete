@@ -1077,6 +1077,28 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1394564625}
     m_Modifications:
+    - target: {fileID: 1440016158518930529, guid: a2d7dfb1edb9f97458f9aa1c608fa60c,
+        type: 3}
+      propertyPath: m_text
+      value: "CTRL_HACK_DELETE\n\nDeveloped by\naBUGames - Bootcamp Group-21\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\nDevelopers 
+        \nEymen Arapo\u011Flu  \n\u015Eevval Arslan \nZeynep Kumralba\u015F (Dev
+        & Scrum Master)  \n\nUI/UX Design  \nEren Alt\u0131n\u0131\u015F\u0131k 
+        \n\nLevel & Game Design  \nFurkan Enes Korkmaz  \n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\nSpecial
+        Thanks  \nMeral Karakoyun (Team Assistant)  \nYapay Zeka ve Teknoloji Akademisi\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\nTools
+        Used  \nUnity  \nPhoton  \nAdobe Firefly  \nAdobe Photoshop  \nAdobe Illustrator 
+        \nChatGPT  \nGemini AI  \nMixamo  \nGoogle Fonts  \nGitHub Desktop  \n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\nAssets
+        Used  \n_3D Scifi Kit \u2013 Creepy Cat  \nAnimated Low Poly Robot \u2013
+        Juanpmh  \nJammo Character \u2013 Mix and Jam  \n80s Computer and Gaming
+        Setup \u2013 Sari3D  \nMegapoly.Art Vintage Control Room \u2013 Megapoly
+        Art  \nStylized Control Panel \u2013 Anni  \nnpc_casual_set_00 \u2013 Chepatack 
+        \nOffice Pack \u2013 nappin  \nSchool Assets \u2013 A.R.S|T.  \nDS Arcade
+        Machine \u2013 DAN SANDERSON  \nSci-Fi PBR Props \u2013 NeutronCat  \nFree:
+        House Interior \u2013 Studio Billion  \nNext-gen Electronics Pack \u2013
+        Vertex Studio  \nGame Input Controller Icons \u2013 Amanz  \nSimple UI Icons
+        \u2013 hardartcore  \nRetro Electro Free \u2013 Ex Lumina Corp.  \nDOTween
+        (HOTween v2) \u2013 Demigiant\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nhttps://github.com/ZeynepKumralbas/CtrlHackDelete\n\xA9
+        2025 aBUGames\nAll Rights Reserved\n"
+      objectReference: {fileID: 0}
     - target: {fileID: 1986891146205994977, guid: a2d7dfb1edb9f97458f9aa1c608fa60c,
         type: 3}
       propertyPath: m_Name

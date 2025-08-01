@@ -11,6 +11,10 @@ public class WatcherAudioManager : MonoBehaviour
 
     [SerializeField] private List<AudioClip> watcherAudioSounds;
 
+    private AudioClip currentClip;
+
+    private SettingsManager settingsManager;
+
     public PhotonView view;
 
     /* WATCHER SESLERÝ -- 3D SES / 2D SES*/
@@ -32,6 +36,9 @@ public class WatcherAudioManager : MonoBehaviour
         Instance = this;
 
         watcherAudioSource = GetComponent<AudioSource>();
+
+        settingsManager = FindObjectOfType<SettingsManager>();
+        watcherAudioSource.volume = settingsManager.settingsVolume;
     }
 
     public void PlayAudioClip(string audioName)
@@ -40,6 +47,7 @@ public class WatcherAudioManager : MonoBehaviour
         {
             if (clip.name == audioName)
             {
+                currentClip = clip;
                 if (clip.name.Contains("notification")) //2D  Ses
                 {
                     if (view.IsMine)
@@ -49,17 +57,20 @@ public class WatcherAudioManager : MonoBehaviour
                 }
                 else                        //3D Ses
                 {
-                    view.RPC("PlayClip", RpcTarget.All, clip);
+                    view.RPC("PlayClip", RpcTarget.All, clip.name);
                 }
                 break;
             }
         }
     }
     [PunRPC]
-    public void PlayClip(AudioClip clip)
+    public void PlayClip(string clipName)
     {
-        watcherAudioSource.spatialBlend = 1f;
-        watcherAudioSource.PlayOneShot(clip);
+        if(currentClip.name == clipName)
+        {
+            watcherAudioSource.spatialBlend = 1f;
+            watcherAudioSource.PlayOneShot(currentClip);
+        }
     }
     public void Play2DClip(AudioClip clip)
     {

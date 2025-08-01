@@ -26,6 +26,8 @@ public class WatcherEffectedFromPlayerSkills : MonoBehaviour
     [PunRPC]
     public void Skill_WatcherFreeze_Start(float cooldown)
     {
+        WatcherAudioManager.Instance.PlayAudioClip("skill_FreezeEffectSound");
+
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<WatcherSmash>().enabled = false;
         transform.Find("Ice").gameObject.SetActive(true);

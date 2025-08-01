@@ -6,6 +6,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("Menu"); // oyun sahnenin ad�n� yaz
+        AudioManager.Instance.PlayClip("menuClickSound");
     }
 
     public void QuitGame()

@@ -2,6 +2,7 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -11,10 +12,9 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private List<AudioClip> menuAudioSounds;
 
-    public PhotonView view;
-
     /* MENÜ VE OYUN SAHNESÝ DIÞI SAHNE SESLERÝ -- 2D SES*/
     /*
+    ambientSound
     menuClickSound
     menuBackgroundSound
     controlsSound
@@ -39,7 +39,7 @@ public class AudioManager : MonoBehaviour
     {
         gameAudioSource = GetComponent<AudioSource>();
 
-        if (!view.IsMine) return;
+        PlayAudioClip("menuBackgroundSound");
     }
 
     public void PlayAudioClip(string audioName)
@@ -48,8 +48,6 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayClip(string audioName)
     {
-        if (!view.IsMine) return;
-
         foreach (AudioClip clip in menuAudioSounds)
         {
             if (clip.name == audioName)
@@ -59,6 +57,11 @@ public class AudioManager : MonoBehaviour
                     gameAudioSource.loop = true;
                     gameAudioSource.clip = clip;
                     gameAudioSource.Play();
+
+                    if(SceneManager.GetActiveScene().name == "Game")
+                    {
+                        gameAudioSource.Stop();
+                    }
                 }
                 else
                 {
@@ -69,6 +72,5 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
-
 
 }

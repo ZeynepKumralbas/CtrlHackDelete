@@ -11,6 +11,8 @@ public class NPCAudioManager : MonoBehaviour
 
     [SerializeField] private List<AudioClip> npcAudioSounds;
 
+    private SettingsManager settingsManager;
+
     public PhotonView view;
 
     /* NPC SESLERÝ -- 3D SES*/
@@ -29,6 +31,9 @@ public class NPCAudioManager : MonoBehaviour
         Instance = this;
 
         npcAudioSource = GetComponent<AudioSource>();
+
+        settingsManager = FindObjectOfType<SettingsManager>();
+        npcAudioSource.volume = settingsManager.settingsVolume;
 
         if (!view.IsMine) return;
     }
