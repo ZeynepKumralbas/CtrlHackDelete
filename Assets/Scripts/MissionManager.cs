@@ -107,7 +107,7 @@ public class MissionManager : MonoBehaviour
     }
     */
 
-/*
+
     public void RemoveMissionAndRedirect(string missionName)
     {
         int index = missionList.IndexOf(missionName);
@@ -135,7 +135,7 @@ public class MissionManager : MonoBehaviour
             missionPointer.enabled = false;
         }
     }
-*/
+
     private void OnMissionSelected(int index)
     {
         missionPointer.gameObject.SetActive(true);
