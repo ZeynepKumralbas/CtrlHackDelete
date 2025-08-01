@@ -29,9 +29,9 @@ public class MissionManager : MonoBehaviour
         missionCount = transform.childCount;
 
         drnMissionList = UIManager.Instance.missionListDropdown;
-        missionPointer = UIManager.Instance.imgMissionPointer;
+    //    missionPointer = UIManager.Instance.imgMissionPointer;
 
-        missionPointer.gameObject.SetActive(false);
+    //    missionPointer.gameObject.SetActive(false);
 
         for(int i = 0; i < transform.childCount; i++)
         {
@@ -63,48 +63,51 @@ public class MissionManager : MonoBehaviour
             }
         }
 
-        MissionPointerRotation();
+    //    MissionPointerRotation();
 
     }
+    /*
     private void MissionPointerRotation()
     {
-        // UI pointer'ýn ekran sýnýrlarý içinde kalmasýný saðla
+        // UI pointer'ï¿½n ekran sï¿½nï¿½rlarï¿½ iï¿½inde kalmasï¿½nï¿½ saï¿½la
         float minX = missionPointer.GetPixelAdjustedRect().width / 2;
         float maxX = Screen.width - minX;
 
         float minY = missionPointer.GetPixelAdjustedRect().height / 2;
         float maxY = Screen.height - minY;
 
-        // Görev objesinin ekran pozisyonu
+        // Gï¿½rev objesinin ekran pozisyonu
         Vector3 screenPos = Camera.main.WorldToScreenPoint(selectedMission.transform.position);
 
-        // Eðer hedef ekranýn arkasýndaysa
+        // Eï¿½er hedef ekranï¿½n arkasï¿½ndaysa
         if (screenPos.z < 0)
         {
-            // Ekran arkasýndaysa iþareti ekran kenarýna sabitle
+            // Ekran arkasï¿½ndaysa iï¿½areti ekran kenarï¿½na sabitle
             screenPos *= -1;
             screenPos.x = (screenPos.x < Screen.width / 2) ? maxX : minX;
             screenPos.y = (screenPos.y < Screen.height / 2) ? maxY : minY;
         }
 
-        // Ekran pozisyonunu sýnýrlara göre kýrp
+        // Ekran pozisyonunu sï¿½nï¿½rlara gï¿½re kï¿½rp
         screenPos.x = Mathf.Clamp(screenPos.x, minX, maxX);
         screenPos.y = Mathf.Clamp(screenPos.y, minY, maxY);
 
-        // UI pointer'ý konumlandýr
+        // UI pointer'ï¿½ konumlandï¿½r
         missionPointer.transform.position = screenPos;
 
-        // Kamera ve hedefin dünya pozisyonu arasýndaki yön vektörü
+        // Kamera ve hedefin dï¿½nya pozisyonu arasï¿½ndaki yï¿½n vektï¿½rï¿½
         Vector3 dir = selectedMission.transform.position - playerCam.transform.position;
-        dir.y = 0f; // Sadece yatay yön için
+        dir.y = 0f; // Sadece yatay yï¿½n iï¿½in
 
-        // Açýyý hesapla
+        // Aï¿½ï¿½yï¿½ hesapla
         float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
 
-        // UI pointer'ý döndür
+        // UI pointer'ï¿½ dï¿½ndï¿½r
         missionPointer.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
+    */
 
+/*
     public void RemoveMissionAndRedirect(string missionName)
     {
         int index = missionList.IndexOf(missionName);
@@ -114,7 +117,7 @@ public class MissionManager : MonoBehaviour
             missionList.RemoveAt(index);
             drnMissionList.options.RemoveAt(index);
             Debug.Log("deneme");
-            // Eðer mevcut seçim silinen görevse, önce geçici olarak sýfýra ayarla
+            // Eï¿½er mevcut seï¿½im silinen gï¿½revse, ï¿½nce geï¿½ici olarak sï¿½fï¿½ra ayarla
             if (drnMissionList.value == index)
                 drnMissionList.value = 0;
 
@@ -132,7 +135,7 @@ public class MissionManager : MonoBehaviour
             missionPointer.enabled = false;
         }
     }
-
+*/
     private void OnMissionSelected(int index)
     {
         missionPointer.gameObject.SetActive(true);
