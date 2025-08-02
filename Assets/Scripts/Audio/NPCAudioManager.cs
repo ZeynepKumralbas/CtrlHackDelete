@@ -34,6 +34,8 @@ public class NPCAudioManager : MonoBehaviour
 
         /*settingsManager = FindObjectOfType<SettingsManager>();
         npcAudioSource.volume = settingsManager.settingsVolume;*/
+        float savedSFXVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        npcAudioSource.volume = savedSFXVolume;
 
         if (!view.IsMine) return;
     }

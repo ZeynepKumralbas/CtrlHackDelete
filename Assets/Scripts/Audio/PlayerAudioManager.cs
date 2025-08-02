@@ -40,6 +40,8 @@ public class PlayerAudioManager : MonoBehaviour
 
         /*settingsManager = FindObjectOfType<SettingsManager>();
         playerAudioSource.volume = settingsManager.settingsVolume;*/
+        float savedSFXVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        playerAudioSource.volume = savedSFXVolume;
     }
 
     public void PlayAudioClip(string audioName)

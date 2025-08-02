@@ -39,6 +39,8 @@ public class WatcherAudioManager : MonoBehaviour
 
         /*settingsManager = FindObjectOfType<SettingsManager>();
         watcherAudioSource.volume = settingsManager.settingsVolume;*/
+        float savedSFXVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        watcherAudioSource.volume = savedSFXVolume;
     }
 
     public void PlayAudioClip(string audioName)
