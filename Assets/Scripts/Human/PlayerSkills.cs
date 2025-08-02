@@ -30,7 +30,7 @@ public class PlayerSkills : MonoBehaviour
     {
         if (!view.IsMine) return;
 
-        playerInteraction = GetComponent<PlayerInteraction>();
+        playerInteraction = FindObjectOfType<PlayerInteraction>();
 
         txtTimersForSkills = new TextMeshProUGUI[skills.Length];
 

@@ -5234,10 +5234,10 @@ MonoBehaviour:
     m_Bits: 1024
   target: {fileID: 2290804137345502363}
   cam: {fileID: 0}
-  fadedAlpha: 0.33
+  fadedAlpha: 0.25
   retainShadows: 1
   targetPositionOffset: {x: 0, y: 1, z: 0}
-  fadeSpeed: 2
+  fadeSpeed: 3
   objectBlockingView: []
   view: {fileID: 5241064141482982936}
 --- !u!82 &-5613106680861566671
