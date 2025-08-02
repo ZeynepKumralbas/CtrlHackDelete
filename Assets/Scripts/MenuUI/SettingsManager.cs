@@ -11,8 +11,6 @@ public class SettingsManager : MonoBehaviour
     private float defaultSFXVolume = 1f;
     private float defaultMusicVolume = 1f;
 
-    public float settingsVolume;
-
     void Start()
     {
         // PlayerPrefs'ten kaydedilen ayarlarý yükle
@@ -32,8 +30,6 @@ public class SettingsManager : MonoBehaviour
     {
         PlayerPrefs.SetFloat("SFXVolume", volume);
         PlayerPrefs.Save();
-
-        settingsVolume = volume;
 
         // Burada kendi SFX ses kanalýna uygulaman gerekir
         Debug.Log("SFX volume: " + volume);
