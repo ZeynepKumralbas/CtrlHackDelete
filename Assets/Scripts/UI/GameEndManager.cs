@@ -314,27 +314,27 @@ public class GameEndManager : MonoBehaviourPunCallbacks
         switch (reason)
         {
             case "HumansWin":
-                message = "🎉 Humans have completed all tasks and escaped!";
+                message = "Humans have completed all tasks and escaped!";
                 cutsceneSceneToLoad = "HumansWin";
                 break;
 
             case "WatcherWin":
-                message = "👁️ Watcher has found all impostors!";
+                message = "Watcher has found all impostors!";
                 cutsceneSceneToLoad = "WatcherWin";
                 break;
 
             case "WatcherLose":
-                message = "💥 Watcher is defeated by false smashes!";
-                cutsceneSceneToLoad = "WatcherLose";
+                message = "Watcher is defeated by false smashes!";
+                cutsceneSceneToLoad = "HumansWin";
                 break;
 
             case "TimeIsUp":
-                message = "⏰ Time's up! No clear winner.";
+                message = "Time's up! No clear winner.";
                 cutsceneSceneToLoad = "TimeIsUp";
                 break;
 
             case "PlayerLeft":
-                message = "🚪 A player left the game. Match ended.";
+                message = "A player left the game. Match ended.";
                 cutsceneSceneToLoad = ""; // Cutscene yok
                 Invoke(nameof(BackToMenu), 3f);
                 break;
