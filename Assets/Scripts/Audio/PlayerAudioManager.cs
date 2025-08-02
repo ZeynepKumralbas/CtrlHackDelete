@@ -10,6 +10,7 @@ public class PlayerAudioManager : MonoBehaviourPunCallbacks
 
     public AudioClip[] playerAudioClips;
 
+    // Loop için kontrol değişkenleri (her client'ta ayrı takip)
     private string currentLoopingClipName = "";
     private bool isLooping = false;
 
@@ -18,13 +19,14 @@ public class PlayerAudioManager : MonoBehaviourPunCallbacks
         if (Instance == null)
             Instance = this;
 
-        view = GetComponent<PhotonView>();
         playerAudioSource = GetComponent<AudioSource>();
+        view = GetComponent<PhotonView>();
     }
 
+    // Normal veya looping sesleri yönetmek için genel fonksiyon
     public void PlayAudioClip(string clipName)
     {
-        // Loop yapılacak sesler
+        // Eğer yürüyüş veya koşma sesi ise loop olarak çal (tüm client'larda)
         if (clipName == "walkingSound" || clipName == "runningSound")
         {
             PlayLoopingAudio(clipName);
@@ -32,27 +34,32 @@ public class PlayerAudioManager : MonoBehaviourPunCallbacks
         }
         else
         {
+            // Loop sesi dışındaki ses çalınacaksa, varsa aktif loop'u tüm client'larda durdur
             if (isLooping)
                 StopLoopingAudio();
         }
 
-        // Mission sesi → sadece kendi duyacak (2D)
-        if (clipName == "missionMakingSound" || clipName == "missionCompletedSound")
+        AudioClip clipToPlay = FindClipByName(clipName);
+        if (clipToPlay == null)
         {
-            if (view.IsMine)
-            {
-                AudioClip clip = FindClipByName(clipName);
-                if (clip != null)
-                {
-                    playerAudioSource.spatialBlend = 0f; // 2D
-                    playerAudioSource.PlayOneShot(clip);
-                }
-            }
+            Debug.LogWarning($"Clip '{clipName}' not found in PlayerAudioClips.");
             return;
         }
 
-        // Diğer tüm sesler (skilller, ölüm) → herkes duyar (3D)
-        view.RPC("PlayClip", RpcTarget.All, clipName);
+        if (clipName.Contains("mission"))
+        {
+            // 2D Ses → sadece kendi duyacak
+            if (view.IsMine)
+            {
+                playerAudioSource.spatialBlend = 0f; // 2D
+                playerAudioSource.PlayOneShot(clipToPlay);
+            }
+        }
+        else
+        {
+            // 3D Ses → herkese gönder
+            view.RPC("PlayClip", RpcTarget.All, clipName);
+        }
     }
 
     [PunRPC]
@@ -68,11 +75,12 @@ public class PlayerAudioManager : MonoBehaviourPunCallbacks
         playerAudioSource.spatialBlend = 1f; // 3D
         playerAudioSource.PlayOneShot(clipToPlay);
     }
-
+    // Loop eden ses çalma (tüm client'larda)
     public void PlayLoopingAudio(string clipName)
     {
         if (!view.IsMine) return;
 
+        // Tüm oyuncularda başlatılması için RPC
         view.RPC("PlayLoopingAudioRPC", RpcTarget.All, clipName);
     }
 
@@ -81,6 +89,7 @@ public class PlayerAudioManager : MonoBehaviourPunCallbacks
     {
         if (currentLoopingClipName == clipName && isLooping) return;
 
+        // Varsa önceki looping sesi durdur
         StopLocalLooping();
 
         AudioClip clipToPlay = FindClipByName(clipName);
@@ -92,13 +101,13 @@ public class PlayerAudioManager : MonoBehaviourPunCallbacks
 
         playerAudioSource.clip = clipToPlay;
         playerAudioSource.loop = true;
-        playerAudioSource.spatialBlend = 1f; // 3D
+        playerAudioSource.spatialBlend = 1f;
         playerAudioSource.Play();
 
         isLooping = true;
         currentLoopingClipName = clipName;
     }
-
+    // Loop eden sesi durdurma (tüm client'larda)
     public void StopLoopingAudio()
     {
         if (!view.IsMine) return;
@@ -112,6 +121,7 @@ public class PlayerAudioManager : MonoBehaviourPunCallbacks
         StopLocalLooping();
     }
 
+    // Sadece bu instance'ta loop sesi durdurur (RPC çağrısında kullanılır)
     private void StopLocalLooping()
     {
         if (!isLooping) return;
@@ -124,6 +134,7 @@ public class PlayerAudioManager : MonoBehaviourPunCallbacks
         currentLoopingClipName = "";
     }
 
+    // Yardımcı: isimle clip bulma
     private AudioClip FindClipByName(string clipName)
     {
         foreach (AudioClip clip in playerAudioClips)
@@ -134,3 +145,4 @@ public class PlayerAudioManager : MonoBehaviourPunCallbacks
         return null;
     }
 }
+

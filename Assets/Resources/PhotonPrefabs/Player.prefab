@@ -1023,7 +1023,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5cd2824677db51f4f94cab67d88b2505, type: 3}
   - {fileID: 8300000, guid: 643942bf852fd8e438567089783ecf40, type: 3}
   - {fileID: 8300000, guid: 4b09f12628e7dc749868933ead763b64, type: 3}
-  - {fileID: 0}
   - {fileID: 8300000, guid: 578e06b82b6c5df4381c1a306261d1f8, type: 3}
   - {fileID: 8300000, guid: 6cfa80757aee0c6429b5ab08e777126b, type: 3}
 --- !u!1 &4644778070499559366
