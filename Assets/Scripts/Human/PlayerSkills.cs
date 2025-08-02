@@ -29,6 +29,8 @@ public class PlayerSkills : MonoBehaviour
 
     private void Start()
     {
+
+        if (!view.IsMine) return;
         Instance = this;
 
         txtTimersForSkills = new TextMeshProUGUI[skills.Length];
