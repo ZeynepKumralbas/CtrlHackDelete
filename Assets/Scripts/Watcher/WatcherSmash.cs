@@ -46,7 +46,7 @@ public class WatcherSmash : MonoBehaviour
                     {
                         view.RPC("SmashAnimation", RpcTarget.All);
                         WatcherInteraction.Instance.targetView.RPC("Die", RpcTarget.All);
-
+                        WatcherAudioManager.Instance.PlayAudioClip("smashSound");
 
                         /* OYUN SONU SENARYOSU ---> TUM PLAYER'LAR OLURSE*/
                         playerCount--;
@@ -67,7 +67,7 @@ public class WatcherSmash : MonoBehaviour
                     {
                         view.RPC("SmashAnimation", RpcTarget.All);
                         WatcherInteraction.Instance.targetView.RPC("Die", RpcTarget.All);
-
+                        WatcherAudioManager.Instance.PlayAudioClip("smashSound");
                         watcherHealth--;
                         watcherHealthSlider.value = watcherHealth;
                         watcherHealthSlider.transform.Find("TxtWatcherHealth").

@@ -145,7 +145,40 @@ public class PlayerMovement : MonoBehaviourPun, IPunObservable
             return;
 
         bool isRunning = run.action.IsPressed();
-        float currentSpeed = isRunning ? runSpeed : walkSpeed;
+        float currentSpeed; // Bu Rigidbody'ye uygulanacak
+
+        // 1. Hız belirleniyor
+        if (isRunning)
+        {
+            currentSpeed = runSpeed;
+        }
+        else
+        {
+            currentSpeed = walkSpeed;
+        }
+
+        // Rigidbody hızını uygula
+        rb.velocity = new Vector3(_moveDirection.x, 0f, _moveDirection.y) * currentSpeed;
+
+        // 2. Ses kontrolü
+        float inputMagnitude = _moveDirection.magnitude;
+
+        if (inputMagnitude < 0.1f)
+        {
+            view.RPC("StopLoopingAudioRPC", RpcTarget.AllBuffered);
+        }
+        else if (isRunning)
+        {
+            view.RPC("PlayLoopingAudioRPC", RpcTarget.AllBuffered, "runningSound");
+        }
+        else
+        {
+            view.RPC("PlayLoopingAudioRPC", RpcTarget.AllBuffered, "walkingSound");
+        }
+
+
+
+
 
         Vector3 movement = new Vector3(_moveDirection.x, 0, _moveDirection.y) * currentSpeed;
         rb.velocity = movement;
