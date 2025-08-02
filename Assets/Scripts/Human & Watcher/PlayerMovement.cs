@@ -1,76 +1,3 @@
-/*
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.InputSystem;
-using Photon.Pun;
-
-public class PlayerMovement : MonoBehaviour
-{
-    public Vector2 _moveDirection;
-    private Rigidbody rb;
-
-    [SerializeField] private InputActionReference move;
-    [SerializeField] private InputActionReference run;
-
-    [SerializeField] private float walkSpeed = 3f;
-    [SerializeField] private float runSpeed = 6f;
-
-    private Animator _animator;
-
-    // Multiplayer
-    public PhotonView view;
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        _animator = GetComponent<Animator>();
-        view = GetComponent<PhotonView>();
-    }
-
-    void Update()
-    {
-        if (!view.IsMine)
-        {
-            return;
-        }
-
-        _moveDirection = move.action.ReadValue<Vector2>();
-
-        // Animasyona h�z bilgisi g�nder (0 = idle, 0.5 = y�r�me, 1 = ko�u)
-        float inputMagnitude = _moveDirection.magnitude;
-        bool isRunning = run.action.IsPressed();
-        float animationSpeed = inputMagnitude * (isRunning ? 1f : 0.5f);
-
-        _animator.SetFloat("speed", animationSpeed);
-    }
-
-    void FixedUpdate()
-    {
-        if (!view.IsMine)
-        {
-            return;
-        }
-
-        bool isRunning = run.action.IsPressed();
-        float currentSpeed = isRunning ? runSpeed : walkSpeed;
-
-        Vector3 movement = new Vector3(_moveDirection.x, 0, _moveDirection.y) * currentSpeed;
-        rb.velocity = movement;
-
-        // Hareket varsa y�n�n� de�i�tir
-        if (_moveDirection != Vector2.zero)
-        {
-            Vector3 lookDirection = new Vector3(_moveDirection.x, 0f, _moveDirection.y);
-            Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
-        }
-
-    }
-}
-*/
-
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -90,10 +17,8 @@ public class PlayerMovement : MonoBehaviourPun, IPunObservable
 
     private Animator _animator;
 
-    // Multiplayer
     public PhotonView view;
 
-    // Remote oyuncu için network senkronizasyon verileri
     private Vector3 networkPosition;
     private Quaternion networkRotation;
     private Vector3 networkVelocity;
@@ -106,7 +31,6 @@ public class PlayerMovement : MonoBehaviourPun, IPunObservable
         _animator = GetComponent<Animator>();
         view = GetComponent<PhotonView>();
 
-        // Remote başlangıç pozisyonu local konuma eşitlenir
         networkPosition = transform.position;
         networkRotation = transform.rotation;
     }
@@ -122,18 +46,35 @@ public class PlayerMovement : MonoBehaviourPun, IPunObservable
             float animationSpeed = inputMagnitude * (isRunning ? 1f : 0.5f);
 
             _animator.SetFloat("speed", animationSpeed);
+
+            // 🔊 YÜRÜME / KOŞMA SESLERİ — sadece kendi karakterin için tetiklenir ama ses tüm client'lara gider
+            if (inputMagnitude > 0.1f)
+            {
+                if (isRunning)
+                {
+                    PlayerAudioManager.Instance?.PlayAudioClip("runningSound");
+                    WatcherAudioManager.Instance?.PlayAudioClip("runningSound");
+
+                }
+                else
+                {
+                    PlayerAudioManager.Instance?.PlayAudioClip("walkingSound");
+                    WatcherAudioManager.Instance?.PlayAudioClip("walkingSound");
+                }
+            }
+            else
+            {
+                PlayerAudioManager.Instance?.StopLoopingAudio();
+                WatcherAudioManager.Instance?.StopLoopingAudio();
+            }
         }
         else
         {
-            // Remote oyuncular için pozisyon ve animasyon interpolasyonu
-
-            // FPS farkını dengelemek için interpolation factor
             float lerpFactor = Mathf.Clamp01(15f * Time.deltaTime);
 
             transform.position = Vector3.Lerp(transform.position, networkPosition, lerpFactor);
             transform.rotation = Quaternion.Slerp(transform.rotation, networkRotation, lerpFactor);
 
-            // Animasyon parametresi de yumuşak geçsin
             float currentSpeed = _animator.GetFloat("speed");
             _animator.SetFloat("speed", Mathf.Lerp(currentSpeed, networkAnimSpeed, lerpFactor));
         }
@@ -178,7 +119,6 @@ public class PlayerMovement : MonoBehaviourPun, IPunObservable
 
             double lag = PhotonNetwork.Time - receivedTime;
 
-            // Lag compensation
             networkPosition = receivedPosition + receivedVelocity * (float)lag;
             networkRotation = receivedRotation;
             networkVelocity = receivedVelocity;

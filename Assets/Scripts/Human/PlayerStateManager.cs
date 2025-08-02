@@ -37,7 +37,7 @@ public class PlayerStateManager : MonoBehaviourPun
     public void DieAndBecomeGhost()
     {
         if (currentState != PlayerState.Alive) return;
-
+        PlayerAudioManager.Instance.PlayAudioClip("playerDeathSound");
         currentState = PlayerState.Dead;
         animator.SetTrigger("getHit");
 

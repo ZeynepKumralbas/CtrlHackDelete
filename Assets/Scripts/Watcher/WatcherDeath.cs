@@ -27,7 +27,7 @@ public class WatcherDeath : MonoBehaviour
         isDead = true;
 
         animator.SetTrigger("getHit");
-
+        WatcherAudioManager.Instance.PlayAudioClip("watcherDeathSound");
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<WatcherInteraction>().enabled = false;
         GetComponent<WatcherNotification>().enabled = false;

@@ -5348,10 +5348,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b778f2664982dd64cb726dd465886007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  watcherAudioSource: {fileID: -5613106680861566671}
-  watcherAudioSounds:
+  watcherAudioClips:
+  - {fileID: 8300000, guid: a390c1d3207a78f4790f8827b0c5581c, type: 3}
+  - {fileID: 8300000, guid: 43e4410fe2562df4590b5f61a199b009, type: 3}
+  - {fileID: 8300000, guid: 1fdf746e1c25b814aaf737f79d948f1a, type: 3}
   - {fileID: 8300000, guid: 5eac4525ec1be1d4b8c728ceba879016, type: 3}
-  view: {fileID: 5241064141482982936}
+  - {fileID: 8300000, guid: a4df4e818ccdd7a4eaded7dcce674326, type: 3}
+  - {fileID: 8300000, guid: cb6ca3ea371b7a9408a68c1f8848ad17, type: 3}
+  - {fileID: 8300000, guid: 5a7fb04b84c90a1418dd7615a811a31f, type: 3}
 --- !u!1 &7420957708180363229
 GameObject:
   m_ObjectHideFlags: 0

@@ -97,6 +97,7 @@ public class PlayerInteraction : MonoBehaviourPun
 
         if (missionCompletePercentSlider != null)
         {
+            PlayerAudioManager.Instance.PlayAudioClip("missionMakingSound");
             missionCompletePercentSlider.gameObject.SetActive(true);
             missionCompletePercentSlider.value = interactionTime;
         }
@@ -106,6 +107,7 @@ public class PlayerInteraction : MonoBehaviourPun
             if (!interaction.action.IsPressed())
             {
                 view.RPC("SetInteractingAnim", RpcTarget.All, false);
+                
 
                 if (missionCompletePercentSlider != null)
                 {
@@ -121,12 +123,14 @@ public class PlayerInteraction : MonoBehaviourPun
             if (missionCompletePercentSlider != null)
             {
                 missionCompletePercentSlider.value = interactionTime - holdTime;
+                
             }
 
             yield return null;
         }
 
         Debug.Log("Görev tamamlandı!");
+        PlayerAudioManager.Instance.PlayAudioClip("missionCompletedSound");
         view.RPC("SetInteractingAnim", RpcTarget.All, false);
         finishedMissionCounter++;
         isHolding = false;

@@ -165,6 +165,7 @@ public class WatcherNotification : MonoBehaviour
     public int notificationDelay = 1;
     public int notificationScreenTime = 5;
 
+
     public GameObject pnlNotification;
 
     private bool isNotifying = false;
@@ -203,6 +204,7 @@ public class WatcherNotification : MonoBehaviour
     /// </summary>
     private IEnumerator Notification_MissionComplete(string roomName)
     {
+        WatcherAudioManager.Instance.PlayAudioClip("notificationSound");
         isNotifying = true;
 
         string notificationMessage = $"Something is wrong in {roomName}";

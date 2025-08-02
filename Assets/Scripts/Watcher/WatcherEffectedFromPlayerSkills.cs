@@ -58,6 +58,7 @@ public class WatcherEffectedFromPlayerSkills : MonoBehaviour
     [PunRPC]
     public void Skill_WatcherVisibilityBlock_Start(float cooldown)
     {
+        WatcherAudioManager.Instance.PlayAudioClip("skill_CloseSightEffectSound");
         UIManager.Instance.pnlWatcherVisibilityBlocker.gameObject.SetActive(true);
         SkillCooldown(1, cooldown);
         StartCoroutine(VisibilityBlockDurationCoroutine(cooldown));

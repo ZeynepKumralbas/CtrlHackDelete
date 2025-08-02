@@ -67,6 +67,7 @@ public class WatcherSmash : MonoBehaviour
                     {
                         view.RPC("SmashAnimation", RpcTarget.All);
                         WatcherInteraction.Instance.targetView.RPC("Die", RpcTarget.All);
+                        WatcherAudioManager.Instance.PlayAudioClip("smashSound");
 
                         watcherHealth--;
                         watcherHealthSlider.value = watcherHealth;
