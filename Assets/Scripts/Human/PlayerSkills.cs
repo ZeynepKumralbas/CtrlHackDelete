@@ -98,6 +98,8 @@ public class PlayerSkills : MonoBehaviour
     }
     private void SkillActivationController(int index)
     {
+        if(!view.IsMine) return;
+
         if(index == 1)
         {
             SkillImageAlpha(0);
