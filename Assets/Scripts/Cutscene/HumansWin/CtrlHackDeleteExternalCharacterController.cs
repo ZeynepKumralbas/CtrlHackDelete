@@ -24,8 +24,12 @@ public class CtrlHackDeleteExternalCharacterController : MonoBehaviour
 
     private IEnumerator PlayCutscene()
     {
+        while (!leadCharacter.IsReady()) // IsReady fonksiyonu eklemelisin
+        yield return null;
+        
         bool leadArrived = false;
-
+        Debug.Log("Enumerator");
+        Debug.Log("leadTarget.position:" + leadTarget.position);
         // 1️⃣ Lead karakter yürüsün
         leadCharacter.MoveTo(leadTarget.position, isRunning: false, isSneaking: false, onArrived: () =>
         {

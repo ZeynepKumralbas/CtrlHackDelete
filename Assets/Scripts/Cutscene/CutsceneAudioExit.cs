@@ -4,18 +4,7 @@ using Photon.Pun;
 
 public class CutsceneAutoExit : MonoBehaviour
 {
-    public PlayableDirector director;
-
     private bool exited = false;
-
-    void Start()
-    {
-        if (director == null)
-            director = GetComponent<PlayableDirector>();
-
-    //    if (director != null)
-      //      director.stopped += OnCutsceneFinished;
-    }
 
     void Update()
     {
@@ -23,21 +12,9 @@ public class CutsceneAutoExit : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            SkipCutscene();
+            exited = true;
+            Launcher.instance.returnToMenuScene = true;
+            PhotonNetwork.LeaveRoom();
         }
-    }
-
-    private void OnCutsceneFinished(PlayableDirector d)
-    {
-        SkipCutscene();
-    }
-
-    void SkipCutscene()
-    {
-        if (exited) return;
-        exited = true;
-
-        Launcher.instance.returnToMenuScene = true;
-        PhotonNetwork.LeaveRoom();
     }
 }
