@@ -13,7 +13,7 @@ public class WatcherEffectedFromPlayerSkills : MonoBehaviour
     private void Start()
     {
         Instance = this;
-        _playerSkills = FindObjectOfType<PlayerSkills>();
+        _playerSkills = GetComponent<PlayerSkills>();
     }
 
     public void SkillCooldown(int index, float cooldown)

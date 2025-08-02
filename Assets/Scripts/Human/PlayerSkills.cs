@@ -10,8 +10,6 @@ using YourNamespaceHere;
 
 public class PlayerSkills : MonoBehaviour
 {
-    public static PlayerSkills Instance;
-
     [SerializeField] private InputActionReference[] skills;
 
     [SerializeField] private float[] cooldownsForSkills;
@@ -20,6 +18,7 @@ public class PlayerSkills : MonoBehaviour
 
     public TextMeshProUGUI[] txtTimersForSkills;
 
+    private PlayerInteraction playerInteraction;
 
     public float[] activeCooldownsForSkills;
 
@@ -29,9 +28,9 @@ public class PlayerSkills : MonoBehaviour
 
     private void Start()
     {
-
         if (!view.IsMine) return;
-        Instance = this;
+
+        playerInteraction = GetComponent<PlayerInteraction>();
 
         txtTimersForSkills = new TextMeshProUGUI[skills.Length];
 
@@ -79,9 +78,9 @@ public class PlayerSkills : MonoBehaviour
                 }
             }
         }
-        if(PlayerInteraction.Instance.finishedMissionCounter > 0)
+        if(playerInteraction.finishedMissionCounter > 0)
         {
-            switch (PlayerInteraction.Instance.finishedMissionCounter)
+            switch (playerInteraction.finishedMissionCounter)
             {
                 case 1:
                     SkillActivationController(1);
