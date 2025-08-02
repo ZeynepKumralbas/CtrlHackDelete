@@ -12,6 +12,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private List<AudioClip> menuAudioSounds;
 
+    private bool isBackground = false;
+
     /* MENÜ VE OYUN SAHNESÝ DIÞI SAHNE SESLERÝ -- 2D SES*/
     /*
     ambientSound
@@ -41,6 +43,16 @@ public class AudioManager : MonoBehaviour
 
         PlayAudioClip("menuBackgroundSound");
     }
+    private void Update()
+    {
+        if (isBackground)
+        {
+            if (SceneManager.GetActiveScene().name == "Game")
+            {
+                gameAudioSource.Stop();
+            }
+        }
+    }
 
     public void PlayAudioClip(string audioName)
     {
@@ -58,10 +70,7 @@ public class AudioManager : MonoBehaviour
                     gameAudioSource.clip = clip;
                     gameAudioSource.Play();
 
-                    if(SceneManager.GetActiveScene().name == "Game")
-                    {
-                        gameAudioSource.Stop();
-                    }
+                    isBackground = true;
                 }
                 else
                 {
