@@ -1,82 +1,136 @@
-using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class PlayerAudioManager : MonoBehaviour
+public class PlayerAudioManager : MonoBehaviourPunCallbacks
 {
     public static PlayerAudioManager Instance;
 
-    public AudioSource playerAudioSource;
+    private PhotonView view;
+    private AudioSource playerAudioSource;
 
-    [SerializeField] private List<AudioClip> playerAudioSounds;
+    public AudioClip[] playerAudioClips;
 
-    private AudioClip currentClip;
+    private string currentLoopingClipName = "";
+    private bool isLooping = false;
 
-    private SettingsManager settingsManager;
-
-    public PhotonView view;
-
-    /* PLAYER SESLERÝ -- 3D SES / 2D SES*/
-    /*
-    walkingSound
-    runningSound --> walkingSound AudioClip üzerinden ayar çekilip runningSound için kullanýlabilir
-
-    missionMakingSound
-    missionCompletedSound
-
-    skill_FreezeActivateSound
-    skill_CloseSightActivateSound
-    skill_ChangecolorActivateSound
-
-    playerDeathSound
-    */
-
-    void Start()
+    private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+            Instance = this;
 
+        view = GetComponent<PhotonView>();
         playerAudioSource = GetComponent<AudioSource>();
-
-        /*settingsManager = FindObjectOfType<SettingsManager>();
-        playerAudioSource.volume = settingsManager.settingsVolume;*/
     }
 
-    public void PlayAudioClip(string audioName)
+    public void PlayAudioClip(string clipName)
     {
-        foreach (AudioClip clip in playerAudioSounds)
+        // Loop yapÄ±lacak sesler
+        if (clipName == "walkingSound" || clipName == "runningSound")
         {
-            currentClip = clip;
-            if (clip.name == audioName)
-            {
-                if (clip.name.Contains("skill")) //2D  Ses
-                {
-                    if (view.IsMine)
-                    {
-                        Play2DClip(clip);
-                    }
-                }
-                else                        //3D Ses
-                {
-                    view.RPC("PlayClip", RpcTarget.All, clip.name);
-                }
-                break;
-            }
+            PlayLoopingAudio(clipName);
+            return;
         }
+        else
+        {
+            if (isLooping)
+                StopLoopingAudio();
+        }
+
+        // Mission sesi â†’ sadece kendi duyacak (2D)
+        if (clipName == "missionMakingSound" || clipName == "missionCompletedSound")
+        {
+            if (view.IsMine)
+            {
+                AudioClip clip = FindClipByName(clipName);
+                if (clip != null)
+                {
+                    playerAudioSource.spatialBlend = 0f; // 2D
+                    playerAudioSource.PlayOneShot(clip);
+                }
+            }
+            return;
+        }
+
+        // DiÄŸer tÃ¼m sesler (skilller, Ã¶lÃ¼m) â†’ herkes duyar (3D)
+        view.RPC("PlayClip", RpcTarget.All, clipName);
     }
 
     [PunRPC]
-    public void PlayClip(string clipName)
+    private void PlayClip(string clipName)
     {
-        if(currentClip.name == clipName)
+        AudioClip clipToPlay = FindClipByName(clipName);
+        if (clipToPlay == null)
         {
-            playerAudioSource.spatialBlend = 1f;
-            playerAudioSource.PlayOneShot(currentClip);
+            Debug.LogWarning($"[RPC] Clip '{clipName}' not found.");
+            return;
         }
+
+        playerAudioSource.spatialBlend = 1f; // 3D
+        playerAudioSource.PlayOneShot(clipToPlay);
     }
-    public void Play2DClip(AudioClip clip)
+
+    public void PlayLoopingAudio(string clipName)
     {
-        playerAudioSource.spatialBlend = 0f;
-        playerAudioSource.PlayOneShot(clip);
+        if (!view.IsMine) return;
+
+        view.RPC("PlayLoopingAudioRPC", RpcTarget.All, clipName);
+    }
+
+    [PunRPC]
+    private void PlayLoopingAudioRPC(string clipName)
+    {
+        if (currentLoopingClipName == clipName && isLooping) return;
+
+        StopLocalLooping();
+
+        AudioClip clipToPlay = FindClipByName(clipName);
+        if (clipToPlay == null)
+        {
+            Debug.LogWarning($"[RPC] Looping Clip '{clipName}' not found.");
+            return;
+        }
+
+        playerAudioSource.clip = clipToPlay;
+        playerAudioSource.loop = true;
+        playerAudioSource.spatialBlend = 1f; // 3D
+        playerAudioSource.Play();
+
+        isLooping = true;
+        currentLoopingClipName = clipName;
+    }
+
+    public void StopLoopingAudio()
+    {
+        if (!view.IsMine) return;
+
+        view.RPC("StopLoopingAudioRPC", RpcTarget.All);
+    }
+
+    [PunRPC]
+    private void StopLoopingAudioRPC()
+    {
+        StopLocalLooping();
+    }
+
+    private void StopLocalLooping()
+    {
+        if (!isLooping) return;
+
+        playerAudioSource.Stop();
+        playerAudioSource.clip = null;
+        playerAudioSource.loop = false;
+
+        isLooping = false;
+        currentLoopingClipName = "";
+    }
+
+    private AudioClip FindClipByName(string clipName)
+    {
+        foreach (AudioClip clip in playerAudioClips)
+        {
+            if (clip != null && clip.name == clipName)
+                return clip;
+        }
+        return null;
     }
 }
