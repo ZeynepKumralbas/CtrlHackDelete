@@ -7,8 +7,8 @@ aBUGames
 |--------------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Zeynep Kumralbaş   | Scrum Master & Developer   | <a href="https://www.linkedin.com/in/zeynep-kumralbas/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>                  <a href="https://github.com/ZeynepKumralbas"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>       <a href="https://zeynepkumralbas.itch.io/"><img src="https://static.itch.io/images/itchio-textless-black.svg" width="24"/></a> |
 | Eymen Arapoğlu     | Product Owner & Developer  | <a href="https://www.linkedin.com/in/eymen-arapo%C4%9Flu-3543a8262/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>     <a href="https://github.com/Eymen179"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>              <a href="https://eymen179.itch.io/"><img src="https://static.itch.io/images/itchio-textless-black.svg" width="24"/></a>        |
-| Furkan Enes Kurnaz | Developer                  | <a href="https://www.linkedin.com/in/furkan-enes-kurnaz-906999236/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>      <a href="https://github.com/FurkanEnesKurnaz"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>      <a href="https://furkankurnaz.itch.io/"><img src="https://static.itch.io/images/itchio-textless-black.svg" width="24"/></a>    |
 | Eren Altınışık     | Developer                  | <a href="https://www.linkedin.com/in/erenaltinisik/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>                     <a href="https://github.com/goldenlight97"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>                                                                                                                                        |
+| Furkan Enes Kurnaz | Developer                  | <a href="https://www.linkedin.com/in/furkan-enes-kurnaz-906999236/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>      <a href="https://github.com/FurkanEnesKurnaz"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>      <a href="https://furkankurnaz.itch.io/"><img src="https://static.itch.io/images/itchio-textless-black.svg" width="24"/></a>    |
 | Şevval Arslan      | Developer                  | <a href="https://www.linkedin.com/in/%C5%9Fevval-arslan-039526256/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>      <a href="http://github.com/iamsevval"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>              <a href="https://sevvalarslan.itch.io"><img src="https://static.itch.io/images/itchio-textless-black.svg" width="24"/></a>     |
 
 
@@ -402,13 +402,11 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
     <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/TrelloBoard/ColorLegend.png" alt="Trello Board Color Legend" style="width:50%;"  />
     <br/><em>Figure 3.1: Trello Board Color Legend</em>
   </p>
-  
-<!--
+
   <p align="center">
     <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/TrelloBoard/TrelloBoardUpdate.png" alt="Trello Board" style="width:50%;"  />
     <br/><em>Figure 3.2: Trello Board</em>
   </p>
-  -->
 
   <br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Game Status Screenshots:</strong></span>
@@ -426,12 +424,12 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
   </p>
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/GameStatusScreenshots/WatcherSpawnRoom.jpeg" alt="Watcher Spawn Room" width="400" />
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/GameStatusScreenshots/WatcherSpawnRoom.png" alt="Watcher Spawn Room" width="400" />
     <br/><em>Figure 3.5: Watcher Spawn Room</em>
   </p>
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/GameStatusScreenshots/Mission1.jpeg" alt="Humans Disguised as Robots Completing a Mission" width="400" />
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/GameStatusScreenshots/Mission1.png" alt="Humans Disguised as Robots Completing a Mission" width="400" />
     <br/><em>Figure 3.6: Humans Disguised as Robots Completing a Mission</em>
   </p>
 
