@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviourPun, IPunObservable
         networkRotation = transform.rotation;
     }
 
-    void Update()
+    void Update() // Hareket animasyonu ayarları / Ses ayarları / lagfix
     {
         if (view.IsMine)
         {
@@ -80,7 +80,7 @@ public class PlayerMovement : MonoBehaviourPun, IPunObservable
         }
     }
 
-    void FixedUpdate()
+    void FixedUpdate() // Hareket mekanikleri ayarları
     {
         if (!view.IsMine)
             return;
