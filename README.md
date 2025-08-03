@@ -3,13 +3,13 @@ aBUGames
 
 ## Team Members
 
-| Name               | Title          | Socials                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|--------------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Zeynep Kumralbaş   | Scrum Master   | <a href="https://www.linkedin.com/in/zeynep-kumralbas/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>                  <a href="https://github.com/ZeynepKumralbas"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>       <a href="https://zeynepkumralbas.itch.io/"><img src="https://static.itch.io/images/itchio-textless-black.svg" width="24"/></a> |
-| Eymen Arapoğlu     | Product Owner  | <a href="https://www.linkedin.com/in/eymen-arapo%C4%9Flu-3543a8262/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>     <a href="https://github.com/Eymen179"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>              <a href="https://eymen179.itch.io/"><img src="https://static.itch.io/images/itchio-textless-black.svg" width="24"/></a>        |
-| Furkan Enes Kurnaz | Developer      | <a href="https://www.linkedin.com/in/furkan-enes-kurnaz-906999236/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>      <a href="https://github.com/FurkanEnesKurnaz"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>      <a href="https://furkankurnaz.itch.io/"><img src="https://static.itch.io/images/itchio-textless-black.svg" width="24"/></a>    |
-| Eren Altınışık     | Developer      | <a href="https://www.linkedin.com/in/erenaltinisik/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>                     <a href="https://github.com/goldenlight97"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>                                                                                                                                        |
-| Şevval Arslan      | Developer      | <a href="https://www.linkedin.com/in/%C5%9Fevval-arslan-039526256/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>      <a href="http://github.com/iamsevval"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>              <a href="https://sevvalarslan.itch.io"><img src="https://static.itch.io/images/itchio-textless-black.svg" width="24"/></a>     |
+| Name               | Title                      | Socials                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|--------------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Zeynep Kumralbaş   | Scrum Master & Developer   | <a href="https://www.linkedin.com/in/zeynep-kumralbas/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>                  <a href="https://github.com/ZeynepKumralbas"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>       <a href="https://zeynepkumralbas.itch.io/"><img src="https://static.itch.io/images/itchio-textless-black.svg" width="24"/></a> |
+| Eymen Arapoğlu     | Product Owner & Developer  | <a href="https://www.linkedin.com/in/eymen-arapo%C4%9Flu-3543a8262/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>     <a href="https://github.com/Eymen179"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>              <a href="https://eymen179.itch.io/"><img src="https://static.itch.io/images/itchio-textless-black.svg" width="24"/></a>        |
+| Furkan Enes Kurnaz | Developer                  | <a href="https://www.linkedin.com/in/furkan-enes-kurnaz-906999236/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>      <a href="https://github.com/FurkanEnesKurnaz"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>      <a href="https://furkankurnaz.itch.io/"><img src="https://static.itch.io/images/itchio-textless-black.svg" width="24"/></a>    |
+| Eren Altınışık     | Developer                  | <a href="https://www.linkedin.com/in/erenaltinisik/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>                     <a href="https://github.com/goldenlight97"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>                                                                                                                                        |
+| Şevval Arslan      | Developer                  | <a href="https://www.linkedin.com/in/%C5%9Fevval-arslan-039526256/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="24"/>      <a href="http://github.com/iamsevval"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/>              <a href="https://sevvalarslan.itch.io"><img src="https://static.itch.io/images/itchio-textless-black.svg" width="24"/></a>     |
 
 
 ## Game Name
@@ -378,7 +378,9 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
         <li>Integrated cutscenes, VFX, and audio for a complete game experience.</li>
       </ul>
     </li>
-  <li> Potential risks include slower progress from the team members who are currently working.
+    <li>It has been decided to upload the game to itch.io. Since the game is intended as a desktop experience, and due to the nature of the platform, including advertisements would not be appropriate.</li>
+    <li>During the project, we worked with branches on GitHub. It has been decided to merge the latest development branch into the main branch.</li>
+    <li> Potential risks include slower progress from the team members who are currently working.
 
     
   </ul>
@@ -403,7 +405,7 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
   
 <!--
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/TrelloBoard/TrelloBoardUpdate.png" alt="Trello Board Color Legend" style="width:50%;"  />
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/TrelloBoard/TrelloBoardUpdate.png" alt="Trello Board" style="width:50%;"  />
     <br/><em>Figure 3.2: Trello Board</em>
   </p>
   -->
@@ -413,54 +415,42 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
   <br/>
   <br/>
 
-  <!--
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/WatcherAndRobotAssets.png" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.3: Watcher and Robot Asset</em>
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/GameStatusScreenshots/GameEnvironment.png" alt="Game Environment" width="400" />
+    <br/><em>Figure 3.3: Game Environment</em>
   </p>
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/MainMenu.jpeg" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.4: Main Menu</em>
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/GameStatusScreenshots/RobotsNPCsSpawnRoom.png" alt="Robots and NPCs Spawn Room" width="400" />
+    <br/><em>Figure 3.4: Robots and NPCs Spawn Room</em>
   </p>
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/TeamSelection.jpeg" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.5: Team Selection Menu</em>
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/GameStatusScreenshots/WatcherSpawnRoom.jpeg" alt="Watcher Spawn Room" width="400" />
+    <br/><em>Figure 3.5: Watcher Spawn Room</em>
   </p>
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/WatcherSabotage1.png" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.6: Human Sabotage 1 to Watcher</em>
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/GameStatusScreenshots/Mission1.jpeg" alt="Humans Disguised as Robots Completing a Mission" width="400" />
+    <br/><em>Figure 3.6: Humans Disguised as Robots Completing a Mission</em>
   </p>
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/WatcherSabotage2.png" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.7: Human Sabotage 2 to Watcher</em>
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/GameStatusScreenshots/Mission2.png" alt="Humans Disguised as Robots Completing a Mission" width="400" />
+    <br/><em>Figure 3.7: Humans Disguised as Robots Completing a Mission</em>
   </p>
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/WatcherSabotage3.png" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.8: Human Sabotage 3 to Watcher</em>
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/GameStatusScreenshots/WatcherNotification.png" alt="Watcher Notification Triggered When a Human Completes a Mission" width="400" />
+    <br/><em>Figure 3.8: Watcher Notification Triggered When a Human Completes a Mission</em>
   </p>
-
-  <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/TaskBasedNPC.png" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.9: Task-based NPCs</em>
-  </p>
-
-  <p align="center">
-    <img src="http://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint2/GameStatusScreenshots/GameScene.png" alt="Robot Asset" width="400" />
-    <br/><em>Figure 2.10: Basic Game Scene</em>
-  </p>
-  -->
   
   <br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Review:</strong></span>
     The team focused on finalizing the gameplay mechanics, integrating audio, polishing the overall gameplay experience, and delivering a stable multiplayer game. 
     Planned goals, including all remaining tasks from Sprint 2 and tasks defined in Sprint 3, were successfully completed and integrated into the game. 
     A final playable version of the game now includes the core mechanics envisioned in the GDD.
-    The team was able to complete ... out of the estimated 76 points for this sprint.
+    The team was able to complete 76 out of the estimated 76 points for this sprint.
   <br/>
   <br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Retrospective:</strong></span>
