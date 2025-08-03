@@ -330,7 +330,7 @@ public class GameEndManager : MonoBehaviourPunCallbacks
 
             case "TimeIsUp":
                 message = "Time's up! No clear winner.";
-                cutsceneSceneToLoad = "TimeIsUp";
+                cutsceneSceneToLoad = "WatcherWin";
                 break;
 
             case "PlayerLeft":
