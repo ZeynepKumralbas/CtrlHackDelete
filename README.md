@@ -445,8 +445,13 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
   </p>
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/GameStatusScreenshots/CtrlHackDeleteCutscene.png" alt="Game End Cutscene - Executing Ctrl Hack Delete" width="400" />
-    <br/><em>Figure 3.9: Game End Cutscene - Executing Ctrl Hack Delete</em>
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/GameStatusScreenshots/WatcherWinCutscene.png" alt="WatcherWinCutscene" width="400" />
+    <br/><em>Figure 3.9: Game End Cutscene - Watcher Win</em>
+  </p>
+
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/GameStatusScreenshots/CtrlHackDeleteCutscene.png" alt="Game End Cutscene - Humans Win Executing Ctrl Hack Delete" width="400" />
+    <br/><em>Figure 3.10: Game End Cutscene - Executing Ctrl Hack Delete</em>
   </p>
   
   <br/>
