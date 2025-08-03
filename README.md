@@ -100,8 +100,9 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
 - 🧍‍♂️ 3D isometric camera  
 - 🎮 Multiplayer for 2 to 5 players
 - 🕹️ Asymmetric roles: Humans vs Watcher
+- 🤖 AI-controlled NPCs performing tasks
 - 🧠 Social deduction with stealth mechanics
-- 🤖 Reverse Turing Test concept
+- 🪞 Reverse Turing Test concept
 
 ## 🎯 Target Audience
 - 🎭 Fans of stealth and social deduction games like *Among Us*, *West Hunt*, *SpyParty*, or *Project Winter*  
@@ -111,6 +112,9 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
 - 💻 Indie game lovers interested in creative mechanics  
 - 🔞 Recommended for ages 13 and up
 
+## 🚀 Deployment Plan
+- The game is designed as a desktop application and will be distributed via itch.io.
+- Due to this distribution method and the nature of desktop gameplay, no in-game advertisements will be included.
 
 ## 🗃️ Product Backlog
 [Trello](https://trello.com/invite/b/68582bb91c557a8922e77594/ATTIdcd19b358bfb2d774811755d1cf56501AEFE1FCE/yzta-bootcamp)
@@ -378,11 +382,8 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
         <li>Integrated cutscenes, VFX, and audio for a complete game experience.</li>
       </ul>
     </li>
-    <li>It has been decided to upload the game to itch.io. Since the game is intended as a desktop experience, and due to the nature of the platform, including advertisements would not be appropriate.</li>
     <li>During the project, we worked with branches on GitHub. It has been decided to merge the latest development branch into the main branch.</li>
     <li> Potential risks include slower progress from the team members who are currently working.
-
-    
   </ul>
 
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Estimated Points to Complete:</strong></span>
