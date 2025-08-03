@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Linq;
 using Photon.Pun;
 using TMPro;
@@ -269,6 +269,265 @@ public class PlayerInteraction : MonoBehaviourPun
             {
                 missionCompletePercentSlider.gameObject.SetActive(false);
                 missionCompletePercentSlider.value = interactionTime;
+            }
+
+            if (txtInteractionButton != null)
+                txtInteractionButton.SetActive(false);
+
+            Debug.Log("Görev alanı terk edildi, işlem iptal.");
+        }
+    }
+}
+*/
+
+using Photon.Pun;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
+
+public class PlayerInteraction : MonoBehaviourPun
+{
+    public static PlayerInteraction Instance;
+
+    [SerializeField] private InputActionReference interaction;
+    [SerializeField] private float interactionTime = 5f;
+
+    [SerializeField] private GameObject txtInteractionButton;
+    [SerializeField] private Slider missionCompletePercentSlider;
+
+    private Animator _animator;
+
+    private Coroutine holdCoroutine;
+
+    public int finishedMissionCounter = 0;
+
+    private bool isInMissionPoint = false;
+    private bool isHolding = false;
+
+    private GameObject currentMissionPoint;
+    private string currentMissionPointName;
+
+    public string roomName;
+
+    private void Start()
+    {
+        Instance = this;
+
+        _animator = GetComponent<Animator>();
+
+        if (photonView.IsMine)
+        {
+            txtInteractionButton = UIManager.Instance.txtInteractionButton;
+            missionCompletePercentSlider = UIManager.Instance.missionCompletePercentSlider;
+
+            if (txtInteractionButton != null)
+                txtInteractionButton.SetActive(false);
+
+            if (missionCompletePercentSlider != null)
+            {
+                missionCompletePercentSlider.gameObject.SetActive(false);
+                missionCompletePercentSlider.maxValue = interactionTime;
+                missionCompletePercentSlider.value = interactionTime;
+            }
+        }
+    }
+
+    private void Update()
+    {
+        if (!photonView.IsMine) return;
+        if (!isInMissionPoint) return;
+        if (GetComponent<PlayerStateManager>().currentState == PlayerState.Ghost) return; // Hayaletken etkileşim yok
+
+        if (interaction.action.WasPressedThisFrame())
+        {
+            holdCoroutine = StartCoroutine(HoldInteraction());
+        }
+
+        if (interaction.action.WasReleasedThisFrame())
+        {
+            if (holdCoroutine != null)
+            {
+                isInMissionPoint = false;
+
+                StopCoroutine(holdCoroutine);
+                holdCoroutine = null;
+
+                photonView.RPC("SetInteractingAnim", RpcTarget.All, false);
+
+                if (txtInteractionButton != null)
+                    txtInteractionButton.SetActive(false);
+            }
+        }
+    }
+
+    private IEnumerator HoldInteraction()
+    {
+        isHolding = true;
+        photonView.RPC("SetInteractingAnim", RpcTarget.All, true);
+
+        float holdTime = 0f;
+
+        if (missionCompletePercentSlider != null)
+        {
+            PlayerAudioManager.Instance.PlayAudioClip("missionMakingSound");
+
+            missionCompletePercentSlider.gameObject.SetActive(true);
+            missionCompletePercentSlider.value = interactionTime;
+        }
+
+        while (holdTime < interactionTime)
+        {
+            if (!interaction.action.IsPressed())
+            {
+                photonView.RPC("SetInteractingAnim", RpcTarget.All, false);
+                if (missionCompletePercentSlider != null)
+                    missionCompletePercentSlider.gameObject.SetActive(false);
+                yield break;
+            }
+
+            holdTime += Time.deltaTime;
+
+            if (missionCompletePercentSlider != null)
+                missionCompletePercentSlider.value = interactionTime - holdTime;
+
+            yield return null;
+        }
+
+        Debug.Log("Görev tamamlandı!");
+        PlayerAudioManager.Instance.PlayAudioClip("missionCompletedSound");
+
+        photonView.RPC("SetInteractingAnim", RpcTarget.All, false);
+
+        finishedMissionCounter++;
+        isHolding = false;
+
+        MissionManager.Instance.missionCount--;
+
+        if (photonView.IsMine && !string.IsNullOrEmpty(roomName))
+        {
+            photonView.RPC("NotifyWatcherMissionComplete", RpcTarget.All, roomName);
+        }
+
+        if (missionCompletePercentSlider != null)
+        {
+            missionCompletePercentSlider.gameObject.SetActive(false);
+            missionCompletePercentSlider.value = 0;
+        }
+
+        if (currentMissionPoint != null)
+        {
+            currentMissionPointName = currentMissionPoint.transform.parent.name;
+
+            PhotonView missionView = currentMissionPoint.GetComponent<PhotonView>();
+            if (missionView != null)
+            {
+                photonView.RPC("SetMissionVisibility", RpcTarget.All, missionView.ViewID, false);
+            }
+
+            interactionTime = 5f;
+            if (txtInteractionButton != null)
+                txtInteractionButton.SetActive(false);
+        }
+
+        if (MissionManager.Instance != null && !string.IsNullOrEmpty(currentMissionPointName) && !currentMissionPoint.activeSelf)
+        {
+            MissionManager.Instance.RemoveMissionAndRedirect(currentMissionPointName);
+        }
+    }
+
+    [PunRPC]
+    private void SetInteractingAnim(bool isInteracting)
+    {
+        _animator.SetBool("isInteracting", isInteracting);
+    }
+
+    [PunRPC]
+    private void SetMissionVisibility(int missionPhotonViewId, bool isVisible)
+    {
+        PhotonView missionView = PhotonView.Find(missionPhotonViewId);
+        if (missionView != null)
+        {
+            missionView.gameObject.SetActive(isVisible);
+        }
+    }
+
+    [PunRPC]
+    public void NotifyWatcherMissionComplete(string room)
+    {
+        Debug.Log("Watcher'a görev bildirimi: " + room);
+        if (PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue("Team", out object role))
+        {
+            if (role.ToString() == "Watchers")
+            {
+                WatcherNotification.Instance?.ShowNotification(room);
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!photonView.IsMine) return;
+
+        if (other.CompareTag("MissionPoint"))
+        {
+            isInMissionPoint = true;
+            currentMissionPoint = other.gameObject;
+            roomName = currentMissionPoint.GetComponent<TaskPoint>().roomName;
+
+            string difficulty = currentMissionPoint.transform.parent.tag;
+
+            switch (difficulty)
+            {
+                case "EasyMission":
+                    interactionTime = 5f;
+                    break;
+                case "NormalMission":
+                    interactionTime = 10f;
+                    break;
+                case "HardMission":
+                    interactionTime = 15f;
+                    break;
+                default:
+                    interactionTime = 5f;
+                    break;
+            }
+
+            if (missionCompletePercentSlider != null)
+            {
+                missionCompletePercentSlider.maxValue = interactionTime;
+                missionCompletePercentSlider.value = interactionTime;
+            }
+
+            if (txtInteractionButton != null)
+            {
+                txtInteractionButton.transform.position = currentMissionPoint.transform.position + new Vector3(0f, 1.5f, 0f);
+                txtInteractionButton.SetActive(true);
+            }
+
+            Debug.Log("Görev alanına girildi");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!photonView.IsMine) return;
+
+        if (other.CompareTag("MissionPoint"))
+        {
+            isInMissionPoint = false;
+            currentMissionPoint = null;
+
+            if (holdCoroutine != null)
+            {
+                StopCoroutine(holdCoroutine);
+                holdCoroutine = null;
+                photonView.RPC("SetInteractingAnim", RpcTarget.All, false);
+            }
+
+            if (missionCompletePercentSlider != null)
+            {
+                missionCompletePercentSlider.gameObject.SetActive(false);
             }
 
             if (txtInteractionButton != null)
