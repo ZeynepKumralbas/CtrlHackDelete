@@ -79,6 +79,8 @@ namespace YourNamespaceHere
                 RandomColorSelecter.Instance.xOffsets[Random.Range(0, RandomColorSelecter.Instance.xOffsets.Length)],
                 RandomColorSelecter.Instance.yOffsets[Random.Range(0, RandomColorSelecter.Instance.yOffsets.Length)]);
         }*/
+
+        [PunRPC]
         public void RandomizeMaterialOffsets()
         {
             int randomRange = RandomColorSelecter.Instance.xOffsets.Length;

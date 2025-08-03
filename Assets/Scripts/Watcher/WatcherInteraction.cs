@@ -25,7 +25,7 @@ public class WatcherInteraction : MonoBehaviour
         hitboxCollider = GetComponent<Collider>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) //Hitbox'a giren karakterin kim olduðunu anlama
     {
         if (other.gameObject.CompareTag("Player"))
         {
