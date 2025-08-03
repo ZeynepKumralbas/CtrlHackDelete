@@ -442,6 +442,11 @@ Will you blend in well enough to survive? Or spot the intruders before it’s to
     <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/GameStatusScreenshots/WatcherNotification.png" alt="Watcher Notification Triggered When a Human Completes a Mission" width="400" />
     <br/><em>Figure 3.8: Watcher Notification Triggered When a Human Completes a Mission</em>
   </p>
+
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/ZeynepKumralbas/CtrlHackDelete/refs/heads/main/ProjectManagement/Sprint3/GameStatusScreenshots/CtrlHackDeleteCutscene.png" alt="Game End Cutscene - Executing Ctrl Hack Delete" width="400" />
+    <br/><em>Figure 3.9: Game End Cutscene - Executing Ctrl Hack Delete</em>
+  </p>
   
   <br/>
   <span style="font-size: 1.3em; font-weight: bold;"><strong>Sprint Review:</strong></span>
